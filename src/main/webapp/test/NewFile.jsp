@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>���ㅽ�몃�ㅼ�댁�댁�댁��</h2>
-<p>나도 test</p>
-<h1>test2 룰 정하기</h1>
+<h2></h2>
+<p>t</p>
+<h1>11-02xptmxm</h1>
 </body>
 </html>
