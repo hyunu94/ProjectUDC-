@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.div0{
+	width: 600px;
+	padding:10px;
+}
+.div1, .div2, .div3{
+	width: 400px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+}
+
+.p1{
+	margin:0px;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.p2{
+	display: none;	/* 보이게 할 때는 inline으로 */
+}
+.input1{
+	margin:0px;
+	height:30px;
+	width:390px;
+	margin-top:5px;
+	background-color: #f4f4f4;
+	border: 1px solid #dcdcdc;
+	padding: 5px;
+	font-weight: bold;
+}
+.input2{
+	margin:0px;
+	margin-top:5px;
+	width:390px;
+	height:100px;
+	background-color: #f4f4f4;
+	border: 1px solid #dcdcdc;
+	padding: 5px;
+	font-weight: bold;
+}
+#sub1{
+	margin:0px;
+	height:40px;
+	width:400px;
+	margin-top:5px;
+	background-color: #196ab3;
+	border: 1px solid #dcdcdc;
+	padding: 5px;
+	font-weight: bold;
+}
+
