@@ -160,8 +160,7 @@ img.imgsize {
 			<section>
 				<article>
 					<div class="text-center">
-						<img src="../img/sea.jpg" class="img-fluid" alt="..."
-							style="width: 800px; height: 500px;">
+						<jsp:include page="../api/XY3.jsp"></jsp:include>
 					</div>
 				</article>
 				<article>

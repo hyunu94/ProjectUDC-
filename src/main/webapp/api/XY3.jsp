@@ -40,7 +40,7 @@
 <input type="text" id="address" value="" size="70"> 
 <input type="button" value="ÁÂÇ¥°ª °Ë»ö" onclick="addressChk()">
 
-<div id="map" style="width:100%;height:450px;"></div>
+<div id="map" style="width:800px;height:500px;"></div>
 
 <div id="coordXY"></div>
 
