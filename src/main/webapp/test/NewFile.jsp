@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>테스트다이이이잉</h2>
+<h2>���ㅽ�몃�ㅼ�댁�댁�댁��</h2>
+<p>나도 test</p>
 </body>
 </html>
