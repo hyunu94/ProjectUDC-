@@ -4,12 +4,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>다음지도 - 주소로 위도/경도 좌표값 얻기</title>
+<title>지도</title>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-
-<p style="text-align:center;">[주소로 위도, 경도 좌표값 얻기]</p>
 <select id="borough">
 	<option value="동작구">동작구</option>
 	<option value="용산구">용산구</option>
@@ -37,8 +35,8 @@
 	<option value="중구">중구</option>
 	<option value="노원구">노원구</option>
 </select>
-<input type="text" id="address" value="" size="70"> 
-<input type="button" value="좌표값 검색" onclick="addressChk()">
+<input type="hidden" id="address" value="" size="70"> 
+<input type="button" value="검색" onclick="addressChk()">
 
 <div id="map" style="width:800px;height:500px;"></div>
 
@@ -47,20 +45,15 @@
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f45b93b9d4d2b1538f1f65bd30241ea9&libraries=services"></script>
 <script type="text/javascript">
 
-var lat=0;
-var lon=0;
 //현재위치 좌표 알려줌
 navigator.geolocation.getCurrentPosition(function(pos) {
     console.log(pos);
     var latitude = pos.coords.latitude;
     var longitude = pos.coords.longitude;
-    alert("현재 위치는 : " + latitude + ", "+ longitude);
+     alert("현재 위치는 : " + latitude + ", "+ longitude); 
     
-    lat = latitude;
-    lon = longitude;
 });
 
-alert(lat);
 //===============================
 	
 	
@@ -135,7 +128,7 @@ function addressChk() {
    // 지도 중심을 이동
    map.setCenter(coords);
 
-   coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y;
+    coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y; 
   }
  });
 }
