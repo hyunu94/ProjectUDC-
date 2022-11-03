@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+div#outer-grid {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#outer-grid {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr;
+	grid-gap: 8px;
+}
+
+#inner-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5px;
+}
+
+#inner-grid>div {
+	background: lightgreen;
+	padding: 8px;
+}
+
+#inner-grid>div:nth-child(1) {
+	grid-column: 1/3;
+}
+
+
