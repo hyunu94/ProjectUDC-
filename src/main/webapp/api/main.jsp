@@ -5,7 +5,13 @@
 <head>
     <meta charset="utf-8">
     <title>UDC</title>
-    
+     <style type="text/css">
+    	.btn btn-lg btn-primary{
+    		position: absolute;
+    		left: 100px;
+    		top: 100px;
+    	}
+    </style> 
 </head>
 <body>
 <select id="borough">
@@ -39,7 +45,7 @@
 <input type="button" value="검색" onclick="addressChk()">
 
 <!-- ============================== -->
-<div id="map" style="width:700px;height:500px;"></div>
+<div id="map" style="width:1296px;height:500px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f45b93b9d4d2b1538f1f65bd30241ea9&libraries=services"></script>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
@@ -49,8 +55,8 @@
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
-        center: new kakao.maps.LatLng(37.655214, 127.0770748), // 지도의 중심좌표
-        level: 10 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.5567206870, 126.941924105), // 지도의 중심좌표 이젠으로 찍어 놓음
+        level: 4 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -58,8 +64,8 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 => foe문 돌려서 공연정보랑 좌표 넣어주면 될듯?
 var positions = [
     {
-        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains3.jpg" style="width:150px;height: 130px"><br>장르 : 락<br>일시 : 2022.11.03<br>~ 2022.11.05<br>출연 : 신짱구<br>위치 : 마포구</div>', 
-        latlng: new kakao.maps.LatLng(37.5622856, 126.9087601)
+        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains3.jpg" style="width:150px;height: 130px"><br>장르 : 락<br>일시 : 2022.11.03<br>~ 2022.11.05<br>출연 : 신짱구<br>위치 : 신촌역<br><a href="https://www.naver.com/">상세보기</a></div>', 
+        latlng: new kakao.maps.LatLng(37.555776, 126.93687162)
     },
     {
         content: '<div style="width:150px;height: 250px;"><img src="../img/mountains1.jpg" style="width:150px;height: 130px"><br>장르 : 재즈<br>일시 : 2022.12.03<br>~ 2022.12.05<br>출연 : 철수 <br>위치 : 서대문구</div>', 
@@ -70,8 +76,8 @@ var positions = [
         latlng: new kakao.maps.LatLng(37.4959668, 127.0674358)
     },
     {
-        content: '<div>근린공원</div>',
-        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains2.jpg" style="width:150px;height: 130px"><br>장르 : 어쿠스틱<br>일시 : 2022.11.07<br>출연 : 김봉중 <br>위치 : 이화여대</div>',
+        latlng: new kakao.maps.LatLng(37.5626293, 126.94743724)
     }
 ];
 
@@ -80,8 +86,8 @@ var positions = [
 for (var i = 0; i < positions.length; i ++) {
 	
 var imageSrc = '../img/saxophone.png', // 마커이미지의 주소입니다    //if문 써서 장르별로 이미지 주면 될듯?
-    imageSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(20, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+    imageSize = new kakao.maps.Size(80, 80), // 마커이미지의 크기입니다
+    imageOption = {offset: new kakao.maps.Point(40, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
  // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
@@ -93,17 +99,19 @@ var imageSrc = '../img/saxophone.png', // 마커이미지의 주소입니다    
         position: positions[i].latlng, // 마커의 위치
         image: markerImage // 마커이미지 설정 
     });
+    var iwRemoveable = true;  // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
-        content: positions[i].content // 인포윈도우에 표시할 내용
+        content: positions[i].content, // 인포윈도우에 표시할 내용
+        removable : iwRemoveable  // 인포윈도 닫는 변수 넣어줌
     });
 
     // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
     // 이벤트 리스너로는 클로저를 만들어 등록합니다 
     // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+    kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, '', makeOutListener(infowindow));
 }
 
 // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
@@ -222,7 +230,7 @@ function getCurrentPosBtn(){
    // 지도 중심을 이동
    map.setCenter(coords);
 
-    coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y; 
+   /*  coordXY.innerHTML = "<br>X좌표 : " + x + "<br><br>Y좌표 : " + y;  */
   }
  });
 }
@@ -231,6 +239,7 @@ function getCurrentPosBtn(){
 
 	<!-- 부트스트랩 primary 버튼 -->
 <button type="button" class="btn btn-lg btn-primary" id="getMyPositionBtn"
-	onclick="getCurrentPosBtn()">내 위치</button>
+	onclick="getCurrentPosBtn()">근처 위치 보기</button>
+
 </body>
 </html>
