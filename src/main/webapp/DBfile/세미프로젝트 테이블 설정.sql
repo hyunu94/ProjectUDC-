@@ -5,9 +5,9 @@ CREATE TABLE member  (
 	pwd VARCHAR2(20), /* 비밀번호 */
 	name VARCHAR2(20) NOT NULL, /* 이름 */
 	nick VARCHAR2(20) UNIQUE, /* 닉네임 */
-    jumin char(14) UNIQUE NOT NULL,  /* 주민등록번호 */
+   	 jumin char(14) UNIQUE NOT NULL,  /* 주민등록번호 */
 	mobile VARCHAR2(15) NOT NULL, /* 휴대폰 */
-    outdate char(1) default 'N', /* 탈퇴여부 */
+    	outdate char(1) default 'N', /* 탈퇴여부 */
 	kindNo NUMBER CONSTRAINT FK_MEMBER_KIND  
                    REFERENCES KIND(kindNo) , /* 회원종류고유번호 */
 	locationNo NUMBER CONSTRAINT FK_MEMBER_loca  
@@ -37,8 +37,8 @@ CREATE TABLE location  (
 	zipcode VARCHAR2(10) NOT NULL, /* 우편번호 */
 	address VARCHAR2(100) NOT NULL, /* 주소 */
 	addressdetail VARCHAR2(100), /* 상세주소 */
-	axisx NUMBER NOT NULL, /* x좌표 */
-	axisy NUMBER NOT NULL /* y좌표 */
+	axisx NUMBER, /* x좌표 */
+	axisy NUMBER /* y좌표 */
 );
 
 create sequence location_seq
@@ -112,6 +112,7 @@ CREATE TABLE board  (
                    REFERENCES category(cateNo)/* 카테고리고유번호 */
 );
 
+delete tablefrom board;
 create sequence board_seq
 increment by 1
 start with 1

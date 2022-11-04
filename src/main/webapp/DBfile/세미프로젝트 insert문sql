@@ -1,0 +1,27 @@
+select * from user_tables;
+
+select * from kind;
+
+--insert into kind
+--values(kind_seq.nextval,'판매자');
+
+--insert into kind
+--values(kind_seq.nextval,'일반회원');
+
+--insert into kind
+--values(kind_seq.nextval,'비회원');
+
+select * from category;
+
+--insert into category
+--values(category_seq.nextval,'후기 게시판');
+
+--insert into category
+--values(category_seq.nextval,'같이가요 게시판');
+
+--insert into category
+--values(category_seq.nextval,'잡담 게시판');
+
+select * from location;
+
+commit;
