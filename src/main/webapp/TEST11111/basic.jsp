@@ -11,15 +11,62 @@
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="../css/gird_mold.css">
 <link rel="stylesheet" href="../css/article.css">
 <link rel="stylesheet" href="../css/nav.css">
 <style type="text/css">
+
+@media ( max-width : 768px) {
+	aside {
+		grid-row: 4/5;
+		grid-column: 1/3;
+	}
+	section {
+		grid-column: 1/3;
+	}
+}
+
+.grid-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(100px, auto);
+}
+
+header {
+	padding: 1em;
+	grid-column: 1/3;
+}
+
+nav {
+	grid-column: 1/3;
+}
+
+section {
+	background-color: lightyellow;
+	border: 1px solid #333;
+	padding: 10px;
+}
+
+aside {
+	background-color: limegreen;
+	border: 1px solid #333;
+	padding: 1em;
+}
+
+footer {
+	background: #f8f9fa;
+	padding: 1em;
+	grid-column: 1/3;
+}
+
 .h_header {
 	display: grid;
 	grid-template-columns: repeat(3, 33%); /*같은 단위 반복일때 사용*/
 	grid-gap: 300px 10px; /*줄간격, 칼럼 간격*/
 	text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .title {
@@ -141,7 +188,7 @@ a.nav-link.px-2.text-muted:hover {
 		<section>
 			<div id="grid">
 				<article>
-
+					<p>지도자리</p>
 				</article>
 				<article id="3685" class="location-listing">
 					<a class="location-title" href="#"> San Francisco </a>
