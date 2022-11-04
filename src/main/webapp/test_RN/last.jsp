@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,9 +10,11 @@
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.104.2">
 <title>UDC : Uri Dle Concert</title>
+<link rel="stylesheet" href="../css/card.css">
+<link rel="stylesheet" href="../css/_utilities.scss">
+<link rel="stylesheet" href="../css/_card.scss">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.2/examples/blog/">
-<link rel="stylesheet" href="../css/card.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -83,10 +85,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	</nav>
 	<div class="container">
 		<main class="container">
-			<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-				<div class="col-md-6 px-0">
-				<%@ include file="../api/main.jsp" %>
-				</div>
+			<div class="map">
+					<%@ include file="../api/main.jsp" %>
 			</div>
 
 			<div class="row mb-2">

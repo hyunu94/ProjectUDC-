@@ -18,6 +18,8 @@
     width: 48rem; /* not responsive!! */
     aspect-ratio: 2/1;
     font-family: 'Noto Sans KR', sans-serif;
+    
+    display: inline-block;
 }
 .card > * { /* picture and content */
     position: absolute;
@@ -82,7 +84,7 @@
 
     height : 0px;
     opacity: 0;
-
+    
     transition: var(--tr-s);
 }
 .card:hover .content {
@@ -107,7 +109,7 @@ ul, li { padding: 0; list-style-type: none }
 }
 
 .title { font-size: 1.4rem }
-.prix  { font-size: 3.0rem; font-weight: bold }
+.prix  { font-size: 3.0rem; font-weight: 800; }
 .unit  { font-size: 1.6rem }
 
 /* BONUS: card hover/click animation */
@@ -118,7 +120,7 @@ ul, li { padding: 0; list-style-type: none }
                 0px 1px 3px  0px rgba(0,0,0,.12);
 }
 .card:hover {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
     /* GMD elevation 3dp */
     box-shadow: 0px 3px 3px -2px rgba(0,0,0,.20),
                 0px 3px 4px  0px rgba(0,0,0,.14),
@@ -138,22 +140,92 @@ ul, li { padding: 0; list-style-type: none }
 	        <div class="header">
 	            <!-- <div class="prix">JOHN MAYER</div> -->
 	        </div>
+	        <div class="footer">
+	            <span class="prix">JOHN MAYER<span class="unit"><!-- &euro; --></span></span>
+	            <div>2022/12/23 ~ 2022/12/24, 신촌EZEN홀</div>
+	        </div>
 	
 	        <div class="content">
 	            <ul>
-	                <li class="title" style="font-weight: 800;">UDC SuperConcert#001 JOHN MAYER!</li>
+	                <li class="title"">UDC SuperConcert#001 JOHN MAYER!</li>
 	                <li>롤링스톤즈 선정 2022년 세계 3대 기타리스트</li>
 	                <li>존 메이어, 8년만에 다시 내한!</li>
 	                <li>올 겨울 크리스마스를 준비하세요!</li>
 	            </ul>
 	        </div>
 	
+	    </div>
+	</div>
+	<div class="card">
+	    <div class="bg-pic"><img src="../img/slidetest.jpg" alt="" aria-hidden="true" /></div>
+	
+	    <div class="inner">
+	        <div class="header">
+	            <!-- <div class="prix">JOHN MAYER</div> -->
+	        </div>
 	        <div class="footer">
 	            <span class="prix">JOHN MAYER<span class="unit"><!-- &euro; --></span></span>
 	            <div>2022/12/23 ~ 2022/12/24, 신촌EZEN홀</div>
 	        </div>
+	
+	        <div class="content">
+	            <ul>
+	                <li class="title"">UDC SuperConcert#001 JOHN MAYER!</li>
+	                <li>롤링스톤즈 선정 2022년 세계 3대 기타리스트</li>
+	                <li>존 메이어, 8년만에 다시 내한!</li>
+	                <li>올 겨울 크리스마스를 준비하세요!</li>
+	            </ul>
+	        </div>
+	
 	    </div>
 	</div>
-
+	
+	<div class="card">
+	    <div class="bg-pic"><img src="../img/slidetest.jpg" alt="" aria-hidden="true" /></div>
+	
+	    <div class="inner">
+	        <div class="header">
+	            <!-- <div class="prix">JOHN MAYER</div> -->
+	        </div>
+	        <div class="footer">
+	            <span class="prix">JOHN MAYER<span class="unit"><!-- &euro; --></span></span>
+	            <div>2022/12/23 ~ 2022/12/24, 신촌EZEN홀</div>
+	        </div>
+	
+	        <div class="content">
+	            <ul>
+	                <li class="title"">UDC SuperConcert#001 JOHN MAYER!</li>
+	                <li>롤링스톤즈 선정 2022년 세계 3대 기타리스트</li>
+	                <li>존 메이어, 8년만에 다시 내한!</li>
+	                <li>올 겨울 크리스마스를 준비하세요!</li>
+	            </ul>
+	        </div>
+	
+	    </div>
+	</div>
+	
+		<div class="card">
+	    <div class="bg-pic"><img src="../img/slidetest.jpg" alt="" aria-hidden="true" /></div>
+	
+	    <div class="inner">
+	        <div class="header">
+	            <!-- <div class="prix">JOHN MAYER</div> -->
+	        </div>
+	        <div class="footer">
+	            <span class="prix">JOHN MAYER<span class="unit"><!-- &euro; --></span></span>
+	            <div>2022/12/23 ~ 2022/12/24, 신촌EZEN홀</div>
+	        </div>
+	
+	        <div class="content">
+	            <ul>
+	                <li class="title"">UDC SuperConcert#001 JOHN MAYER!</li>
+	                <li>롤링스톤즈 선정 2022년 세계 3대 기타리스트</li>
+	                <li>존 메이어, 8년만에 다시 내한!</li>
+	                <li>올 겨울 크리스마스를 준비하세요!</li>
+	            </ul>
+	        </div>
+	
+	    </div>
+	</div>
 
 </html>
