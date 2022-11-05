@@ -21,7 +21,6 @@ public class BoardVO {
 
 	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, int star, int count, String delcheck,
 			int memberNo, int concertNo, int cateNo) {
-		super();
 		this.boardNo = boardNo;
 		this.title = title;
 		this.content = content;

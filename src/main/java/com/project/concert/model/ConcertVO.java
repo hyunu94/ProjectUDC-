@@ -22,8 +22,7 @@ public class ConcertVO {
 	}
 
 	public ConcertVO(int concertNo, String artist, String title, String content, Timestamp startdate, Timestamp enddate,
-			String time, int price, String link, String thumbimg, String detailimg, int memberNo, int locationNo) {
-		super();
+			String time, int price, String link, String thumbimg, int memberNo, int locationNo) {
 		this.concertNo = concertNo;
 		this.artist = artist;
 		this.title = title;
@@ -34,7 +33,6 @@ public class ConcertVO {
 		this.price = price;
 		this.link = link;
 		this.thumbimg = thumbimg;
-		this.detailimg = detailimg;
 		this.memberNo = memberNo;
 		this.locationNo = locationNo;
 	}
@@ -119,14 +117,6 @@ public class ConcertVO {
 		this.thumbimg = thumbimg;
 	}
 
-	public String getDetailimg() {
-		return detailimg;
-	}
-
-	public void setDetailimg(String detailimg) {
-		this.detailimg = detailimg;
-	}
-
 	public int getMemberNo() {
 		return memberNo;
 	}
@@ -147,7 +137,7 @@ public class ConcertVO {
 	public String toString() {
 		return "ConcertVO [concertNo=" + concertNo + ", artist=" + artist + ", title=" + title + ", content=" + content
 				+ ", startdate=" + startdate + ", enddate=" + enddate + ", time=" + time + ", price=" + price
-				+ ", link=" + link + ", thumbimg=" + thumbimg + ", detailimg=" + detailimg + ", memberNo=" + memberNo
+				+ ", link=" + link + ", thumbimg=" + thumbimg + ", memberNo=" + memberNo
 				+ ", locationNo=" + locationNo + "]";
 	}
 	

@@ -18,7 +18,6 @@ public class MemberVO {
 
 	public MemberVO(int memberNo, String userid, String pwd, String name, String nick, String jumin, String mobile,
 			String outdate, int kindNo, int locationNo) {
-		super();
 		this.memberNo = memberNo;
 		this.userid = userid;
 		this.pwd = pwd;

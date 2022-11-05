@@ -18,7 +18,6 @@ public class CommentsVO {
 
 	public CommentsVO(int commentsNo, String content, Timestamp regdate, int step, int sortno, String delcheck,
 			int boardNo, int memberNo) {
-		super();
 		this.commentsNo = commentsNo;
 		this.content = content;
 		this.regdate = regdate;
