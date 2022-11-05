@@ -1,0 +1,143 @@
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* for debugging, remove/disable when done */
+/* * { outline: 1px dashed }/**/
+
+/***********************/
+/* element definitions */
+/***********************/
+.inner {background-image: url("../img/slidetest.jpg");background-size: cover;}
+
+.card {
+    position: relative;
+
+    margin: 0 auto;
+    width: 48rem; /* not responsive!! */
+    aspect-ratio: 2/1;
+    font-family: 'Noto Sans KR', sans-serif;
+    border: none;
+}
+
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 1px;
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: 0.375rem;
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(0.375rem - 1px);
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #fff;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: #000;
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+}
+.card > * { /* picture and content */
+    position: absolute;
+    inset: 0; /* stretched to fill parent (T/R/B/L) */
+}
+
+/* background picture under all content, stretched to fit parent */
+.card .bg-pic     { z-index: -1 }
+.card .bg-pic img { display: block; width: 100%; height: 100%; object-fit: cover }
+
+/* Flexbox container over card background image */
+.card .inner {
+    z-index: 1;
+    display: flex; flex-flow: column wrap;
+    padding: 1rem;
+
+    justify-content: flex-end; /* move all elements to .inner bottom */
+}
+
+.card .inner > * {
+    /* all card .inner elements are FBL column containers */
+    display: flex; flex-flow: column wrap;
+ } 
+
+/********************************/
+/* All hover animation settings */
+/********************************/
+/*
+    element defaults before animation with transitions set,
+    followed by animation settings.
+*/
+.card {
+    /* trasition properties, delay, behaviour */
+    --tr-f: all 1.0s ease-in-out; /* fast transition */
+    --tr-s: all 1.0s ease-in-out; /* slow */
+}
+
+.card .header { 
+    flex-basis: 0%; /* makes it shrink to HTML default */
+    font-size: 1.5rem;
+    transition: var(--tr-f);
+    display:none;
+}
+.card:hover .header  {
+    /* When content/footer tend to wrap, fiddle with below 'flex-basis' < 40% */
+    flex-basis: 40%; /* makes it stretch to fill 40% */
+    font-size: 2rem;
+    text-align: center;
+}
+
+.card .bg-pic {
+    opacity: 1;
+    transition: var(--tr-s);
+}
+.card:hover .bg-pic  {
+    opacity: 0.5;
+}
+
+.card .content {
+    /* hides fading text under pricing */
+    overflow: hidden; /* disable to test */
+
+    height : 0px;
+    opacity: 0;
+
+    transition: var(--tr-s);
+}
+.card:hover .content {
+    height : auto;
+    opacity: 1;
+}
+
+.card:hover {
+    opacity: 0.9;
+}
+
+/*************/
+/* Eye-candy */
+/*************/
+
+body { font-size: 1rem }
+
+ul, li { padding: 0; list-style-type: none }
+
+.card > * {
+     /* obfuscate picture for testing */
+    background-color: hsl(0,0%,0%,.5);/* remove me */
+    color:  hsl(0,0%,100%,1);
+
+    cursor: pointer;
+}
+
+.title { font-size: 1.4rem }
+.prix  { font-size: 3.0rem; font-weight: bold }
+.unit  { font-size: 1.6rem }
