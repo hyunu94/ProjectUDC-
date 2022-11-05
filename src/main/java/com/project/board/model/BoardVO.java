@@ -1,11 +1,12 @@
 package com.project.board.model;
 
+import java.sql.Clob;
 import java.sql.Timestamp;
 
 public class BoardVO {
 	private int boardNo; /* 고유번호 */
 	private String title; /* 제목 */
-	private String content; /* 내용 */
+	private Clob content; /* 내용 */
 	private Timestamp regdate; /* 작성일 */
 	private int star; /* 별점 */
 	private int count; /* 조회수 */
@@ -18,7 +19,7 @@ public class BoardVO {
 		super();
 	}
 
-	public BoardVO(int boardNo, String title, String content, Timestamp regdate, int star, int count, String delcheck,
+	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, int star, int count, String delcheck,
 			int memberNo, int concertNo, int cateNo) {
 		super();
 		this.boardNo = boardNo;
@@ -49,11 +50,11 @@ public class BoardVO {
 		this.title = title;
 	}
 
-	public String getContent() {
+	public Clob getContent() {
 		return content;
 	}
 
-	public void setContent(String content) {
+	public void setContent(Clob content) {
 		this.content = content;
 	}
 
