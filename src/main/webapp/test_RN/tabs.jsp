@@ -107,7 +107,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="/2490476089"><strong><span
 											style="font-weight: bold;; color: #7f7f7f">【6/17 외부
 												디도스 공격으로 인한 해외접속 차단 공지】</span></strong></a></td>
-								<td class="time">06.17</td>
+								< td class="time">06.17</td>
 								<td class="m_no">243만</td>
 							</tr>
 							<tr class="">
@@ -140,7 +140,7 @@ input[type="submit"]:hover {
 								<td class="cate" style="color:"><strong></strong></td>
 								<td class="title"><a href="/54943465"><strong><span
 											style="font-weight: bold;; color: #7166ab">*.。+o●*.。【200430-200502
-												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">4516</a></td>
+												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">[4516]</a></td>
 								<td class="time">15.02.16</td>
 								<td class="m_no">514만</td>
 							</tr>
@@ -151,7 +151,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><strong><span
 											style="font-weight: bold;; color: #ff00ff">[왕덬:공지정독바라]
 												왕덬이 슼방/핫게 글이나 댓글 끌올해서 중계하는것도 작작하랬는데 안지켜지더라</span></strong></a> <a
-									href="/841733540#841733540_comment" class="replyNum">90</a></td>
+									href="/841733540#841733540_comment" class="replyNum">[90]</a></td>
 								<td class="time">18.08.28</td>
 								<td class="m_no">162만</td>
 							</tr>
@@ -161,7 +161,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><span style="">롤
 											결승 진짜 존잼 미친경기</span></a></td>
 								<td class="time">14:14</td>
-								<td class="m_no">6</td>
+								<td class="m_no">[6]</td>
 							</tr>
 							<tr>
 								<td class="no">26675667</td>
@@ -175,7 +175,7 @@ input[type="submit"]:hover {
 								<td class="no">26675666</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">아이티대통령
-											자택에서 암살당했대</span></a> <a href="#" class="replyNum">1</a></td>
+											자택에서 암살당했대</span></a> <a href="#" class="replyNum">[1]</a></td>
 								<td class="time">14:14</td>
 								<td class="m_no">38</td>
 							</tr>
@@ -215,7 +215,7 @@ input[type="submit"]:hover {
 								<td class="no">26675661</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">남자들
-											스포츠덬이랑 게임덬 중에 뭐가 더 많을까 궁금함</span></a> <a href="#" class="replyNum">2</a></td>
+											스포츠덬이랑 게임덬 중에 뭐가 더 많을까 궁금함</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">34</td>
 							</tr>
@@ -223,7 +223,7 @@ input[type="submit"]:hover {
 								<td class="no">26675660</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">롤..
-											페이커밖에 모름...</span></a> <a href="#" class="replyNum">6</a></td>
+											페이커밖에 모름...</span></a> <a href="#" class="replyNum">[6]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">62</td>
 							</tr>
@@ -231,7 +231,7 @@ input[type="submit"]:hover {
 								<td class="no">26675659</td>
 								<td class="cate"><span>같이가요</span></td>
 								<td class="title"><a href="#"><span style="">이번
-											락콘서트 같이 갈사람?</span></a> <a href="#" class="replyNum">2</a></td>
+											락콘서트 같이 갈사람?</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">32</td>
 							</tr>
@@ -239,7 +239,7 @@ input[type="submit"]:hover {
 								<td class="no">26675658</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">너네
-											네이버 지도 돼??</span></a> <a href="#" class="replyNum">1</a></td>
+											네이버 지도 돼??</span></a> <a href="#" class="replyNum">[1]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">56</td>
 							</tr>
@@ -255,7 +255,7 @@ input[type="submit"]:hover {
 								<td class="no">26675656</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">결국
-											네이버 안되는게 통신사때문인거네 어휴</span></a> <a href="#" class="replyNum">2</a></td>
+											네이버 안되는게 통신사때문인거네 어휴</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">144</td>
 							</tr>
@@ -263,7 +263,7 @@ input[type="submit"]:hover {
 								<td class="no">26675655</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">아홉시에
-											시작했는데 여태 해? 게이머들도 체력 엄청나구나</span></a> <a href="#" class="replyNum">3</a></td>
+											시작했는데 여태 해? 게이머들도 체력 엄청나구나</span></a> <a href="#" class="replyNum">[3]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">86</td>
 							</tr>
@@ -303,7 +303,7 @@ input[type="submit"]:hover {
 								<td class="no">26675650</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">위버스
-											쓰는 덬들 지금 들어가지니?</span></a> <a href="#" class="replyNum">4</a></td>
+											쓰는 덬들 지금 들어가지니?</span></a> <a href="#" class="replyNum">[4]</a></td>
 								<td class="time">14:12</td>
 								<td class="m_no">56</td>
 							</tr>
@@ -311,7 +311,7 @@ input[type="submit"]:hover {
 								<td class="no">26675649</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">갤럽
-											결과 예능인부터 나오지?</span></a> <a href="#" class="replyNum">2</a></td>
+											결과 예능인부터 나오지?</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:12</td>
 								<td class="m_no">42</td>
 							</tr>
@@ -399,7 +399,7 @@ input[type="submit"]:hover {
 								<td class="cate" style="color:"><strong></strong></td>
 								<td class="title"><a href="/54943465"><strong><span
 											style="font-weight: bold;; color: #7166ab">*.。+o●*.。【200430-200502
-												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">4516</a></td>
+												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">[4516]</a></td>
 								<td class="time">15.02.16</td>
 								<td class="m_no">514만</td>
 							</tr>
@@ -410,24 +410,15 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><strong><span
 											style="font-weight: bold;; color: #ff00ff">[왕덬:공지정독바라]
 												왕덬이 슼방/핫게 글이나 댓글 끌올해서 중계하는것도 작작하랬는데 안지켜지더라</span></strong></a> <a
-									href="/841733540#841733540_comment" class="replyNum">90</a></td>
+									href="/841733540#841733540_comment" class="replyNum">[90]</a></td>
 								<td class="time">18.08.28</td>
 								<td class="m_no">162만</td>
-							</tr>
-
-							<tr>
-								<td class="no">26675662</td>
-								<td class="cate"><span>잡담</span></td>
-								<td class="title"><a href="#"><span style="">와
-											결승재밌닼ㅋㅋㅋㅋ나 5세트만보는데</span></a></td>
-								<td class="time">14:13</td>
-								<td class="m_no">38</td>
 							</tr>
 							<tr>
 								<td class="no">26675661</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">남자들
-											스포츠덬이랑 게임덬 중에 뭐가 더 많을까 궁금함</span></a> <a href="#" class="replyNum">2</a></td>
+											스포츠덬이랑 게임덬 중에 뭐가 더 많을까 궁금함</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">34</td>
 							</tr>
@@ -435,7 +426,7 @@ input[type="submit"]:hover {
 								<td class="no">26675658</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">너네
-											네이버 지도 돼??</span></a> <a href="#" class="replyNum">1</a></td>
+											네이버 지도 돼??</span></a> <a href="#" class="replyNum">[1]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">56</td>
 							</tr>
@@ -443,7 +434,7 @@ input[type="submit"]:hover {
 								<td class="no">26675649</td>
 								<td class="cate"><span>질문</span></td>
 								<td class="title"><a href="#"><span style="">갤럽
-											결과 예능인부터 나오지?</span></a> <a href="#" class="replyNum">2</a></td>
+											결과 예능인부터 나오지?</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:12</td>
 								<td class="m_no">42</td>
 							</tr>
@@ -531,7 +522,7 @@ input[type="submit"]:hover {
 								<td class="cate" style="color:"><strong></strong></td>
 								<td class="title"><a href="/54943465"><strong><span
 											style="font-weight: bold;; color: #7166ab">*.。+o●*.。【200430-200502
-												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">4516</a></td>
+												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">[4516]</a></td>
 								<td class="time">15.02.16</td>
 								<td class="m_no">514만</td>
 							</tr>
@@ -542,7 +533,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><strong><span
 											style="font-weight: bold;; color: #ff00ff">[왕덬:공지정독바라]
 												왕덬이 슼방/핫게 글이나 댓글 끌올해서 중계하는것도 작작하랬는데 안지켜지더라</span></strong></a> <a
-									href="/841733540#841733540_comment" class="replyNum">90</a></td>
+									href="/841733540#841733540_comment" class="replyNum">[90]</a></td>
 								<td class="time">18.08.28</td>
 								<td class="m_no">162만</td>
 							</tr>
@@ -552,7 +543,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><span style="">롤
 											결승 진짜 존잼 미친경기</span></a></td>
 								<td class="time">14:14</td>
-								<td class="m_no">6</td>
+								<td class="m_no">[6]</td>
 							</tr>
 							<tr>
 								<td class="no">26675667</td>
@@ -654,7 +645,7 @@ input[type="submit"]:hover {
 								<td class="cate" style="color:"><strong></strong></td>
 								<td class="title"><a href="/54943465"><strong><span
 											style="font-weight: bold;; color: #7166ab">*.。+o●*.。【200430-200502
-												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">4516</a></td>
+												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">[4516]</a></td>
 								<td class="time">15.02.16</td>
 								<td class="m_no">514만</td>
 							</tr>
@@ -665,7 +656,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><strong><span
 											style="font-weight: bold;; color: #ff00ff">[왕덬:공지정독바라]
 												왕덬이 슼방/핫게 글이나 댓글 끌올해서 중계하는것도 작작하랬는데 안지켜지더라</span></strong></a> <a
-									href="/841733540#841733540_comment" class="replyNum">90</a></td>
+									href="/841733540#841733540_comment" class="replyNum">[90]</a></td>
 								<td class="time">18.08.28</td>
 								<td class="m_no">162만</td>
 							</tr>
@@ -673,7 +664,7 @@ input[type="submit"]:hover {
 								<td class="no">26675666</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">아이티대통령
-											자택에서 암살당했대</span></a> <a href="#" class="replyNum">1</a></td>
+											자택에서 암살당했대</span></a> <a href="#" class="replyNum">[1]</a></td>
 								<td class="time">14:14</td>
 								<td class="m_no">38</td>
 							</tr>
@@ -713,7 +704,7 @@ input[type="submit"]:hover {
 								<td class="no">26675660</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">롤..
-											페이커밖에 모름...</span></a> <a href="#" class="replyNum">6</a></td>
+											페이커밖에 모름...</span></a> <a href="#" class="replyNum">[6]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">62</td>
 							</tr>
@@ -721,7 +712,7 @@ input[type="submit"]:hover {
 								<td class="no">26675656</td>
 								<td class="cate"><span>잡담</span></td>
 								<td class="title"><a href="#"><span style="">결국
-											네이버 안되는게 통신사때문인거네 어휴</span></a> <a href="#" class="replyNum">2</a></td>
+											네이버 안되는게 통신사때문인거네 어휴</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">144</td>
 							</tr>
@@ -849,7 +840,7 @@ input[type="submit"]:hover {
 								<td class="cate" style="color:"><strong></strong></td>
 								<td class="title"><a href="/54943465"><strong><span
 											style="font-weight: bold;; color: #7166ab">*.。+o●*.。【200430-200502
-												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">4516</a></td>
+												더쿠 가입 마감 **현재 theqoo 가입 불가**】 *.。+o●*.。</span></strong></a> <a href="#">[4516]</a></td>
 								<td class="time">15.02.16</td>
 								<td class="m_no">514만</td>
 							</tr>
@@ -860,7 +851,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="#"><strong><span
 											style="font-weight: bold;; color: #ff00ff">[왕덬:공지정독바라]
 												왕덬이 슼방/핫게 글이나 댓글 끌올해서 중계하는것도 작작하랬는데 안지켜지더라</span></strong></a> <a
-									href="/841733540#841733540_comment" class="replyNum">90</a></td>
+									href="/841733540#841733540_comment" class="replyNum">[90]</a></td>
 								<td class="time">18.08.28</td>
 								<td class="m_no">162만</td>
 							</tr>
@@ -868,7 +859,7 @@ input[type="submit"]:hover {
 								<td class="no">26675659</td>
 								<td class="cate"><span>같이가요</span></td>
 								<td class="title"><a href="#"><span style="">이번
-											락콘서트 같이 갈사람?</span></a> <a href="#" class="replyNum">2</a></td>
+											락콘서트 같이 갈사람?</span></a> <a href="#" class="replyNum">[2]</a></td>
 								<td class="time">14:13</td>
 								<td class="m_no">32</td>
 							</tr>
