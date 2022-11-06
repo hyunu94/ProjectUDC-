@@ -50,6 +50,10 @@ table.btn_mold th:nth-child(2) {
 				<col style="width: 50%;" />
 			</colgroup>
 			<tr>
+				<td>회원유형</td>
+				<td name="userid">일반회원</td>
+			</tr>
+			<tr>
 				<td>아이디</td>
 				<td name="userid">honggildong</td>
 			</tr>
