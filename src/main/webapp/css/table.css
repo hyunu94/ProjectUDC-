@@ -1,8 +1,19 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:10pt;
+}
+.div0{
+	width:1000px;
+}
 .tab {
 	overflow: hidden;
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
+	/* border: 1px solid #ccc; */
+	background-color: white;
+	margin-top: 10px;
+	width: 1000px;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -18,29 +29,36 @@
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-	background-color: #ddd;
+	background-color: #eeeeee;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-	background-color: #ccc;
+	background-color: #eeeeee;
 }
 
 /* Style the tab content */
 .tabcontent {
 	display: none;
-	padding: 6px 12px;
-	border: 1px solid #ccc;
-	border-top: none;
+	width: 1000px;
+	padding: 20px 20px;
+	border: 1px solid #eeeeee;
+	margin-top: 10px;
 }
 
 table {
 	border-collapse: collapse;
-	width: 100%;
-	border: 1px solid #ddd;
+	width: 960px;
 }
-
-th, td {
+td{
+	height:50px;
+	border-bottom: 1px solid #eeeeee;
+}
+td:first-child {
 	text-align: left;
-	padding: 16px;
+	
+}
+td:last-child {
+	text-align: right;
+	
 }

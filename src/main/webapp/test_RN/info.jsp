@@ -5,14 +5,10 @@
 <link rel="stylesheet" href="../css/table.css">
 <div class="container">
 	<div class="tab">
-		<button class="tablinks" onclick="openCity(event, 'London')"
-			id="defaultOpen">회원정보</button>
-		<button class="tablinks" onclick="openCity(event, 'Paris')">작성한
-			글</button>
-		<button class="tablinks" onclick="openCity(event, 'Seoul')">작성한
-			댓글</button>
-		<button class="tablinks" onclick="openCity(event, 'Tokyo')">예매/결제
-			내역</button>
+		<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">회원정보 보기</button>
+		<button class="tablinks" onclick="openCity(event, 'Paris')">작성한 글</button>
+		<button class="tablinks" onclick="openCity(event, 'Seoul')">작성한 댓글</button>
+		<button class="tablinks" onclick="openCity(event, 'Tokyo')">예매/결제 내역</button>
 	</div>
 
 	<!-- Tab content -->
