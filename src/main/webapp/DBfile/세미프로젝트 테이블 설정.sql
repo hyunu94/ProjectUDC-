@@ -5,7 +5,7 @@ CREATE TABLE member  (
 	pwd VARCHAR2(20), /* 비밀번호 */
 	name VARCHAR2(20) NOT NULL, /* 이름 */
 	nick VARCHAR2(20) UNIQUE, /* 닉네임 */
-   	 jumin char(14) UNIQUE NOT NULL,  /* 주민등록번호 */
+   	 jumin varchar2(30) UNIQUE,  /* 주민등록번호 */
 	mobile VARCHAR2(15) NOT NULL, /* 휴대폰 */
     	outdate char(1) default 'N', /* 탈퇴여부 */
 	kindNo NUMBER CONSTRAINT FK_MEMBER_KIND  
@@ -37,6 +37,7 @@ CREATE TABLE location  (
 	zipcode VARCHAR2(10) NOT NULL, /* 우편번호 */
 	address VARCHAR2(100) NOT NULL, /* 주소 */
 	addressdetail VARCHAR2(100), /* 상세주소 */
+	locationname varchar2(100), /* 장소이름 */
 	axisx NUMBER, /* x좌표 */
 	axisy NUMBER /* y좌표 */
 );
@@ -53,13 +54,14 @@ CREATE TABLE notice  (
 	regdate TIMESTAMP default sysdate, /* 작성일 */
 	count NUMBER default 0, /* 조회수 */
 	memberNo NUMBER CONSTRAINT FK_Notice_mem  
-                   REFERENCES member(memberNo)/* 회원고유번호 */
+                   REFERENCES member(memberNo) on delete cascade /* 회원고유번호 */
 );
 
 create sequence notice_seq
 increment by 1
 start with 1
 nocache;
+
 /* 카테고리  */
 CREATE TABLE category  (
 	cateNo NUMBER primary key, /* 고유번호 */
@@ -83,9 +85,8 @@ CREATE TABLE concert  (
     price number NOT NULL, /* 가격 */
 	link VARCHAR2(1000), /* 링크 */
 	thumbimg varchar2(100) NOT NULL, /* 썸네일 */
-	detailimg varchar2(100) , /* 상세이미지 */
 	memberNo NUMBER  CONSTRAINT FK_concert_mem  
-                   REFERENCES member(memberNo), /* 회원번호 */
+                   REFERENCES member(memberNo) ON DELETE CASCADE , /* 회원번호 */
 	locationNo NUMBER  CONSTRAINT FK_concert_loca  
                    REFERENCES location(locationNo) /* 위치고유번호 */
 );
@@ -103,11 +104,12 @@ CREATE TABLE board  (
 	regdate TIMESTAMP default sysdate, /* 작성일 */
 	star NUMBER default 0, /* 별점 */
 	count NUMBER default 0, /* 조회수 */
-    delcheck char(1) default 'N', /* 삭제여부 */
+	img varchar2(100) , /* 이미지 */
+    	delcheck char(1) default 'N', /* 삭제여부 */
 	memberNo NUMBER  CONSTRAINT FK_board_mem  
-                   REFERENCES member(memberNo), /* 회원번호 */
+                   REFERENCES member(memberNo) on delete cascade, /* 회원번호 */
 	concertNo NUMBER  CONSTRAINT FK_board_con  
-                   REFERENCES concert(concertNo), /* 공연고유번호 */
+                   REFERENCES concert(concertNo) on delete cascade, /* 공연고유번호 */
 	categoryNo NUMBER  CONSTRAINT FK_board_cate  
                    REFERENCES category(cateNo)/* 카테고리고유번호 */
 );
@@ -122,9 +124,9 @@ nocache;
 CREATE TABLE reserve  (
 	reserveNo NUMBER NOT NULL, /* 고유번호 */
 	memberNo NUMBER  CONSTRAINT FK_reserve_mem  
-                   REFERENCES member(memberNo), /* 회원번호 */
+                   REFERENCES member(memberNo) on delete cascade, /* 회원번호 */
 	concertNo NUMBER  CONSTRAINT FK_reserve_con  
-                   REFERENCES concert(concertNo),/* 공연고유번호 */
+                   REFERENCES concert(concertNo) on delete cascade,/* 공연고유번호 */
     buy char(1) default 'N' /* 결제여부 */
 );
 

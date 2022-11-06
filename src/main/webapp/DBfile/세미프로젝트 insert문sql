@@ -11,13 +11,13 @@ select * from kind;
 --insert into kind
 --values(kind_seq.nextval,'비회원');
 
-select * from category;
+--select * from category;
 
 --insert into category
 --values(category_seq.nextval,'후기 게시판');
 
 --insert into category
---values(category_seq.nextval,'같이가요 게시판');
+--values(category_seq.nextval,'같이가요게시판');
 
 --insert into category
 --values(category_seq.nextval,'잡담 게시판');
@@ -25,3 +25,66 @@ select * from category;
 select * from location;
 
 commit;
+--장르 
+
+--insert into genre
+--values(genre_seq.nextval,'락');
+
+--insert into genre
+--values(genre_seq.nextval,'발라드');
+
+--insert into genre
+--values(genre_seq.nextval,'K-POP');
+
+--insert into genre
+--values(genre_seq.nextval,'재즈');
+
+--insert into genre
+--values(genre_seq.nextval,'EDM');
+
+--insert into genre
+--values(genre_seq.nextval,'POP');
+
+--판매자관점(회원가입)
+--insert into member(memberNo,userid,pwd,name,nick,jumin,mobile,kindNo,locationNo)
+--values(member_seq.nextval,'ezen','a1234','김성훈','이젠아카데미','110123-3049280','02-304-3049',1,1);
+
+--일반회원관점(회원가입)
+--insert into member(memberNo,userid,pwd,name,nick,jumin,mobile,kindNo,locationNo)
+--values(member_seq.nextval,'idhong','1234','홍길동','kildong','930123-1049480','010-3104-2949',2,3);
+
+--비회원관점(예약 시)
+--insert into member(memberNo,name,mobile,kindNo)
+--values(member_seq.nextval,'비회원','010-3940-1010',3);
+
+select * from member;
+commit;
+
+--공지사항( 관리자용이라 자바에서 kindNo == 1 일경우에만 가능하게 설정하기)
+--insert into notice(noticeNo,title,content,memberNo)
+--values(notice_seq.nextval,'공지사항입니다.','공지사항은 필요합니다',1);
+
+select * from notice;
+commit;
+
+--공연 등록 ( 관리자용이라 자바에서 memberNo == 1 일경우에만 가능하게 설정하기)
+--insert into concert
+--values(concert_seq.nextval,'나훈아','나훈아 콘서트','기성세대가 좋아할만한 콘서트',
+--'2022-11-09','2022-12-01','13:50',100000,'www.youtube.com/nahuna',
+--'nahuna.jpg','nahunade.jpg',1,20,3);
+
+select * from genre;
+select * from concert;
+commit;
+
+select * from board;
+
+--SELECT 'DROP TABLE "' || TABLE_NAME || '" CASCADE CONSTRAINTS;' FROM user_tables;
+
+
+
+
+
+
+
+
