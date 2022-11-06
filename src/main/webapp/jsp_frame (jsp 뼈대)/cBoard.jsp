@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공연정보게시판 > 글쓰기</title>
 <link rel="stylesheet" type="text/css" href="../css/cBoard.css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script type="text/javascript" src="../smartEdit/js/service/HuskyEZCreator.js" charset="utf-8"></script>  
@@ -51,10 +53,7 @@
 	    });
 	});
 	
-
-
 </script>
-
 </head>
 <body>
 	<h3>공연정보게시판 > 글쓰기</h3>
@@ -93,7 +92,7 @@
 			</div>
 			<div class="div2">
 				<p class="p1">공연소개 / MAIN CONTENTS</p>
-				<textarea class="input2" id="content" name="ir1" rows="10" cols="30"></textarea>
+				<textarea class="input2" id="content" name="content" rows="10" cols="30"></textarea>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
