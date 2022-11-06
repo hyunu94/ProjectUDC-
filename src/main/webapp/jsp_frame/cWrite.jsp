@@ -39,7 +39,12 @@
 				alert('공연시각을 입력하세요');
 				$('#time').focus();
 				event.preventDefault();
-	    	}else if($('#price').val().length<1){
+	    	}else if(!validate_time($('#time').val()) ||
+	    			$('#time').val().substr(2,1).indexOf(':') == -1){
+				alert('공연시각을 보기와 같이 입력하세요.\n\n예)17:00');
+				$('#time').focus();
+				event.preventDefault();	
+			}else if($('#price').val().length<1){
 				alert('가격을 입력하세요');
 	    		$('#price').focus();
 	    		event.preventDefault();
@@ -98,6 +103,12 @@
 		 return pattern.test(price);
 	 }
 	
+	//공연시각 숫자 랑 : 만 가능
+	function validate_time(time){
+		 var pattern=new RegExp(/^[0-9:]*$/g);
+		 return pattern.test(time);
+	 }
+	
 </script>
 </head>
 <body>
@@ -127,7 +138,7 @@
 			</div>
 			<div class="div1">
 				<p class="p1">공연시각 / TIMETABLE</p>
-				<input type="text" class="input1" id="time" name="time" />
+				<input type="text" class="input1" id="time" name="time" maxlength="5"/>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
