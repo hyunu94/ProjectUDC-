@@ -203,6 +203,23 @@
 		은평구<input type="radio" name="locationNo" value="5">
 		모르구<input type="radio" name="locationNo" value="6">	
 	</div>
+<hr>
+<div id="zipcode">
+<input type="text" id="sample6_postcode" placeholder="우편번호">
+<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+<input type="text" id="sample6_address" placeholder="주소">
+<input type="button" value="주소 확인" onclick="addressChk()"> <br> <!-- 이거 꼭 눌러야 xy좌표 구함 -->
+<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+<br>
+<br>
+
+<h3>xy 히든값</h3>
+
+	<input type="text" id="x" value="" size="70"> 
+	<input type="text" id="y" value="" size="70"> 
+	<hr>
+	</div>
 	<!-- <div class = "realize">
 	</div> 유효성 검사 칸-->
 	<div class="multi_radio1">
