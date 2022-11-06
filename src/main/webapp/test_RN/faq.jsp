@@ -38,7 +38,7 @@ body * {
 	cursor: pointer;
 	padding-left: 50px;
 	border-bottom: 2px solid black;
-	font-size: 20pt;
+	font-size: 18pt;
 }
 
 .title:after {
