@@ -51,8 +51,16 @@
 				alert('주민번호 앞자리를 입력하세요.');
 				$('#jumin1').focus();
 				event.preventDefault();
+			}else if($('#jumin1').val().length!=6){
+				alert('주민번호 앞자리 6자를 입력하셔야합니다.');
+				$('#jumin1').focus();
+				event.preventDefault();
 			}else if($('#jumin2').val().length<1){
 				alert('주민번호 뒷자리를 입력하세요.');
+				$('#jumin2').focus();
+				event.preventDefault();
+			}else if($('#jumin2').val().length!=7){
+				alert('주민번호 뒷자리 7자를 입력하셔야합니다.');
 				$('#jumin2').focus();
 				event.preventDefault();
 			}else if(!validate_jumin($('#jumin1').val())
