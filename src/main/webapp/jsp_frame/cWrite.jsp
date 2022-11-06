@@ -15,6 +15,45 @@
 	var oEditors=[];
 	
 	$(function() {
+		
+		  $('#artist').focus();
+		
+		$('#sub1').click(function(){
+	    	if($('#artist').val().length<1){
+				alert('공연자를 입력하세요');
+				$('#artist').focus();
+				event.preventDefault();
+	    	}else if($('#title').val().length<1){
+				alert('공연제목을 입력하세요');
+				$('#title').focus();
+				event.preventDefault();
+	    	}else if($('#start').val().length<1){
+				alert('시작날짜를 선택하세요');
+				$('#start').focus();
+				event.preventDefault();
+	    	}else if($('#end').val().length<1){
+				alert('끝나는날짜 입력하세요');
+				$('#end').focus();
+				event.preventDefault();
+	    	}else if($('#time').val().length<1){
+				alert('공연시각을 입력하세요');
+				$('#time').focus();
+				event.preventDefault();
+	    	}else if($('#price').val().length<1){
+				alert('가격을 입력하세요');
+	    		$('#price').focus();
+	    		event.preventDefault();
+	    	}else if(!validate_price($('#price').val())){
+				alert('가격은 숫자만 가능합니다.');
+				$('#price').focus();
+				event.preventDefault();	
+			}else if($('#content').val().length<1){
+				alert('공연소개를 입력하세요');
+	    		$('#content').focus();
+	    		event.preventDefault();
+	    	}
+	    });
+		
 		nhn.husky.EZCreator.createInIFrame({
 			oAppRef: oEditors,
 			elPlaceHolder : "content",
@@ -51,7 +90,17 @@
                 $("#start").datepicker( "option", "maxDate", selectedDate );
             }
 	    });
+	    
+	  
+	    
+	    
+	    
 	});
+	//가격 숫자만 가능
+	function validate_price(price){
+		 var pattern=new RegExp(/^[0-9]*$/g);
+		 return pattern.test(price);
+	 }
 	
 </script>
 </head>
