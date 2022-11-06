@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>글쓰기</title>
-<link rel="stylesheet" type="text/css" href="../css/detail.css" />
+<link rel="stylesheet" type="text/css" href="../css/nWrite.css" />
 <script type="text/javascript" src="../smartEdit/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
