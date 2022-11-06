@@ -19,6 +19,10 @@
 		  $('#artist').focus();
 		
 		$('#sub1').click(function(){
+			var hour = $('#time').val().substr(0,2);
+			var minute = $('#time').val().substr(3,2)
+			
+			
 	    	if($('#artist').val().length<1){
 				alert('공연자를 입력하세요');
 				$('#artist').focus();
@@ -42,6 +46,10 @@
 	    	}else if(!validate_time($('#time').val()) ||
 	    			$('#time').val().substr(2,1).indexOf(':') == -1){
 				alert('공연시각을 보기와 같이 입력하세요.\n\n예)17:00');
+				$('#time').focus();
+				event.preventDefault();	
+			}else if(hour>24 || minute>60){
+				alert('공연시각은\n00:00 ~ 23:59 사이만 입력가능합니다');
 				$('#time').focus();
 				event.preventDefault();	
 			}else if($('#price').val().length<1){
