@@ -8,7 +8,8 @@ public class BoardVO {
 	private String title; /* 제목 */
 	private Clob content; /* 내용 */
 	private Timestamp regdate; /* 작성일 */
-	private int star; /* 별점 */
+	private double star; /* 별점 */
+	private int starcount; /* 별점 누른 인원수*/
 	private int count; /* 조회수 */
 	private String img; /* 이미지 */
 	private String delcheck; /* 삭제여부 */
@@ -20,14 +21,15 @@ public class BoardVO {
 		super();
 	}
 
-	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, int star, int count, String img,
-			String delcheck, int memberNo, int concertNo, int cateNo) {
+	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, double star, int starcount, int count,
+			String img, String delcheck, int memberNo, int concertNo, int cateNo) {
 		super();
 		this.boardNo = boardNo;
 		this.title = title;
 		this.content = content;
 		this.regdate = regdate;
 		this.star = star;
+		this.starcount = starcount;
 		this.count = count;
 		this.img = img;
 		this.delcheck = delcheck;
@@ -35,8 +37,6 @@ public class BoardVO {
 		this.concertNo = concertNo;
 		this.cateNo = cateNo;
 	}
-
-
 
 	public int getBoardNo() {
 		return boardNo;
@@ -70,12 +70,20 @@ public class BoardVO {
 		this.regdate = regdate;
 	}
 
-	public int getStar() {
+	public double getStar() {
 		return star;
 	}
 
-	public void setStar(int star) {
+	public void setStar(double star) {
 		this.star = star;
+	}
+	
+	public int getStarcount() {
+		return starcount;
+	}
+
+	public void setStarcount(int starcount) {
+		this.starcount = starcount;
 	}
 
 	public int getCount() {
@@ -129,9 +137,11 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", regdate=" + regdate
-				+ ", star=" + star + ", count=" + count + ", img=" + img + ", delcheck=" + delcheck + ", memberNo="
-				+ memberNo + ", concertNo=" + concertNo + ", cateNo=" + cateNo + "]";
+				+ ", star=" + star + ", starcount=" + starcount + ", count=" + count + ", img=" + img + ", delcheck="
+				+ delcheck + ", memberNo=" + memberNo + ", concertNo=" + concertNo + ", cateNo=" + cateNo + "]";
 	}
+
+	
 
 	
 	

@@ -9,12 +9,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import com.project.db.ConnectionPoolMgr2;
 import com.project.v_board.model.BoardSelectVO;
-
-import oracle.sql.TIMESTAMP;
 
 public class BoardDAO {
 	private ConnectionPoolMgr2 pool;
@@ -170,7 +166,7 @@ public class BoardDAO {
 			}
 			
 			if(list.size()>0) {
-				System.out.println("게시판 전체 조회 list.size = " + list.size());
+				System.out.println("게시판 종류 번호 : " + cateNo + " 조회 list.size = " + list.size());
 			}
 			return list;
 		}finally {
@@ -178,7 +174,69 @@ public class BoardDAO {
 		}
 	}
 	
+	public int updateCount(int boardNo) throws SQLException { //조회수 증가
+		Connection con=null;
+		PreparedStatement ps=null;
+
+		try {
+			//1,2
+			con=pool.getConnection();
+
+			//3
+			String sql="update board\r\n"
+					+ "    set count = count + 1\r\n"
+					+ "    where boardNo = 1";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, boardNo);
+
+			//4
+			int cnt=ps.executeUpdate();
+			System.out.println("조회수 증가 결과 cnt="+cnt+", 매개변수 no="+boardNo);
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 	
+	public double updatestar(BoardVO vo) throws SQLException { //별점 구하기
+		Connection con=null;
+		PreparedStatement ps=null;
+		PreparedStatement ps2 = null;
+		ResultSet rs = null;
+		int cnt = 0;
+		double result=0;
+
+		try {
+			//1,2
+			con=pool.getConnection();
+
+			//3
+			String sql="update board\r\n"
+					+ "    set starcount = starcount + 1 , star = star + ?\r\n"
+					+ "    where boardNo = ?";
+			ps=con.prepareStatement(sql);
+			ps.setDouble(1, vo.getStar());
+			ps.setInt(2, vo.getBoardNo());
+
+			//4
+			cnt=ps.executeUpdate();
+			System.out.println("별점 추가 결과 cnt="+cnt+", 매개변수 no="+vo.getBoardNo());
+			
+			String sql2 = "select star/starcount from board where boardNo = ?";
+			ps2 = con.prepareStatement(sql2);
+			ps.setInt(1, vo.getBoardNo());
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				result = rs.getDouble(1);
+			}
+			
+			System.out.println("별점 : " + result);
+			return result;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 	
 	
 }
