@@ -25,6 +25,10 @@
 }
 /*---------------------*/
 
+ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+    margin: auto; /*메뉴 가운데 고정*/
+}
+
 /* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
 	margin-top: 25px;
 } 이게 뭐더라 */
