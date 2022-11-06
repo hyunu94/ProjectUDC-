@@ -3,11 +3,6 @@
 <link rel="stylesheet" href="../css/board.css">
 <%@ include file="../inc/top.jsp"%>
 <style>
-
-body {
-    min-width:475px;
-}
-
 * {
 	box-sizing: border-box
 }
@@ -107,7 +102,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="/2490476089"><strong><span
 											style="font-weight: bold;; color: #7f7f7f">【6/17 외부
 												디도스 공격으로 인한 해외접속 차단 공지】</span></strong></a></td>
-								< td class="time">06.17</td>
+								<td class="time">06.17</td>
 								<td class="m_no">243만</td>
 							</tr>
 							<tr class="">

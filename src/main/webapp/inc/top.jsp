@@ -20,6 +20,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 body {
 	font-family: "Noto Sans KR", sans-serif !important; /* 폰트적용 */
+    min-width:475px;/*최소 화면 넓이*/
 }
 
 /* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
@@ -33,10 +34,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	z-index: 12; /*nav postion stick 상단바 고정*/
 }
 
+ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+    margin: auto;
+}
+
 form[role=search] {
     margin-bottom: 0px;
 }
-
 </style>
 <!-- Custom styles for this template -->
 <link

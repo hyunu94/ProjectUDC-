@@ -13,7 +13,6 @@ public class ConcertVO {
 	private int price; /* 가격 */
 	private String link; /* 링크 */
 	private String thumbimg; /* 썸네일 */
-	private String detailimg; /* 상세이미지 */
 	private int memberNo; /* 회원번호 */
 	private int locationNo;/* 위치고유번호 */
 	
@@ -23,6 +22,7 @@ public class ConcertVO {
 
 	public ConcertVO(int concertNo, String artist, String title, String content, Timestamp startdate, Timestamp enddate,
 			String time, int price, String link, String thumbimg, int memberNo, int locationNo) {
+		super();
 		this.concertNo = concertNo;
 		this.artist = artist;
 		this.title = title;

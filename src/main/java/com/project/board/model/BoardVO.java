@@ -10,6 +10,7 @@ public class BoardVO {
 	private Timestamp regdate; /* 작성일 */
 	private int star; /* 별점 */
 	private int count; /* 조회수 */
+	private String img; /* 이미지 */
 	private String delcheck; /* 삭제여부 */
 	private int memberNo; /* 회원번호 */
 	private int concertNo; /* 공연고유번호 */
@@ -19,19 +20,23 @@ public class BoardVO {
 		super();
 	}
 
-	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, int star, int count, String delcheck,
-			int memberNo, int concertNo, int cateNo) {
+	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, int star, int count, String img,
+			String delcheck, int memberNo, int concertNo, int cateNo) {
+		super();
 		this.boardNo = boardNo;
 		this.title = title;
 		this.content = content;
 		this.regdate = regdate;
 		this.star = star;
 		this.count = count;
+		this.img = img;
 		this.delcheck = delcheck;
 		this.memberNo = memberNo;
 		this.concertNo = concertNo;
 		this.cateNo = cateNo;
 	}
+
+
 
 	public int getBoardNo() {
 		return boardNo;
@@ -113,12 +118,22 @@ public class BoardVO {
 		this.cateNo = cateNo;
 	}
 
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	@Override
 	public String toString() {
 		return "BoardVO [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", regdate=" + regdate
-				+ ", star=" + star + ", count=" + count + ", delcheck=" + delcheck + ", memberNo=" + memberNo
-				+ ", concertNo=" + concertNo + ", cateNo=" + cateNo + "]";
+				+ ", star=" + star + ", count=" + count + ", img=" + img + ", delcheck=" + delcheck + ", memberNo="
+				+ memberNo + ", concertNo=" + concertNo + ", cateNo=" + cateNo + "]";
 	}
+
+	
 	
 	
 	
