@@ -1,0 +1,29 @@
+ -- 예매 조회 뷰
+--create or replace view v_reserve 
+--as
+--select r.reserveNo , r.buy , m.memberNo , m.name, c.artist,c.title,
+--c.startdate , c.enddate , c.time , l.locationname
+--from reserve r join member m
+--on r.memberNo = m.memberNo
+--join concert c
+--on r.concertNo = c.concertNo
+--join location l
+--on c.locationNo = l.locationNo;
+
+--전체게시판 뷰
+--create or replace view v_boardall 
+--as
+--select b.title , b.content , b.regdate , b.star , b.count , c.catename
+--from board b join category c
+--on b.categoryNo = c.cateNo
+--where b.delcheck = 'N';
+--
+--select * from v_boardall;
+
+--게시판별 뷰
+--create or replace view v_board_cate
+--as
+--select b.title , b.content , b.regdate , b.star , b.count , c.cateno , c.catename
+--from board b join category c
+--on b.categoryNo = c.cateNo
+--where b.delcheck = 'N';

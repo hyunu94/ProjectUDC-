@@ -103,6 +103,7 @@ CREATE TABLE board  (
 	content CLOB, /* 내용 */
 	regdate TIMESTAMP default sysdate, /* 작성일 */
 	star NUMBER default 0, /* 별점 */
+	starcount Number default 0, /* 별점 누른사람 횟수 */
 	count NUMBER default 0, /* 조회수 */
 	img varchar2(100) , /* 이미지 */
     	delcheck char(1) default 'N', /* 삭제여부 */

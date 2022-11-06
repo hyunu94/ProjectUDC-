@@ -36,16 +36,11 @@ values(member_seq.nextval,'비회원','010-0203-0400',3);
 
 commit;
 
---create or replace view v_reserve //예매 조회 뷰
---as
---select r.reserveNo , r.buy , m.memberNo , m.name, c.artist,c.title,c.content, 
---c.startdate , c.enddate , c.time , l.address , l.addressDetail, l.name as "장소이름"
---from reserve r join member m
---on r.memberNo = m.memberNo
---join concert c
---on r.concertNo = c.concertNo
---join location l
---on c.locationNo = l.locationNo;
+
+
+
+
+
 
 
 

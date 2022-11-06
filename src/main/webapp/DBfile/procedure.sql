@@ -1,0 +1,31 @@
+--create or replace procedure deletecomments --프로시저 이름 
+--	(
+--	--매개변수
+--	    m_no  number --해당 게시글 번호
+--	)
+--	is
+--	--변수선언부
+--	    cnt number;
+--	    v_step  number; -- 댓글 서열
+--	begin
+--	--답변이 있는 댓글인 경우에는 레코드를 삭제하지 말고 DelFlag = Y 로 update
+--	select step into cnt
+--	from comments
+--	where no=m_no;
+--	        
+--	        --답변글이 존재한다면
+--	        if cnt>0 then
+--	            update comments
+--	            set delflag='Y'
+--	            where no=m_no;
+--	        else --답변글이 없는 경우
+--	            delete from comments
+--	            where no=m_no;
+--	        end if;
+--        
+--    commit;
+--	EXCEPTION
+--	    WHEN OTHERS THEN
+--		raise_application_error(-20001, '댓글 삭제 실패!');
+--	        ROLLBACK;
+--	end;

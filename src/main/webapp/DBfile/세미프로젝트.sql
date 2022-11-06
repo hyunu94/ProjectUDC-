@@ -64,8 +64,12 @@ commit;
 --insert into notice(noticeNo,title,content,memberNo)
 --values(notice_seq.nextval,'공지사항입니다.','공지사항은 필요합니다',1);
 
-select * from notice;
-commit;
+--update notice
+--set title = '공지사항제목수정' , content = '공지사항내용수정'
+--where noticeNo = 6 and memberNo = 10;
+--
+--delete from notice
+--where noticeNo = 7 and memberNo = 10;
 
 --공연 등록 ( 관리자용이라 자바에서 memberNo == 1 일경우에만 가능하게 설정하기)
 --insert into concert
@@ -73,13 +77,69 @@ commit;
 --'2022-11-09','2022-12-01','13:50',100000,'www.youtube.com/nahuna',
 --'nahuna.jpg','nahunade.jpg',1,20,3);
 
+--update concert
+--set artist = '아티스트' , title = '타이틀' , content = '컨텐트' , 
+--startdate = '2020-12-19' , enddate = '2020-12-19' , time = '13:50' , 
+--price = 55000 , link = '' , thumbimg = 'imsi.jpg' , locationNo = 31550
+--where concertNo = 4;
+--
+--delete from concert
+--where concertNo = 4;
+
 select * from genre;
 select * from concert;
 commit;
 
 select * from board;
 
---SELECT 'DROP TABLE "' || TABLE_NAME || '" CASCADE CONSTRAINTS;' FROM user_tables;
+--insert into board(boardNo,title,content,img,memberNo,concertNo,categoryNo)
+--values(board_seq.nextval,'후기제목','후기내용','chum.jpg',11,3,3);
+--
+--update board
+--set title = '바뀐제목' , content = '바뀐내용' , regdate = sysdate , img = 'ba.jpg' ,
+--concertNo = 5 , categoryNo = '2'
+--where boardNo = 1;
+--
+--update board
+--set Delcheck = 'Y'
+--where boardNo = 1;
+
+--update board
+--set starcount = starcount + 1 , star = star + 4
+--where boardNo = 11;
+--    
+--select star/starcount from board where boardNo = 11;
+
+select * from reserve;
+
+--insert into reserve(reserveNo , memberNo , concertNo)
+--values(reserve_seq.nextval,11,3);
+
+--update reserve
+--set concertNo = 4
+--where reserveNo = 1;
+--
+--delete from reserve
+--where reserveNo = 1;
+
+select * from comments;
+
+--insert into comments(commentsNo,content,boardNo,MemberNo)
+--values(comments_seq.nextval,'댓글내용',1,11);
+
+--update comments
+--set content = '댓글수정'
+--where commentsNo = 1;
+
+--update comments
+--set delcheck = 'Y'
+--where commentsNo = 1;
+
+select * from member;
+select * from concert;
+select * from location;
+select * from category;
+select * from board;
 
 
 
