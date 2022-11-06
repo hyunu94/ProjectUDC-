@@ -11,7 +11,7 @@ body{
 	margin-top: 50px;
 	padding-left:190px;
 }
-.text_regi{
+.input1{
 	width: 600px;
 	height: 40px;
 	padding-left: 10px;
@@ -22,9 +22,20 @@ body{
 	border-radius:5px 5px 5px 5px;
 }
 .input2{
-	width: 600px;
-	height:300px;
-	padding: 10px;
+	width: 200px;
+	height:40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+}
+.mobile{
+	width: 100px;
+	height:40px;
+	padding-left: 10px;
+	padding-right: 10px;
 	margin: 0px;
 	vertical-align: middle;
 	border: 1px solid #9d9d9d;
