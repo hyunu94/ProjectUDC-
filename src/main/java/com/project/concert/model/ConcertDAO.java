@@ -74,4 +74,66 @@ public class ConcertDAO {
 			pool.dbClose(ps, con);
 		}
 	}
+	
+	public int UpdateCon(ConcertVO vo) throws SQLException { //공연정보 업데이트
+		Connection con = null;
+		PreparedStatement ps = null;
+		int cnt = 0;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "update concert\r\n"
+					+ "set artist = ? , title = ? , content = ? , \r\n"
+					+ "startdate = ? , enddate = ? , time = ? , \r\n"
+					+ "price = ? , link = ? , thumbimg = ? , locationNo = ?\r\n"
+					+ "where concertNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, vo.getArtist());
+			ps.setString(2, vo.getTitle());
+			ps.setString(3, vo.getContent());
+			ps.setTimestamp(4, vo.getStartdate());
+			ps.setTimestamp(5, vo.getEnddate());
+			ps.setString(6, vo.getTime());
+			ps.setInt(7, vo.getPrice());
+			ps.setString(8, vo.getLink());
+			ps.setString(9, vo.getThumbimg());
+			ps.setInt(10, vo.getConcertNo());
+			
+			cnt = ps.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("변경된 vo = " + vo);
+			}
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
+	
+	public int deleteCon(int concertNo) throws SQLException { //공연정보 삭제
+		Connection con = null;
+		PreparedStatement ps = null;
+		int cnt = 0;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "delete from concert\r\n"
+					+ "where concertNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, concertNo);
+			
+			cnt = ps.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("삭제된 No = " + concertNo);
+			}
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 }

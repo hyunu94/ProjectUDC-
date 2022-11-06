@@ -9,6 +9,7 @@ public class CategoryVO {
 	}
 
 	public CategoryVO(int cateNo, String catename) {
+		super();
 		this.cateNo = cateNo;
 		this.catename = catename;
 	}

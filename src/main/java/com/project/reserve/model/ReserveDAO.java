@@ -2,9 +2,14 @@ package com.project.reserve.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.project.db.ConnectionPoolMgr2;
+import com.project.v_reserve.model.ReserveViewVO;
 
 public class ReserveDAO {
 	private ConnectionPoolMgr2 pool;
@@ -89,6 +94,44 @@ public class ReserveDAO {
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	public List<ReserveViewVO> selectByMemberno(int memberNo) throws SQLException{
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ReserveViewVO> list = new ArrayList<>();
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select * from v_reserve\r\n"
+					+ "where memberNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, memberNo);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int reserveNo = rs.getInt(1);
+				String buy = rs.getString(2);
+				int memberNo2 = rs.getInt(3);
+				String name = rs.getString(4);
+				String artist = rs.getString(5);
+				String title = rs.getString(6);
+				Timestamp startdate = rs.getTimestamp(7);
+				Timestamp enddate = rs.getTimestamp(8);
+				String time = rs.getString(9);
+				String locationname = rs.getString(10);
+				
+				ReserveViewVO vo = new ReserveViewVO(reserveNo, buy, memberNo2, name, artist, title, startdate, enddate, time, locationname);
+				list.add(vo);
+			}
+			
+			System.out.println("예매 조회 결과 list.size = " + list.size());
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
 		}
 	}
 	
