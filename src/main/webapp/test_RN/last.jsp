@@ -17,41 +17,48 @@
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 	crossorigin="anonymous"></script>
-
 <style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 body {
-  font-family: "Noto Sans KR", sans-serif !important;
+	font-family: "Noto Sans KR", sans-serif !important; /* 폰트적용 */
 }
 
 .map {
-    margin-top: 30px;
-    margin-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px; /* 지도 위아래 간격 적용 */
 }
 
+#map {
+	max-width: 100%;
+	min-height: auto; /* 지도 화면 비율 고정*/
+}
+
+/* article border 속성 삭제*/
 .card {
-    border: none!important;
+	border: none !important;
 }
 
-.row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative {
-    border: none!important;
+.row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+	{
+	border: none !important;
 }
+/*---------------------*/
 
-.p-4.p-md-5.mb-4.rounded.text-bg-dark {
+/* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
 	margin-top: 25px;
-}
-
+} 이게 뭐더라 */
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	position: sticky;
 	top: 0%;
 	right: 0%;
 	left: 0%;
-	z-index: 2;
+	z-index: 12; /*nav postion stick 상단바 고정*/
 }
 
 .inner {
 	background-image: url("../img/slidetest.jpg");
 	background-size: cover;
+	/* 카드 이미지 적용 - 이거 안하면 카드 회색으로 나오고 hover시에만 사진/문장 나옴 */
 }
 </style>
 <!-- Custom styles for this template -->
@@ -64,9 +71,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	rel="stylesheet">
 </head>
 <body>
+	<!-- nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
 		aria-label="Ninth navbar example">
 		<div class="container-xl">
+			<!-- UDC (reload) 아이콘 -->
 			<div>
 				<a class="navbar-brand" href="#">UDC</a>
 				<button class="navbar-toggler" type="button"
@@ -76,6 +85,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
+
+			<!-- 메뉴 -->
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
@@ -95,6 +106,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 					<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
 				</ul>
 			</div>
+			<!-- 검색, 로그인, 회원가입 버튼 -->
 			<div>
 				<form role="search">
 					<button type="button" class="btn btn-outline-light me-2">Login</button>
@@ -104,12 +116,14 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 			</div>
 		</div>
 	</nav>
+	<!-- /nav -->
+
+	<!-- content - 바뀌는 부분 -->
 	<div class="container">
 		<main class="container">
 			<div class="map">
 				<%@ include file="../api/main.jsp"%>
 			</div>
-
 			<div class="row mb-2">
 				<div class="col-md-6">
 					<div
@@ -235,6 +249,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 			</div>
 		</main>
 	</div>
+	<!-- content 바뀌는 부분 끝 -->
+
+	<!-- footer -->
 	<footer class="py-3 my-4">
 		<ul class="nav justify-content-center border-bottom pb-3 mb-3">
 			<li class="nav-item"><a href="#"
@@ -250,6 +267,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 		</ul>
 		<p class="text-center text-muted">&copy 2022 Company, Inc</p>
 	</footer>
+	<!-- /footer -->
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
