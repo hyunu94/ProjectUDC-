@@ -14,7 +14,10 @@
 		$('#userid').focus();
 		
 		$('#wr_submit').click(function(){
-			if($('#userid').val().length<1){
+			if($('input[name=kind]:radio:checked').length<1){
+				alert('회원유형을 선택하세요');
+				event.preventDefault();
+			}else if($('#userid').val().length<1){
 				alert('아이디를 입력하세요');
 				$('#userid').focus();
 				event.preventDefault();
@@ -46,10 +49,24 @@
 				alert('주민번호 뒷자리를 입력하세요.');
 				$('#jumin2').focus();
 				event.preventDefault();
+			}else if(!validate_jumin($('#jumin1').val())
+					|| !validate_jumin($('#jumin2').val())){
+				alert('주민번호는 숫자만 가능합니다.');
+				$('#jumin1').focus();
+				event.preventDefault();
+			}else if($('#mobile2').val().length<1){
+				alert('핸드폰번호를 입력하세요.')
+				event.preventDefault();
+			}else if($('#mobile3').val().length<1){
+				alert('핸드폰번호를 입력하세요.')
+				event.preventDefault();
 			}else if(!validate_phone($('#mobile2').val())
 					|| !validate_phone($('#mobile3').val())){
 				alert('전화번호는 숫자만 가능합니다.');
 				$('#mobile2').focus();
+				event.preventDefault();
+			}else if($('input[name=locationNo]:radio:checked').length<1){
+				alert('관심지역을 선택하세요.');
 				event.preventDefault();
 			}
 			
@@ -72,6 +89,11 @@
 		 시작하거나 끝나야 한다는 의미
 		 닫기 대괄호(]) 뒤의 + 기호는 이 패턴이 한 번 또는 그 이상 반복된다는 의미 */
 	 }
+	
+	function validate_jumin(jumin){
+		 var pattern = new RegExp(/^[0-9]+$/g);
+		 return pattern.test(jumin);
+	}
 	
 </script>
 </head>
@@ -99,13 +121,13 @@
 		<strong class = "text_regi">비밀번호</strong>
 	</div>
 	<div class = "second_regi">
-		 <input id="pwd" type="text" name="pwd">
+		 <input id="pwd" type="Password" name="pwd">
 	</div>
 	<div class = "first_regi">
 		<strong class = "text_regi">비밀번호 확인</strong>
 	</div>
 	<div class = "second_regi">
-		 <input id="pwd2" type="text" name="pwd2">
+		 <input id="pwd2" type="Password" name="pwd2">
 	</div>
 	<!-- <div class = "realize">
 	</div> 유효성 검사 칸-->
@@ -130,8 +152,8 @@
 	</div>
 	<div class = "second_regi">
 		<span>
-		<input id="jumin1" type="text" name="jumin1"> -
-		<input id="jumin2" type="text" name="jumin2"> 		
+		<input id="jumin1" type="text" name="jumin1" maxlength="6"> -
+		<input id="jumin2" type="Password" name="jumin2" maxlength="7"> 		
 		</span>		
 	</div>
 	<!-- <div class = "realize">
@@ -146,8 +168,8 @@
 			<option>011</option>
 			<option>017</option>
 		</select>
-		- <input class = "mobile" id="mobile2" type="text" name="mobile2"> 
-		- <input class = "mobile" id="mobile3" type="text" name="mobile3"> 		
+		- <input class = "mobile" id="mobile2" type="text" name="mobile2" maxlength="4"> 
+		- <input class = "mobile" id="mobile3" type="text" name="mobile3" maxlength="4"> 		
 		</span>		
 	</div>
 	<!-- <div class = "realize">
