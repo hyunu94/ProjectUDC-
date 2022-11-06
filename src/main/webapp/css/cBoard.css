@@ -32,8 +32,13 @@ body{
 .p1{
 	font-weight: 300;
 	font-size: 11pt;
+	margin-bottom: 2px;
 }
 .p2{
+	margin-top:2px;
+	font-size: 11pt;
+	color: red;
+	padding-left: 2px;
 	display: none;
 }
 #sub1{
