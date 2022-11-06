@@ -47,11 +47,7 @@
 				alert('가격은 숫자만 가능합니다.');
 				$('#price').focus();
 				event.preventDefault();	
-			}else if($('#content').val().length<1){
-				alert('공연소개를 입력하세요');
-	    		$('#content').focus();
-	    		event.preventDefault();
-	    	}
+			}
 	    });
 		
 		nhn.husky.EZCreator.createInIFrame({
