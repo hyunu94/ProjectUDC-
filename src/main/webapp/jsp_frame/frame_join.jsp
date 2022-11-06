@@ -114,7 +114,7 @@
 </script>
 </head>
 <body>
-	<h3>정보를 입력해 주세요.</h3>
+	<h3>가입 정보를 입력해 주세요.</h3>
 	<div class="div0">
 		<form id ="regist" method="post" action="join_ok.jsp">
 			<div class = "first_regi">
@@ -195,14 +195,33 @@
 			<div class="multi_radio1">
 				<p class = "p1">관심지역</p>	
 			</div>
-			<div class="multi_radio2">
-				강남구<input type="radio" name="locationNo" value="1">
-				서대문구<input type="radio" name="locationNo" value="2">
-				중구<input type="radio" name="locationNo" value="3">
-				종로구<input type="radio" name="locationNo" value="4">
-				은평구<input type="radio" name="locationNo" value="5">
-				모르구<input type="radio" name="locationNo" value="6">	
-			</div>
+			<select name="locationNo" class="sel1">
+				<option value="1">강남구</option>
+				<option value="2">강동구</option>
+				<option value="3">강북구</option>
+				<option value="4">강서구</option>
+				<option value="5">관악구</option>
+				<option value="6">광진구</option>
+				<option value="7">구로구</option>
+				<option value="8">금천구</option>
+				<option value="9">노원구</option>
+				<option value="10">도봉구</option>
+				<option value="11">동대문구</option>
+				<option value="12">동작구</option>
+				<option value="13">마포구</option>
+				<option value="14">서대문구</option>
+				<option value="15">서초구</option>
+				<option value="16">성동구</option>
+				<option value="17">성북구</option>
+				<option value="18">송파구</option>
+				<option value="19">양천구</option>
+				<option value="20">영등포구</option>
+				<option value="21">용산구</option>
+				<option value="22">은평구</option>
+				<option value="23">종로구</option>
+				<option value="24">중구</option>
+				<option value="25">중랑구</option>
+			</select>
 			<div class = "first_regi">
 				<p class = "p1">주소</p>
 			</div>

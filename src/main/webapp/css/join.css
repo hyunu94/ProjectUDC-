@@ -54,7 +54,17 @@ body{
 	border: 1px solid #9d9d9d;
 	border-radius:5px 5px 5px 5px;
 }
-
+.sel1{
+	width: 622px;
+	height:40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+}
 .mobile{
 	width: 100px;
 	height:40px;
