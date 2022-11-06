@@ -16,11 +16,14 @@
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 	crossorigin="anonymous"></script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+<style type="text/css">
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap')
+	;
+
 body {
 	font-family: "Noto Sans KR", sans-serif !important; /* 폰트적용 */
-    min-width:475px;/*최소 화면 넓이*/
+	min-width: 475px; /*최소 화면 넓이*/
 }
 
 /* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
@@ -35,11 +38,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 }
 
 ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
-    margin: auto;
+	margin: auto;
 }
 
 form[role=search] {
-    margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 </style>
 <!-- Custom styles for this template -->
@@ -98,3 +101,5 @@ form[role=search] {
 		</div>
 	</nav>
 	<!-- /nav -->
+	<section>
+		<article>

@@ -11,7 +11,6 @@
 	});
 </script>
 <style type="text/css">
-
 body * {
 	font-family: 'Noto Sans KR', sans-serif;
 	margin-left: auto;
@@ -20,8 +19,8 @@ body * {
 }
 
 .container {
-    margin-top: 100px;
-    margin-bottom: 100px;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 .faq {
@@ -95,13 +94,12 @@ body * {
 }
 
 .one a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .one a:hover {
-    font-weight: bold;
+	font-weight: bold;
 }
-
 </style>
 </head>
 <body>
