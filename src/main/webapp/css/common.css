@@ -3,12 +3,13 @@
 
 body{
 	font-family: 'Noto Sans KR', sans-serif;
-	width:1000px;
+	width:810px;
 	padding: 20px;
+	margin-left:auto;
+	margin-right:auto;
 }
 .div0{
 	margin-top: 50px;
-	padding-left:190px;
 }
 .input1{
 	width: 600px;
@@ -56,4 +57,26 @@ body{
 }
 #sub1:active {
 	  transform: translateY(2px);
+}
+.btns{
+	width: 60px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	vertical-align: middle;
+	border: 1px solid #eeeeee;
+	border-radius:5px 5px 5px 5px;
+	font-weight: 400;
+}
+.btns:active {
+	transform: translateY(2px);
+}
+.btns:hover{
+	background-color: #bebebe;
+}
+.div_btns{
+	border-bottom: 1px solid #e5e5e5;
+	padding-top:10px;
+	padding-bottom:10px;
 }

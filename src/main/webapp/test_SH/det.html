@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	p{
+		display: inline-block;
+		height: 50px;
+		line-height: 50px;
+		margin:0px;
+		
+	}
+	.div1{
+		border-bottom: 1px solid #e5e5e5;
+	}
+	.div_inner{
+		display: inline-block;
+	}
+	td{
+		width:400px;
+	}
+	td:first-child {
+		text-align: left;
+	
+	}
+	td:last-child {
+		text-align: right;
+		
+	}
+</style>
+</head>
+<body>
+	<h3>일반게시판</h3>
+	<div class="div0">
+		<div class="div1">
+			<p class="p1">[잡담] 안녕하세요, 동해물과 백두산이</p>
+		</div>
+		<div class="div1">
+			<table>
+				<colgroup>
+					<col style="width: 50%;" />
+					<col style="width: 50%;" />
+				</colgroup>
+				<tr>
+					<td>
+						<div class="div_inner">
+							<p class="p1">닉네임</p>
+						</div>
+					</td>
+					<td>
+						<div class="div_inner">
+							<p class="p1">날짜&nbsp;</p><p class="p1">2022-10-01 17:55</p>
+							<p class="p1">&nbsp;&nbsp;조회수&nbsp;</p><p class="p1">100</p>
+							<p class="p1">&nbsp;&nbsp;추천수&nbsp;</p><p class="p1">10</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="div1">
+			<p class="p1">(본문내용)</p>
+		</div>
+		<div class="div_btns">
+			<table>
+				<colgroup>
+					<col style="width: 50%;" />
+					<col style="width: 50%;" />
+				</colgroup>
+				<tr>
+					<td>
+						<div>
+							<input type="button" class="btns" value="목록">
+							<input type="button" class="btns" value="수정">
+							<input type="button" class="btns" value="삭제">
+						</div>
+					</td>
+					<td>
+						<div>
+							<input type="button" class="btns" value="글쓰기">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
