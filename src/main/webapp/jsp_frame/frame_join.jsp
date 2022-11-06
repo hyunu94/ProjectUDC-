@@ -121,8 +121,9 @@
 				<p class = "p1">회원 유형</p>
 			</div>
 			<div class = "p1">
-				일반 회원<input type="radio" name="kind" value="1">
-				기업 회원<input type="radio" name="kind" value="2">
+				<span>일반 회원</span><input type="radio" name="kind" value="1">
+				<span>&nbsp;|&nbsp;</span>
+				<span>클럽 회원 (공연등록 전용)</span><input type="radio" name="kind" value="2">
 			</div>
 			<!-- <div class = "realize">
 			</div> 유효성 검사 칸-->
@@ -202,23 +203,27 @@
 				은평구<input type="radio" name="locationNo" value="5">
 				모르구<input type="radio" name="locationNo" value="6">	
 			</div>
-		<!-- ================== -->
-<div id="coordXY"></div>
-<input type="text" id="sample6_postcode" placeholder="우편번호">
-<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" placeholder="주소">
-<input type="button" value="주소 확인" onclick="addressChk()"> <br> <!-- 이거 꼭 눌러야 xy좌표 구함 -->
-<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-<input type="text" id="sample6_extraAddress" placeholder="참고항목">
-<input type="hidden" id="x" value="" title="x좌표"> 
-<input type="hidden" id="y" value="" title="y좌표"> 
-	<!-- ================== -->
+			<div class = "first_regi">
+				<p class = "p1">주소</p>
+			</div>
+			<div id="coordXY">
+					<!-- ================== -->
+				<input class="input4" type="text" id="sample6_postcode" placeholder="우편번호" />
+				<input class="btn_add1" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br>
+				<input class="input5" type="text" id="sample6_address" placeholder="주소" />
+				<input class="input5" type="text" id="sample6_detailAddress" placeholder="상세주소" /><br>
+				<input class="btn_add2" type="button" value="주소 확인" onclick="addressChk()" /> <br> <!-- 이거 꼭 눌러야 xy좌표 구함 -->
+				<input type="hidden" id="sample6_extraAddress" placeholder="참고항목" />
+				<input type="hidden" id="x" value="" title="x좌표" /> 
+				<input type="hidden" id="y" value="" title="y좌표" /> 
+				<!-- ================== -->
+			</div>
 			<!-- <div class = "realize">
 			</div> 유효성 검사 칸-->
 			<div class="multi_radio1">
 			</div>
 			<div class="multi_radio2">
-				<input type="submit" id="wr_submit"value="가입 완료">
+				<input type="submit" id="wr_submit" value="가입 완료">
 			</div>
 		</form>
 	</div>

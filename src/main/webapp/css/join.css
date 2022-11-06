@@ -31,6 +31,30 @@ body{
 	border: 1px solid #9d9d9d;
 	border-radius:5px 5px 5px 5px;
 }
+
+.input4{
+	width: 200px;
+	height:40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+}
+.input5{
+	width: 600px;
+	height:40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+}
+
 .mobile{
 	width: 100px;
 	height:40px;
@@ -53,7 +77,33 @@ body{
 	padding-left: 2px;
 	display: none;
 }
-#sub1{
+.btn_add1{
+	width: 110px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 20px;
+	margin: 0px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+	font-weight: 400;
+	cursor: pointer;
+}
+.btn_add2{
+	width: 622px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+	font-weight: 400;
+	cursor: pointer;
+}
+#wr_submit{
 	width: 622px;
 	height: 40px;
 	padding-left: 10px;
@@ -64,7 +114,16 @@ body{
 	border: 1px solid #9d9d9d;
 	border-radius:5px 5px 5px 5px;
 	font-weight: 400;
+	cursor: pointer;
+	background-color: white;
 }
-#sub1:active {
+#wr_submit:hover{
+	background-color: #eeeeee;
+}	
+#wr_submit:active {
 	  transform: translateY(2px);
+}
+.multi_radio2{
+	border-top: 1px solid #eeeeee;
+	margin-top: 10px;
 }
