@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,24 +12,31 @@
 <title>UDC : Uri Dle Concert</title>
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.2/examples/blog/">
-<link rel="stylesheet" href="../css/card.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 	crossorigin="anonymous"></script>
-
 <style>
-.p-4.p-md-5.mb-4.rounded.text-bg-dark {
-	margin-top: 25px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body {
+	font-family: "Noto Sans KR", sans-serif !important; /* 폰트적용 */
 }
 
+/* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
+	margin-top: 25px;
+} 이게 뭐더라 */
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	position: sticky;
 	top: 0%;
 	right: 0%;
 	left: 0%;
-	z-index: 2;
+	z-index: 12; /*nav postion stick 상단바 고정*/
 }
+
+form[role=search] {
+    margin-bottom: 0px;
+}
+
 </style>
 <!-- Custom styles for this template -->
 <link
@@ -41,9 +48,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	rel="stylesheet">
 </head>
 <body>
+	<!-- nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
 		aria-label="Ninth navbar example">
 		<div class="container-xl">
+			<!-- UDC (reload) 아이콘 -->
 			<div>
 				<a class="navbar-brand" href="#">UDC</a>
 				<button class="navbar-toggler" type="button"
@@ -53,6 +62,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
+
+			<!-- 메뉴 -->
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
@@ -72,6 +83,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 					<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
 				</ul>
 			</div>
+			<!-- 검색, 로그인, 회원가입 버튼 -->
 			<div>
 				<form role="search">
 					<button type="button" class="btn btn-outline-light me-2">Login</button>
@@ -81,3 +93,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 			</div>
 		</div>
 	</nav>
+	<!-- /nav -->
