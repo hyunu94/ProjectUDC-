@@ -11,8 +11,6 @@
 <meta name="generator" content="Hugo 0.104.2">
 <title>UDC : Uri Dle Concert</title>
 <link rel="stylesheet" href="../css/card.css">
-<link rel="stylesheet" href="../css/_utilities.scss">
-<link rel="stylesheet" href="../css/_card.scss">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.2/examples/blog/">
 <script
@@ -21,6 +19,24 @@
 	crossorigin="anonymous"></script>
 
 <style>
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+.map {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: none!important;
+}
+
+.row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative {
+    border: none!important;
+}
+
 .p-4.p-md-5.mb-4.rounded.text-bg-dark {
 	margin-top: 25px;
 }
@@ -31,6 +47,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	right: 0%;
 	left: 0%;
 	z-index: 2;
+}
+
+.inner {
+	background-image: url("../img/slidetest.jpg");
+	background-size: cover;
 }
 </style>
 <!-- Custom styles for this template -->
@@ -86,7 +107,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	<div class="container">
 		<main class="container">
 			<div class="map">
-					<%@ include file="../api/main.jsp" %>
+				<%@ include file="../api/main.jsp"%>
 			</div>
 
 			<div class="row mb-2">
