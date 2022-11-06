@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공연정보게시판 > 글쓰기</title>
-<link rel="stylesheet" type="text/css" href="../css/cBoard.css" />
+<link rel="stylesheet" type="text/css" href="../css/cWrite.css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script type="text/javascript" src="../smartEdit/js/service/HuskyEZCreator.js" charset="utf-8"></script>  
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>

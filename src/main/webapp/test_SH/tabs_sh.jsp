@@ -1,78 +1,18 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../css/board.css">
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="../css/board_sh.css">
 <%@ include file="../inc/top.jsp"%>
-<style>
-* {
-	box-sizing: border-box
-}
-
-.contents {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-/* Style tab links */
-.tablink {
-	background-color: #55555580;
-	color: white;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	font-size: 17px;
-	width: 20%;
-}
-
-.tablink:hover {
-	background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-	color: white;
-	display: none;
-	padding: 100px 20px;
-	height: 100%;
-}
-
-#All, #quest, #Review, #Chat, #together {
-	background-color: white;
-}
-
-tbody tr {
-	border-bottom: 1px dashed;
-}
-
-thead tr {
-	background: #212529;
-	color: white;
-}
-
-input[type="submit"] {
-	background: #ffffff;
-	color: #212529;
-	border-radius: 0.5em;
-}
-
-input[type="submit"]:hover {
-	background: #212529;
-	color: white;
-	border-radius: 0.5em;
-	transition: 0.5s;
-}
-</style>
 </head>
 <body>
 	<div class="contents">
-		<button class="tablink" onclick="openPage('All', this, '#212529')"
-			id="defaultOpen">전체</button>
-		<button class="tablink" onclick="openPage('quest', this, '#212529')">질문</button>
-		<button class="tablink" onclick="openPage('Review', this, '#212529')">후기</button>
-		<button class="tablink" onclick="openPage('Chat', this, '#212529')">잡담</button>
-		<button class="tablink"
-			onclick="openPage('together', this, '#212529')">같이가요</button>
+	
+		<div class="catebutton">
+			<span class="catechoice">카테고리 선택 &nbsp;&nbsp;</span>
+			<button class="tablink" onclick="openPage('All', this, '#dfbc2a')" id="defaultOpen">전체</button>
+			<button class="tablink" onclick="openPage('quest', this, '#dfbc2a')">질문</button>
+			<button class="tablink" onclick="openPage('Review', this, '#dfbc2a')">후기</button>
+			<button class="tablink" onclick="openPage('Chat', this, '#dfbc2a')">잡담</button>
+			<button class="tablink"	onclick="openPage('together', this, '#dfbc2a')">같이가요</button>
+		</div>		
 
 		<div id="All" class="tabcontent">
 			<!-- content - 바뀌는 부분 -->
@@ -102,7 +42,7 @@ input[type="submit"]:hover {
 								<td class="title"><a href="/2490476089"><strong><span
 											style="font-weight: bold;; color: #7f7f7f">【6/17 외부
 												디도스 공격으로 인한 해외접속 차단 공지】</span></strong></a></td>
-								<td class="time">06.17</td>
+								< td class="time">06.17</td>
 								<td class="m_no">243만</td>
 							</tr>
 							<tr class="">
@@ -873,16 +813,18 @@ input[type="submit"]:hover {
 					</div>
 					<div class="" style="display: block;">
 						<form name="frm" action="" method="get">
-							<input type="hidden" name="act" value=""> <input
-								type="hidden" name="vid" value=""> <input type="hidden"
-								name="mid" value="ktalk"> <input type="hidden"
-								name="category" value=""> <input type="hidden"
-								name="group_srl" value=""> <select name="search_target">
+							<input type="hidden" name="act" value=""> 
+							<input type="hidden" name="vid" value=""> 
+							<input type="hidden" name="mid" value="ktalk"> 
+							<input type="hidden" name="category" value=""> 
+							<input type="hidden" name="group_srl" value=""> 
+							<select name="search_target">
 								<option value="title_content">전체</option>
 								<option value="title">제목</option>
 								<option value="content">내용</option>
-							</select> <input type="text" name="search_keyword" value=""> <input
-								type="submit" value="검색">
+							</select> 
+							<input type="text" name="search_keyword" value=""> 
+							<input type="submit" value="검색">
 						</form>
 					</div>
 				</div>
@@ -909,4 +851,5 @@ input[type="submit"]:hover {
 		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();
 	</script>
-	<%@ include file="../inc/bottom.jsp"%>
+</body>
+<%@ include file="../inc/bottom.jsp"%>

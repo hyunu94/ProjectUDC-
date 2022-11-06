@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+.community {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2vw;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.community_content {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.community>div {
+	background: #212529;
+	text-align: center;
+}
+
+.category li {
+	float: right;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+form[name=frm] {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+body {
+    min-width:475px;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+}
+
+.contents {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.catebutton{
+	margin-top:10px;
+}
+/* Style tab links */
+.catechoice{
+	float: left;
+	
+}
+.tablink {
+	background-color: white;
+	color: black;
+	float: left;
+	border: 1px solid #9d9d9d;
+	border-radius:5px 5px 5px 5px;
+	outline: none;
+	cursor: pointer;
+	font-size: 11pt;
+	width: 10%;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+	color: white;
+	display: none;
+	padding: 20px 20px;
+	height: 100%;
+}
+
+#All, #quest, #Review, #Chat, #together {
+	background-color: white;
+}
+
+tbody tr {
+	border-bottom: 1px solid #9d9d9d;
+}
+
+/* 게시판 상단 번호-카테고리-제목-날짜-조회 */
+thead tr {	
+	color: black;
+	border-bottom: 1px solid #9d9d9d;
+}
+
+input[type="submit"] {
+	background: #ffffff;
+	color: #212529;
+	border-radius: 0.5em;
+}
+
+input[type="submit"]:hover {
+	background: #212529;
+	color: white;
+	border-radius: 0.5em;
+	transition: 0.5s;
+}
