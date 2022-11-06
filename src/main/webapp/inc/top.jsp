@@ -1,140 +1,96 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="utf-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UDC : URI DONGNE CONSERT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.104.2">
+<title>UDC : Uri Dle Concert</title>
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.2/examples/blog/">
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+	crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body {
+	font-family: "Noto Sans KR", sans-serif !important; /* 폰트적용 */
+}
+
+/* .p-4.p-md-5.mb-4.rounded.text-bg-dark {
+	margin-top: 25px;
+} 이게 뭐더라 */
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+	position: sticky;
+	top: 0%;
+	right: 0%;
+	left: 0%;
+	z-index: 12; /*nav postion stick 상단바 고정*/
+}
+
+form[role=search] {
+    margin-bottom: 0px;
+}
+
+</style>
+<!-- Custom styles for this template -->
+<link
+	href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../css/basic.css">
-<link rel="stylesheet" href="../css/article.css">
-<style type="text/css">
-.h_header {
-	display: grid;
-	grid-template-columns: repeat(3, 33%); /*같은 단위 반복일때 사용*/
-	grid-gap: 300px 10px; /*줄간격, 칼럼 간격*/
-	text-align: center;
-}
-
-.title {
-	border-top: 2px solid;
-	border-bottom: 8px double;
-}
-
-.title span a {
-	text-decoration: none;
-	font-size: 50px;
-	color: black;
-}
-
-.navbar-brand {
-	padding-top: var(- -bs-navbar-brand-padding-y);
-	padding-bottom: var(- -bs-navbar-brand-padding-y);
-	margin-left: 5px;
-	margin-right: 0.5px;
-	font-size: var(- -bs-navbar-brand-font-size);
-	color: var(- -bs-navbar-brand-color);
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-a.nav-link.dropdown-toggle, a.nav-link {
-	background: #f8f9fa;
-}
-
-a.nav-link.dropdown-toggle:hover, a.nav-link:hover, a.nav-link.active:hover
-	{
-	background: black;
-	color: white;
-}
-
-button.btn.btn-outline-success {
-	color: black;
-	border-color: black;
-}
-
-button.btn.btn-outline-success:hover {
-	color: white;
-	background: black;
-}
-
-#grid {
-	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 2vw;
-}
-
-article:nth-child(1) {
-	grid-column: 1/4;
-}
-
-#grid>article {
-	font-size: 1em;
-	text-align: center;
-}
-
-a.nav-link.px-2.text-muted:hover {
-	background: #f8f9fa;
-}
-</style>
+	rel="stylesheet">
 </head>
 <body>
-	<div class="grid-container">
-		<header class="h_header">
-			<div class="mold"></div>
-			<div class="mold">
-				<p class="title">
-					<span> <a href="#" target="_self" tabindex="0">UDC</a>
-					</span>
-				</p>
-				<p>
-					<b>URI DONGNE CONSERT</b>
-				</p>
-			</div>
-			<div class="mold"></div>
-		</header>
-		<nav class="navbar navbar-expand-lg bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <svg class="bi me-2"
-						width="40" height="32" xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512" style="fil: white">
-              <path
-							d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path>
-            </svg>
-				</a>
+	<!-- nav -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+		aria-label="Ninth navbar example">
+		<div class="container-xl">
+			<!-- UDC (reload) 아이콘 -->
+			<div>
+				<a class="navbar-brand" href="#">UDC</a>
 				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
+					data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL"
+					aria-controls="navbarsExample07XL" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">Home</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> BOARD </a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">공연정보 게시판</a></li>
-								<li><a class="dropdown-item" href="#">자유 게시판</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Something else
-										here</a></li>
-							</ul></li>
-						<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-					</ul>
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search"
-							placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
 			</div>
-		</nav>
+
+			<!-- 메뉴 -->
+			<div class="collapse navbar-collapse" id="navbarsExample07XL">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">Home</a></li>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">공연 정보</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#"
+						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">질문</a></li>
+							<li><a class="dropdown-item" id="dropdown" href="#">후기</a>
+							<li><a class="dropdown-item" id="dropdown" href="#">잡담</a>
+							<li><a class="dropdown-item" id="dropdown" href="#">같이
+									가요</a>
+						</ul></li>
+					<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<!-- 검색, 로그인, 회원가입 버튼 -->
+			<div>
+				<form role="search">
+					<button type="button" class="btn btn-outline-light me-2">Login</button>
+					<button type="button" class="btn btn-outline-light me-2">Sign
+						up</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<!-- /nav -->
