@@ -1,10 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+   
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원가입 페이지</title>
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script> 
+<script type="text/javascript">
+	$(function(){
+		$('#userid').focus();
+		
+		$('#wr_submit').click(function(){
+			if($('#userid').val().length<1){
+				alert('아이디를 입력하세요');
+				$('#userid').focus();
+				event.preventDefault();
+			}else if(!validate_userid($('#userid').val())){
+				alert('아이디는 영문, 숫자, _(밑줄문자)만 가능합니다.');
+				$('#userid').focus();
+				event.preventDefault();	
+			}else if($('#pwd').val().length<1){
+				alert('비밀번호를 입력하세요');
+				$('#pwd').focus();
+				event.preventDefault();
+			}else if($('#pwd').val()!=$('#pwd2').val()){
+				alert('비밀번호가 일치하지 않습니다.');
+				$('#pwd2').focus();
+				event.preventDefault();
+			}else if($('#name').val().length<1){
+				alert('이름을 입력하세요.');
+				$('#name').focus();
+				event.preventDefault();
+			}else if($('#nick').val().length<1){
+				alert('닉네임 입력하세요.');
+				$('#nick').focus();
+				event.preventDefault();
+			}else if($('#jumin1').val().length<1){
+				alert('주민번호 앞자리를 입력하세요.');
+				$('#jumin1').focus();
+				event.preventDefault();
+			}else if($('#jumin2').val().length<1){
+				alert('주민번호 뒷자리를 입력하세요.');
+				$('#jumin2').focus();
+				event.preventDefault();
+			}else if(!validate_phone($('#mobile2').val())
+					|| !validate_phone($('#mobile3').val())){
+				alert('전화번호는 숫자만 가능합니다.');
+				$('#mobile2').focus();
+				event.preventDefault();
+			}
+		});
+		
+	});
+	
+	function validate_phone(hp){
+		 var pattern=new RegExp(/^[0-9]*$/g);
+		 return pattern.test(hp);//정규식과 일치하면 true
+		 /* 0 에서 9사이의 숫자로 시작하거나 끝나야 한다는 의미 (^는 시작, $는 끝을 의미)
+		 닫기 대괄호(]) 뒤의 * 기호는 0번 이상 반복 */
+	 }
+	
+	function validate_userid(id){
+		 var pattern = new RegExp(/^[a-zA-Z0-9_]+$/g);
+		 return pattern.test(id);
+		 
+		 /* a에서 z 사이의 문자, A~Z사이의 문자, 0 에서 9사이의 숫자나 _로 
+		 시작하거나 끝나야 한다는 의미
+		 닫기 대괄호(]) 뒤의 + 기호는 이 패턴이 한 번 또는 그 이상 반복된다는 의미 */
+	 }
+	
+</script>
 </head>
 <body>
 	<h3>정보를 입력해 주세요.</h3>
@@ -99,7 +167,7 @@
 	<div class="multi_radio1">
 	</div>
 	<div class="multi_radio2">
-		<input type="submit" value="가입 완료">
+		<input type="submit" id="wr_submit"value="가입 완료">
 	</div>
 </form>
 </body>
