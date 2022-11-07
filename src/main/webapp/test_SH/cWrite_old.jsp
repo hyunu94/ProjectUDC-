@@ -4,12 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공연정보게시판 > 글쓰기</title>
 <link rel="stylesheet" type="text/css" href="../css/cWrite.css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+<script type="text/javascript" src="../smartEdit/js/service/HuskyEZCreator.js" charset="utf-8"></script>  
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript">
+	
+	var oEditors=[];
 	
 	$(function() {
 		
@@ -18,6 +21,7 @@
 		$('#sub1').click(function(){
 			var hour = $('#time').val().substr(0,2);
 			var minute = $('#time').val().substr(3,2)
+			
 			
 	    	if($('#artist').val().length<1){
 				alert('공연자를 입력하세요');
@@ -58,7 +62,22 @@
 				event.preventDefault();	
 			}
 	    });
-	
+		
+		nhn.husky.EZCreator.createInIFrame({
+			oAppRef: oEditors,
+			elPlaceHolder : "content",
+			sSkinURI : "../smartEdit/SmartEditor2Skin.html",
+		      htParams : {
+		          bUseToolbar : true,             
+		          bUseVerticalResizer : true,     
+		          bUseModeChanger : true,         
+		          fOnBeforeUnload : function(){
+		        	  
+		          }
+		      }, 
+		      fCreator: "createSEditor2"
+		      });
+		
 	    $.datepicker.setDefaults($.datepicker.regional['ko']);
 	    $("#start").datepicker({
 	    	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
@@ -81,6 +100,10 @@
             }
 	    });
 	    
+	  
+	    
+	    
+	    
 	});
 	//가격 숫자만 가능
 	function validate_price(price){
@@ -95,15 +118,6 @@
 	 }
 	
 </script>
-<style type="text/css">
-	.input1{
-		width:600px;
-	}
-	.input3{
-		font-family: 'Noto Sans KR', sans-serif;
-		font-weight: 300;
-	}
-</style>
 </head>
 <body>
 	<div class="div0">
@@ -112,58 +126,43 @@
 		</div>
 		<form name="frm1" action="" method="post" >
 			<div class="div1">
-				<p class="p1">ARTIST</p>
-				<input type="text" class="input1" id="artist" name="artist" placeholder="출연 아티스트를 입력하세요" /><br>
+				<p class="p1">공연자 / ARTIST</p>
+				<input type="text" class="input1" id="artist" name="artist" /><br>
 				<p class="p2">숨김 메시지 표시</p>
 			</div>
 			<div class="div1">
-				<p class="p1">TITLE</p>
-				<input type="text" class="input1" id="title" name="title" placeholder="공연 제목을 입력하세요" />
+				<p class="p1">공연제목 / CONCERT TITLE</p>
+				<input type="text" class="input1" id="title" name="title" />
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">START DATE</p>
-				<input type="text" class="input1" id="start" name="start" placeholder="공연시작날짜를 입력하세요"/>
+				<p class="p1">시작날짜 / START DATE</p>
+				<input type="text" class="input1" id="start" name="start" />
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">END DATE</p>
-				<input type="text" class="input1" id="end" name="end" placeholder="공연이 끝나는 날짜를 입력하세요" />
+				<p class="p1">끝나는날짜 / END DATE</p>
+				<input type="text" class="input1" id="end" name="end" />
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">TIMETABLE</p>
-				<input type="text" class="input1" id="time" name="time" maxlength="5"  placeholder="공연시각을 입력하세요"/>
+				<p class="p1">공연시각 / TIMETABLE</p>
+				<input type="text" class="input1" id="time" name="time" maxlength="5"/>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">PRICE</p>
-				<input type="text" class="input1" id="price" name="price"  placeholder="티켓 가격을 입력하세요" />
+				<p class="p1">가격 / PRICE</p>
+				<input type="text" class="input1" id="price" name="price" />
+				<p class="p2"></p>
+			</div>
+			<div class="div2">
+				<p class="p1">공연소개 / MAIN CONTENTS</p>
+				<textarea class="input2" id="content" name="content" rows="10" cols="30"></textarea>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">CONTENT1</p>
-				<input type="text" class="input1" id="content1" name="content1"  placeholder="공연소개를 3줄요약 해주세요(25자)"/>
-				<p class="p2"></p>
-			</div>
-			<div class="div1">
-				<p class="p1">CONTENT2</p>
-				<input type="text" class="input1" id="content2" name="content2" placeholder="공연소개를 3줄요약 해주세요(25자)"/>
-				<p class="p2"></p>
-			</div>
-			<div class="div1">
-				<p class="p1">CONTENT3</p>
-				<input type="text" class="input1" id="content3" name="content3" placeholder="공연소개를 3줄요약 해주세요(25자)" />
-				<p class="p2"></p>
-			</div>
-			<div class="div1">
-				<p class="p1">VIDEO LINK</p>
-				<input type="text" class="input1" id="link" name="link" placeholder="관련 공영영상 링크를 입력하세요"/>
-				<p class="p2"></p>
-			</div>
-			<div class="div1">
-				<p class="p1">사진 첨부 (가로 800px 이상의 사진으로 업로드하세요)</p>
-				<input type="file" class="input3" name="attach" id="attach">
+				<p class="p1">관련영상 / VIDEO LINK</p>
+				<input type="text" class="input1" id="link" name="link" />
 				<p class="p2"></p>
 			</div>
 			<div class=div3> 
