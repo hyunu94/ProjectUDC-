@@ -10,7 +10,13 @@
 
 		$('#sample6_postcode').prop('readonly', true);
 		$('#sample6_address').prop('readonly', true);
-
+		
+		 $('#chkId').click(function(){
+		    	var id=$('#userid').val();
+		    	open('checkUserid.jsp?userid='+id,'chk',
+		    		'width=500,height=300,left=0,top=0,location=yes,resizable=yes');	
+		    });
+		
 		$('#wr_submit').click(
 				function() {
 					if ($('input[name=kind]:radio:checked').length < 1) {
@@ -151,7 +157,7 @@
 						<input class="input1" id="userid" type="text" name="userid">
 					</div>
 					<div class="btn_chkId">
-						<input class="chkId" type="button" onclick="" value="아이디 중복 확인" />
+						<input class="chkId" id="chkId" type="button" onclick="" value="아이디 중복 확인" />
 					</div>
 				</div>
 			</div>
