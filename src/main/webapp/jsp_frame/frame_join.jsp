@@ -11,6 +11,9 @@
 	$(function(){
 		$('#userid').focus();
 		
+		$('#sample6_postcode').prop('readonly', true);
+		$('#sample6_address').prop('readonly', true); 
+		
 		$('#wr_submit').click(function(){
 			if($('input[name=kind]:radio:checked').length<1){
 				alert('회원유형을 선택하세요');
@@ -79,12 +82,21 @@
 				alert('전화번호는 숫자만 가능합니다.');
 				$('#mobile2').focus();
 				event.preventDefault();
-			}else if($('input[name=locationNo]:radio:checked').length<1){
+			}else if($('#interestlo').val()==0){
 				alert('관심지역을 선택하세요.');
+				event.preventDefault();
+			}else if($('#sample6_postcode').val().length<1){
+				$('#sample6_postcode').focus();
+				alert('우편번호를 입력하세요');
+				event.preventDefault();
+			}else if($('#x').val().length<1 || $('#y').val().length<1){
+				alert('주소확인버튼을 클릭해주세요.');
 				event.preventDefault();
 			}
 			
+			
 		});
+			
 		
 	});
 	
@@ -118,6 +130,7 @@
 		 var pattern = new RegExp(/^[a-zA-Zㄱ-ㅎ가-힣]+$/g);
 		 return pattern.test(nick);
 	}
+	
 	
 </script>
 </head>
@@ -203,7 +216,8 @@
 			<div class="multi_radio1">
 				<p class = "p1">관심지역</p>	
 			</div>
-			<select name="locationNo" class="sel1">
+			<select id="interestlo" name="locationNo" class="sel1">
+				<option value="">지역선택</option>
 				<option value="1">강남구</option>
 				<option value="2">강동구</option>
 				<option value="3">강북구</option>
@@ -235,14 +249,14 @@
 			</div>
 			<div id="coordXY">
 					<!-- ================== -->
-				<input class="input4" type="text" id="sample6_postcode" placeholder="우편번호" />
+				<input name="zip" class="input4" type="text" id="sample6_postcode" placeholder="우편번호" />
 				<input class="btn_add1" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br>
 				<input class="input5" type="text" id="sample6_address" placeholder="주소" />
 				<input class="input5" type="text" id="sample6_detailAddress" placeholder="상세주소" /><br>
 				<input class="btn_add2" type="button" value="주소 확인" onclick="addressChk()" /> <br> <!-- 이거 꼭 눌러야 xy좌표 구함 -->
 				<input type="hidden" id="sample6_extraAddress" placeholder="참고항목" />
-				<input type="hidden" id="x" value="" title="x좌표" /> 
-				<input type="hidden" id="y" value="" title="y좌표" /> 
+				<input type="text" id="x" value="" title="x좌표" /> 
+				<input type="text" id="y" value="" title="y좌표" /> 
 				<!-- ================== -->
 			</div>
 			<!-- <div class = "realize">
