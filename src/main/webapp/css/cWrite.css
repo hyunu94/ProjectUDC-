@@ -5,10 +5,12 @@ body{
 	font-family: 'Noto Sans KR', sans-serif;
 	width:1000px;
 	padding: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px solid black;
 }
 .div0{
 	margin-top: 50px;
-	padding-left:190px;
 }
 .input1{
 	width: 600px;

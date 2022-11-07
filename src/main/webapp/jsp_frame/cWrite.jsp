@@ -120,7 +120,6 @@
 </script>
 </head>
 <body>
-	<h3>공연정보게시판 > 글쓰기</h3>
 	<h3>공연정보를 입력해 주세요</h3>
 	<div class="div0">
 		<form name="frm1" action="" method="post" >
