@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
+import com.project.member.model.MemberService;
+import com.project.member.model.MemberVO;
 import com.project.db.ConnectionPoolMgr2;
 
 public class MemberDAO {
@@ -127,6 +130,118 @@ public class MemberDAO {
 			return result;
 		}finally {
 			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	public int loginCheck(String userid, String pwd) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		try {
+			//1,2
+			con=pool.getConnection();
+			//3
+			String sql="select pwd from member where userid=?"
+					+ " and outdate is null";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			//4
+			int result=0;
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				String dbPwd=rs.getString(1);
+				
+				if(dbPwd.equals(pwd)) {
+					result=MemberService.LOGIN_OK;
+				}else {
+					result=MemberService.DISAGREE_PWD;
+				}
+				
+			}else {
+				result=MemberService.NONE_USERID;
+			}
+			
+			System.out.println("로그인 처리 결과 result="+result
+					+", 매개변수 userid="+userid+", pwd="+pwd);
+			
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	public MemberVO selectByUserid(String userid) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		MemberVO memberVo= new MemberVO();
+		try {
+			con=pool.getConnection();
+			
+			String sql="select * from member\r\n"
+					+ "where userid=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				
+				int memberNo=rs.getInt("memberNo");
+				String pwd=rs.getString("pwd");
+				String name=rs.getString("name");
+				String nick=rs.getString("nick");
+				String Jumin=rs.getString("Jumin");
+				String mobile=rs.getString("mobile");
+				String outdate=rs.getString("outdate");
+				int kindNo=rs.getInt("kindNo");
+				int location=rs.getInt("location");
+				
+				memberVo.setMemberNo(memberNo);
+				memberVo.setPwd(pwd);
+				memberVo.setName(name);
+				memberVo.setNick(nick);
+				memberVo.setJumin(Jumin);
+				memberVo.setMobile(mobile);
+				memberVo.setOutdate(outdate);
+				memberVo.setKindNo(kindNo);
+				memberVo.setLocationNo(location);
+				
+			}
+			System.out.println("회원조회 결과 memberVo="+memberVo+", 매개변수 userid="+userid);
+			return memberVo;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+		
+	}
+	
+	public int updateMember(MemberVO vo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="update member\r\n"
+					+ "set name=?, nick=?, \r\n"
+					+ " mobile=?, locationNo=?"
+					+ "where userid=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, vo.getName());
+			ps.setString(2, vo.getNick());
+			ps.setString(3, vo.getMobile());
+			ps.setInt(4, vo.getLocationNo());
+			ps.setString(5, vo.getUserid());
+			
+			int cnt = ps.executeUpdate();
+			
+			System.out.println("업뎃 결과 cnt="+cnt+", 매개변수 vo="+vo);
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
 		}
 	}
 	

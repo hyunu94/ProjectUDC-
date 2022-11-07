@@ -1,6 +1,6 @@
-<%@page import="com.herbmall.member.model.MemberService"%>
+<%@page import="com.project.member.model.MemberService"%>
 <%@page import="java.sql.SQLException"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 </head>
 <body>
 	<jsp:useBean id="memberService"
-		class="com.herbmall.member.model.MemberService" scope="session"></jsp:useBean>
+		class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
 	
 	
 	<%
