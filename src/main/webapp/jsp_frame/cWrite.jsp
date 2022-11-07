@@ -56,6 +56,13 @@
 				alert('가격은 숫자만 가능합니다.');
 				$('#price').focus();
 				event.preventDefault();	
+			}else if($('#content1').val().length<1){
+				alert('공연소개를 입력하세요');
+	    		$('#content1').focus();
+	    		event.preventDefault();
+			}else if($('#attach').val()<1){
+				alert('사진 파일 첨부는 필수 항목입니다.')
+				event.preventDefault();
 			}
 	    });
 	
@@ -143,17 +150,17 @@
 			</div>
 			<div class="div1">
 				<p class="p1">CONTENT1</p>
-				<input type="text" class="input1" id="content1" name="content1"  placeholder="공연소개를 3줄요약 해주세요(25자)"/>
+				<input type="text" class="input1" id="content1" name="content1" maxlength="25" placeholder="공연소개를 3줄요약 해주세요(25자)"/>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
 				<p class="p1">CONTENT2</p>
-				<input type="text" class="input1" id="content2" name="content2" placeholder="공연소개를 3줄요약 해주세요(25자)"/>
+				<input type="text" class="input1" id="content2" name="content2" maxlength="25" placeholder="공연소개를 3줄요약 해주세요(25자)"/>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
 				<p class="p1">CONTENT3</p>
-				<input type="text" class="input1" id="content3" name="content3" placeholder="공연소개를 3줄요약 해주세요(25자)" />
+				<input type="text" class="input1" id="content3" name="content3" maxlength="25" placeholder="공연소개를 3줄요약 해주세요(25자)" />
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
