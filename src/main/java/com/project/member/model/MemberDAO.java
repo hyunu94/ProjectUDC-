@@ -2,6 +2,7 @@ package com.project.member.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.project.db.ConnectionPoolMgr2;
@@ -96,6 +97,36 @@ public class MemberDAO {
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	public int duplicateUserid(String userid) throws SQLException { //아이디 중복확인
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="select count(*) from member where userid=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			int result=0;
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				int cnt = rs.getInt(1);
+				if(cnt>0) {
+					result=MemberService.EXIST_ID; //이미 존재
+				}else {
+					result=MemberService.NON_EXIST_ID; //사용가능
+				}
+			}
+			System.out.println("아이디 중복확인 결과 result="+result+", 매개변수 userid="+userid);
+			
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, con);
 		}
 	}
 	
