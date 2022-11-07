@@ -81,8 +81,8 @@ public class LocationDAO {
 			ps.setString(1, vo.getZipcode());
 			ps.setString(2, vo.getAddress());
 			ps.setString(3, vo.getAddressdetail());
-			ps.setLong(4, vo.getAxisx());
-			ps.setLong(5, vo.getAxisy());
+			ps.setDouble(4, vo.getAxisx());
+			ps.setDouble(5, vo.getAxisy());
 			
 			int cnt = ps.executeUpdate();
 			

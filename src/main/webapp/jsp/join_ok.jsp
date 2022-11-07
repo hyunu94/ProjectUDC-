@@ -43,8 +43,8 @@
 	locationVo.setZipcode(zipcode);
 	locationVo.setAddress(address);
 	locationVo.setAddressdetail(detailAdd);
-	locationVo.setAxisx(Long.parseLong(x));
-	locationVo.setAxisy(Long.parseLong(y));
+	locationVo.setAxisx(Double.parseDouble(x));
+	locationVo.setAxisy(Double.parseDouble(y));
 	
 	//memberVo
 	memberVo.setUserid(userid);
