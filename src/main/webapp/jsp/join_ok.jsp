@@ -45,8 +45,13 @@
 	locationVo.setZipcode(zipcode);
 	locationVo.setAddress(address);
 	locationVo.setAddressdetail(detailAdd);
+<<<<<<< HEAD
 	locationVo.setAxisx(axisx);
 	locationVo.setAxisy(axisy);
+=======
+	locationVo.setAxisx(Double.parseDouble(x));
+	locationVo.setAxisy(Double.parseDouble(y));
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	
 	//memberVo
 	memberVo.setUserid(userid);

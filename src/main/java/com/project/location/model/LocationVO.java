@@ -13,8 +13,6 @@ public class LocationVO{
 		super();
 	}
 
-	
-
 	public LocationVO(int locationNo, String zipcode, String address, String addressdetail, String locationname,
 			double axisx, double axisy) {
 		super();
@@ -26,8 +24,6 @@ public class LocationVO{
 		this.axisx = axisx;
 		this.axisy = axisy;
 	}
-
-
 
 	public int getLocationNo() {
 		return locationNo;
@@ -61,6 +57,20 @@ public class LocationVO{
 		this.addressdetail = addressdetail;
 	}
 
+<<<<<<< HEAD
+	public double getAxisx() {
+		return axisx;
+	}
+=======
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
+
+	public void setAxisx(double axisx) {
+		this.axisx = axisx;
+	}
+
+<<<<<<< HEAD
+=======
+
 	public double getAxisx() {
 		return axisx;
 	}
@@ -69,11 +79,19 @@ public class LocationVO{
 		this.axisx = axisx;
 	}
 
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	public double getAxisy() {
 		return axisy;
 	}
 
 	public void setAxisy(double axisy) {
+<<<<<<< HEAD
+=======
+		this.axisy = axisy;
+	}
+
+	public void setAxisy(long axisy) {
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 		this.axisy = axisy;
 	}
 
