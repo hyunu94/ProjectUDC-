@@ -3,34 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/detail.css" />
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
-<style type="text/css">
-	p{
-		display: inline-block;
-		height: 50px;
-		line-height: 50px;
-		margin:0px;
-		
-	}
-	.div1{
-		border-bottom: 1px solid #e5e5e5;
-	}
-	.div_inner{
-		display: inline-block;
-	}
-	td{
-		width:400px;
-	}
-	td:first-child {
-		text-align: left;
-	
-	}
-	td:last-child {
-		text-align: right;
-		
-	}
-</style>
 </head>
 <body>
 	<h3>일반게시판</h3>
@@ -47,7 +21,7 @@
 				<tr>
 					<td>
 						<div class="div_inner">
-							<p class="p1">닉네임</p>
+							<p class="p1"><a href="#">닉네임</a></p>
 						</div>
 					</td>
 					<td>
@@ -84,6 +58,48 @@
 					</td>
 				</tr>
 			</table>
+		</div>
+		<div  class="div_btns">
+			<table>
+				<colgroup>
+					<col style="width: 50%;" />
+					<col style="width: 50%;" />
+				</colgroup>
+				<tr>	
+					<td>
+						<p class="p1">댓글&nbsp;</p><p class="p1">14</p>
+					</td>
+					<td>
+						<input type="button" class="btns1" value="댓글쓰기">
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- 댓글 for문 돌릴 곳 (시작) -->
+		<div class="div1">
+			<table>
+				<colgroup>
+					<col style="width: 50%;" />
+					<col style="width: 50%;" />
+				</colgroup>
+				<!-- 첫 번째 줄 : [좌]아이디/작성일자 //[우]수정 -->
+				<tr>
+				</tr>
+				<!-- 두 번째 줄 : 댓글 본문 내용 -->
+				<tr>
+				</tr>
+				<!-- 세 번째 줄 : 우측에 [댓글] 버튼 -->
+				<tr>
+				</tr>
+			</table>
+		</div>
+		<!-- 댓글 for문 돌릴 곳 (끝) -->
+		
+		<div class="div1" id="comment">
+			<form name="frm1" method="post" action="">
+				<textarea class="input2" rows="10" cols="30"></textarea>
+			</form>
 		</div>
 	</div>
 </body>

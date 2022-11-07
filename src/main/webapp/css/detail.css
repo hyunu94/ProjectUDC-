@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 body{
@@ -22,13 +23,20 @@ body{
 	border-radius:5px 5px 5px 5px;
 }
 .input2{
-	width: 600px;
-	height:300px;
+	width: 790px;
+	height:50px;
 	padding: 10px;
 	margin: 0px;
 	vertical-align: middle;
 	border: 1px solid #9d9d9d;
 	border-radius:5px 5px 5px 5px;
+}
+p{
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	margin:0px;
+		
 }
 .p1{
 	font-weight: 300;
@@ -101,4 +109,24 @@ body{
 .div_btns p{
 	height: 30px;
 	line-height: 30px;
+}
+
+.div1{
+	border-bottom: 1px solid #e5e5e5;
+}
+.div_inner{
+	display: inline-block;
+}
+td{
+	width:400px;
+}
+td:first-child {
+	text-align: left;
+
+}
+td:last-child {
+	text-align: right;
+}
+#comment{
+	margin-top:10px;
 }
