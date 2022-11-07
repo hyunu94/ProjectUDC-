@@ -8,10 +8,11 @@
 	$(function() {
 		$('#userid').focus();
 
+		$('#userid').prop('readonly', true);
 		$('#sample6_postcode').prop('readonly', true);
 		$('#sample6_address').prop('readonly', true);
 		
-		 $('#chkId').click(function(){
+		 $('#btnChkId').click(function(){
 		    	var id=$('#userid').val();
 		    	open('checkUserid.jsp?userid='+id,'chk',
 		    		'width=500,height=300,left=0,top=0,location=yes,resizable=yes');	
@@ -97,6 +98,10 @@
 							|| $('#y').val().length < 1) {
 						alert('주소확인버튼을 클릭해주세요.');
 						event.preventDefault();
+					}else if($('#chkId').val()!='Y'){
+						alert('아이디 중복확인을 해야 합니다.');
+						$('#btnChkId').focus();
+						event.preventDefault();			
 					}
 
 				});
@@ -154,10 +159,10 @@
 			<div class="second_regi">
 				<div class="wrapper">
 					<div class="text">
-						<input class="input1" id="userid" type="text" name="userid">
+						<input class="input1" id="userid" type="text" name="userid" placeholder="아이디 중복확인을 누르세요" />
 					</div>
 					<div class="btn_chkId">
-						<input class="chkId" id="chkId" type="button" onclick="" value="아이디 중복 확인" />
+						<input class="chkId" id="btnChkId" type="button" onclick="" value="아이디 중복 확인" />
 					</div>
 				</div>
 			</div>
@@ -275,6 +280,7 @@
 			<div class="multi_radio2">
 				<input type="submit" id="wr_submit" value="가입 완료">
 			</div>
+			 <input type ="hidden" name="chkId" id="chkId"> <!-- 아이디 체크 유무 -->
 		</form>
 	</div>
 </div>
