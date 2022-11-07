@@ -51,40 +51,44 @@ table.btn_mold th:nth-child(2) {
 			</colgroup>
 			<tr>
 				<td>회원유형</td>
-				<td name="userid">일반회원</td>
+				<td id="userid">일반회원</td>
 			</tr>
 			<tr>
 				<td>아이디</td>
-				<td name="userid">honggildong</td>
+				<td id="userid">honggildong</td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td name="username">홍길동</td>
+				<td id="username">홍길동</td>
 			</tr>
 			<tr>
 				<td>닉네임</td>
-				<td name="nickname">전우치</td>
+				<td id="nickname">전우치</td>
 			</tr>
 			<tr>
 				<td>전화번호</td>
-				<td name="tel">010-1234-5678</td>
+				<td id="tel">010-1234-5678</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td id="address">서울특별시 서대문구 신촌로 141 위고인빌딩 1층 이젠아카데미 컴퓨터학원 </td>
 			</tr>
 			<tr>
 				<td>성별</td>
-				<td name="gender">M</td>
+				<td id="gender">M</td>
 			</tr>
 			<tr>
 				<td>가입일</td>
-				<td name="joindate">2022-10-01</td>
+				<td id="joindate">2022-10-01</td>
 			</tr>
 		</table>
 	</div>
 	<div class="div1">
 		<table class="btn_mold">
 			<colgroup>
-				<col style="width: 33.3%;" />
-				<col style="width: 33.3%;" />
-				<col style="width: 33.3%;" />
+				<col style="width: 33%;" />
+				<col style="width: 33%;" />
+				<col style="width: 33%;" />
 			</colgroup>
 			<tr>
 				<td>
