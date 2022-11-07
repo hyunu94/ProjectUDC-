@@ -4,17 +4,20 @@
 .body{
 	font-family: 'Noto Sans KR', sans-serif;
 }
-div{
-	margin: 0px;
+.div_table{
+	margin: 0 auto;
 	padding: 0px;
+	width: fit-content;
 }
 .div0{
 	font-family: 'Noto Sans KR', sans-serif;
+    width: fit-content;
+    margin: 0 auto;
 }
 .div_img{
 	text-align: center;
 	vertical-align: middle;
-	width:798px;
+	width: 800px;
 	padding: 1px;
 	padding-top:4px;
 	border-top:1px solid #eeeeee;
@@ -25,6 +28,11 @@ div{
 	width: 790px;
 	height: 440px;
 }
+
+.div_table table {
+    width: 800px;
+}
+
 table{
 	border-collapse: collapse;
 }

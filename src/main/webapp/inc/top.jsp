@@ -44,6 +44,12 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 form[role=search] {
 	margin-bottom: 0px;
 }
+
+.session {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	
+}
 </style>
 <!-- Custom styles for this template -->
 <link
@@ -100,5 +106,5 @@ form[role=search] {
 		</div>
 	</nav>
 	<!-- /nav -->
-	<section>
+	<section class="session">
 		<article>
