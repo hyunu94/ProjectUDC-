@@ -39,7 +39,7 @@ public class BoardDAO {
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, vo.getTitle());
-			ps.setClob(2, vo.getContent());
+			ps.setString(2, vo.getContent());
 			ps.setString(3, vo.getImg());
 			ps.setInt(4, vo.getMemberNo());
 			ps.setInt(5, vo.getConcertNo());
@@ -70,7 +70,7 @@ public class BoardDAO {
 					+ "where boardNo = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, vo.getTitle());
-			ps.setClob(2, vo.getContent());
+			ps.setString(2, vo.getContent());
 			ps.setString(3, vo.getImg());
 			ps.setInt(4, vo.getConcertNo());
 			ps.setInt(5, vo.getCateNo());

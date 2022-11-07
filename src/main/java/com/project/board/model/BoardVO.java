@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 public class BoardVO {
 	private int boardNo; /* 고유번호 */
 	private String title; /* 제목 */
-	private Clob content; /* 내용 */
+	private String content; /* 내용 */
 	private Timestamp regdate; /* 작성일 */
 	private double star; /* 별점 */
 	private int starcount; /* 별점 누른 인원수*/
@@ -21,7 +21,7 @@ public class BoardVO {
 		super();
 	}
 
-	public BoardVO(int boardNo, String title, Clob content, Timestamp regdate, double star, int starcount, int count,
+	public BoardVO(int boardNo, String title, String content, Timestamp regdate, double star, int starcount, int count,
 			String img, String delcheck, int memberNo, int concertNo, int cateNo) {
 		super();
 		this.boardNo = boardNo;
@@ -54,11 +54,11 @@ public class BoardVO {
 		this.title = title;
 	}
 
-	public Clob getContent() {
+	public String getContent() {
 		return content;
 	}
 
-	public void setContent(Clob content) {
+	public void setContent(String content) {
 		this.content = content;
 	}
 

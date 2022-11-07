@@ -1,3 +1,4 @@
+<%@page import="com.project.member.model.MemberService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
@@ -25,19 +26,22 @@
 			},
 			fCreator : "createSEditor2"
 		});
+		
+		val content = $('#content').html();
+		location.href = "nWrite_ok.jsp?content=" + content;
 	});
 </script>
 <div class="body">
 	<h3>일반게시판 > 글쓰기</h3>
 	<div class="div0">
-		<form class="frm1" name="frm1" method="post" action="">
+		<form class="frm1" name="frm1" method="post" action="nWrite_ok.jsp">
 			<div class="div1">
 				<p class="p1">카테고리</p>
 				<select class="sel1" name="category" id="category">
 					<option>분류</option>
-					<option>잡담</option>
-					<option>후기</option>
-					<option>같이 가요</option>
+					<option>잡담 게시판</option>
+					<option>후기 게시판</option>
+					<option>같이 가요 게시판</option>
 				</select>
 			</div>
 			<div class="div1">
