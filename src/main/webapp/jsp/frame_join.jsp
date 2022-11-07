@@ -260,18 +260,18 @@
 			</div>
 			<div id="coordXY">
 				<!-- ================== -->
-				<input name="zip" class="input4" type="text" id="sample6_postcode"
-					placeholder="우편번호" /> <input class="btn_add1" type="button"
-					onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /> <br>
-				<input class="input5" type="text" id="sample6_address"
-					placeholder="주소" /> <input class="input5" type="text"
-					id="sample6_detailAddress" placeholder="상세주소" /><br> <input
+				<input class="input4" type="text" id="sample6_postcode"  name="zipcode" placeholder="우편번호" />
+				 <input class="btn_add1" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" />
+				  <br>
+				<input class="input5" type="text" id="sample6_address" name="address" placeholder="주소" /> 
+				<input class="input5" type="text" id="sample6_detailAddress" name="detailAdd" placeholder="상세주소" /><br> 
+				<input
 					class="btn_add2" type="button" value="주소 확인" onclick="addressChk()" />
 				<br>
 				<!-- 이거 꼭 눌러야 xy좌표 구함 -->
 				<input type="hidden" id="sample6_extraAddress" placeholder="참고항목" />
-				<input type="hidden" id="x" value="" title="x좌표" /> <input
-					type="hidden" id="y" value="" title="y좌표" />
+				<input type="hidden" id="x" name="x" value="" title="x좌표" /> 
+				<input type="hidden" id="y" name="y" value="" title="y좌표" />
 				<!-- ================== -->
 			</div>
 			<!-- <div class = "realize">
