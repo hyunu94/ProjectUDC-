@@ -67,4 +67,29 @@ public class LocationDAO {
 			
 		}
 	}
+	
+	public int insertLocation(LocationVO vo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="insert into location(locationno, zipcode, address, addressdetail,axisx,axisy)\r\n"
+					+ "values(70001,?,?,?,?,?)";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, vo.getZipcode());
+			ps.setString(2, vo.getAddress());
+			ps.setString(3, vo.getAddressdetail());
+			ps.setLong(4, vo.getAxisx());
+			ps.setLong(5, vo.getAxisy());
+			
+			int cnt = ps.executeUpdate();
+			
+			System.out.println("location 등록결과 cnt="+cnt+"매개변수="+vo);
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 }

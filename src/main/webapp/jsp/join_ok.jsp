@@ -1,3 +1,4 @@
+<%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="memberService" class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
@@ -41,9 +42,9 @@
 	//locationVo
 	locationVo.setZipcode(zipcode);
 	locationVo.setAddress(address);
-	locationVo.setAddressdetail(addressdetail);
-	locationVo.setAxisx(Integer.parseInt(x));
-	locationVo.setAxisy(Integer.parseInt(y));
+	locationVo.setAddressdetail(detailAdd);
+	locationVo.setAxisx(Long.parseLong(x));
+	locationVo.setAxisy(Long.parseLong(y));
 	
 	//memberVo
 	memberVo.setUserid(userid);
@@ -53,6 +54,15 @@
 	memberVo.setJumin(jumin);
 	memberVo.setMobile(mobile);
 	memberVo.setKindNo(Integer.parseInt(kind));
+	
+	try{
+		int cnt = locationService.insertLocation(locationVo);
+		
+		
+		
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
 	
 %>
 </body>

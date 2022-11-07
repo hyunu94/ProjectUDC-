@@ -16,4 +16,8 @@ public class LocationService {
 	public String updateXY(int locationNo , double x , double y) throws SQLException { //x,y 얻었을 경우 파라미터 No로 업데이트하기
 		return dao.updateXY(locationNo, x, y);
 	}
+	
+	public int insertLocation(LocationVO vo) throws SQLException { //주소 등록
+		return dao.insertLocation(vo);
+	}
 }
