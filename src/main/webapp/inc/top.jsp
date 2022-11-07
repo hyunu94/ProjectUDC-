@@ -81,7 +81,6 @@ form[role=search] {
 						class="nav-link dropdown-toggle" href="#"
 						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">질문</a></li>
 							<li><a class="dropdown-item" id="dropdown" href="#">후기</a>
 							<li><a class="dropdown-item" id="dropdown" href="#">잡담</a>
 							<li><a class="dropdown-item" id="dropdown" href="#">같이

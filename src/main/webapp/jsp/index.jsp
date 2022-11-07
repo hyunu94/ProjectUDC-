@@ -54,7 +54,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 						<div class="bg-pic">
 							<img src="../img/slidetest.jpg" alt="" aria-hidden="true">
 						</div>
-						<div class="inner" id="pic1">
+						<div class="inner">
 							<div class="header">
 								<!-- <div class="prix">JOHN MAYER</div> -->
 							</div>
@@ -83,7 +83,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 						<div class="bg-pic">
 							<img src="../img/slidetest.jpg" alt="" aria-hidden="true">
 						</div>
-						<div class="inner" id="pic2">
+						<div class="inner">
 							<div class="header">
 								<!-- <div class="prix">JOHN MAYER</div> -->
 							</div>
@@ -112,7 +112,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 						<div class="bg-pic">
 							<img src="../img/slidetest.jpg" alt="" aria-hidden="true">
 						</div>
-						<div class="inner" id="pic3">
+						<div class="inner">
 							<div class="header">
 								<!-- <div class="prix">JOHN MAYER</div> -->
 							</div>
@@ -142,7 +142,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 							<img src="../img/slidetest.jpg" alt="" aria-hidden="true">
 						</div>
 
-						<div class="inner" id="pic4">
+						<div class="inner">
 							<div class="header">
 								<!-- <div class="prix">JOHN MAYER</div> -->
 							</div>

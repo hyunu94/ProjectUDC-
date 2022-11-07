@@ -109,7 +109,6 @@ input[type="submit"]:hover {
 			<div class="grid-item2">
 				<button class="tablink" onclick="openPage('All', this, '#212529')"
 					id="defaultOpen">전체</button>
-				<button class="tablink" onclick="openPage('quest', this, '#212529')">질문</button>
 				<button class="tablink"
 					onclick="openPage('Review', this, '#212529')">후기</button>
 				<button class="tablink" onclick="openPage('Chat', this, '#212529')">잡담</button>
@@ -149,6 +148,7 @@ input[type="submit"]:hover {
 										<td>3</td>
 										<td>4</td>
 										<td>5</td>
+										<td>5</td>
 									</tr>
 									<tr>
 
@@ -156,6 +156,7 @@ input[type="submit"]:hover {
 										<td>제목+이미지+댓글수</td>
 										<td>3</td>
 										<td>4</td>
+										<td>5</td>
 										<td>5</td>
 									</tr>
 								</tbody>
