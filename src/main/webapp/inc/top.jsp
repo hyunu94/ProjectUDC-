@@ -99,9 +99,9 @@ form[role=search] {
 			<!-- 검색, 로그인, 회원가입 버튼 -->
 			<div>
 				<form role="search">
-
 					<button type="button" class="btn btn-outline-light me-2">Login</button>
-					<button type="button" class="btn btn-outline-light me-2">Sign up</button>
+					<button type="button" class="btn btn-outline-light me-2"
+					 onclick="location.href='../jsp/agreement.jsp'">Sign up</button>
 				</form>
 			</div>
 		</div>
