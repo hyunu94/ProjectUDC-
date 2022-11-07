@@ -24,6 +24,25 @@ th {
 tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
+
+.page {
+	text-align: center;
+}
+
+.write {
+	position: absolute;
+}
+
+input.btn.btn-outline-dark.me-2 {
+	height: 30px;
+	padding: 0% 10% 0 10%;
+}
+
+.board {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 </style>
 <div class="body">
 	<div class="wrapper">
@@ -81,6 +100,27 @@ tr:nth-child(even) {
 						</tr>
 					</tbody>
 				</table>
+				<div class="board" style="display: block;">
+					<form name="frm" action="" method="get">
+						<div class="write">
+							<input type="button" class="btn.btn-outline-dark.me-2"
+								value="글쓰기">
+						</div>
+						<input type="hidden" name="act" value=""> <input
+							type="hidden" name="vid" value=""> <input type="hidden"
+							name="mid" value="ktalk"> <input type="hidden"
+							name="category" value=""> <input type="hidden"
+							name="group_srl" value=""> <select name="search_target">
+							<option value="title_content">전체</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select> <input type="text" name="search_keyword" value=""> <input
+							type="submit" value="검색">
+					</form>
+				</div>
+				<div class="page">
+					<p>페이징 뷰 자리</p>
+				</div>
 			</div>
 
 			<div id="Paris" class="tabcontent">
@@ -124,6 +164,27 @@ tr:nth-child(even) {
 						</tr>
 					</tbody>
 				</table>
+				<div class="board" style="display: block;">
+					<form name="frm" action="" method="get">
+						<div class="write">
+							<input type="button" class="btn.btn-outline-dark.me-2"
+								value="글쓰기">
+						</div>
+						<input type="hidden" name="act" value=""> <input
+							type="hidden" name="vid" value=""> <input type="hidden"
+							name="mid" value="ktalk"> <input type="hidden"
+							name="category" value=""> <input type="hidden"
+							name="group_srl" value=""> <select name="search_target">
+							<option value="title_content">전체</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select> <input type="text" name="search_keyword" value=""> <input
+							type="submit" value="검색">
+					</form>
+				</div>
+				<div class="page">
+					<p>페이징 뷰 자리</p>
+				</div>
 			</div>
 
 			<div id="Tokyo" class="tabcontent">
@@ -167,8 +228,28 @@ tr:nth-child(even) {
 						</tr>
 					</tbody>
 				</table>
+				<div class="board" style="display: block;">
+					<form name="frm" action="" method="get">
+						<div class="write">
+							<input type="button" class="btn.btn-outline-dark.me-2"
+								value="글쓰기">
+						</div>
+						<input type="hidden" name="act" value=""> <input
+							type="hidden" name="vid" value=""> <input type="hidden"
+							name="mid" value="ktalk"> <input type="hidden"
+							name="category" value=""> <input type="hidden"
+							name="group_srl" value=""> <select name="search_target">
+							<option value="title_content">전체</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select> <input type="text" name="search_keyword" value=""> <input
+							type="submit" value="검색">
+					</form>
+				</div>
+				<div class="page">
+					<p>페이징 뷰 자리</p>
+				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

@@ -12,12 +12,12 @@
 	#sub1{
 		background-color: #f2dede;
 		color : #b94a48;
-		font-weight: 800;
+		font-weight: 500;
 	}
 	#sub1:hover{
 		background-color: #e9a2a2;
 		color : #b94a48;
-		font-weight: 900;
+		font-weight: 600;
 	}
 	
 
