@@ -6,8 +6,8 @@ public class LocationVO{
 	private String address; /* 주소 */
 	private String addressdetail; /* 상세주소 */
 	private String locationname; /* 장소이름 */
-	private long axisx; /* x좌표 */
-	private long axisy; /* y좌표 */
+	private double axisx; /* x좌표 */
+	private double axisy; /* y좌표 */
 	
 	public LocationVO() {
 		super();
@@ -16,7 +16,7 @@ public class LocationVO{
 	
 
 	public LocationVO(int locationNo, String zipcode, String address, String addressdetail, String locationname,
-			long axisx, long axisy) {
+			double axisx, double axisy) {
 		super();
 		this.locationNo = locationNo;
 		this.zipcode = zipcode;
@@ -61,19 +61,19 @@ public class LocationVO{
 		this.addressdetail = addressdetail;
 	}
 
-	public long getAxisx() {
+	public double getAxisx() {
 		return axisx;
 	}
 
-	public void setAxisx(long axisx) {
+	public void setAxisx(double axisx) {
 		this.axisx = axisx;
 	}
 
-	public long getAxisy() {
+	public double getAxisy() {
 		return axisy;
 	}
 
-	public void setAxisy(long axisy) {
+	public void setAxisy(double axisy) {
 		this.axisy = axisy;
 	}
 

@@ -35,6 +35,8 @@
 	String detailAdd = request.getParameter("detailAdd");
 	String x = request.getParameter("x");
 	String y = request.getParameter("y");
+	double axisx = Double.parseDouble(x);
+	double axisy = Double.parseDouble(y);
 	
 	String jumin = jumin1 +"-"+ jumin2;
 	String mobile = mobile1 +"-"+ mobile2 +"-"+ mobile3;
@@ -43,8 +45,8 @@
 	locationVo.setZipcode(zipcode);
 	locationVo.setAddress(address);
 	locationVo.setAddressdetail(detailAdd);
-	locationVo.setAxisx(Long.parseLong(x));
-	locationVo.setAxisy(Long.parseLong(y));
+	locationVo.setAxisx(axisx);
+	locationVo.setAxisy(axisy);
 	
 	//memberVo
 	memberVo.setUserid(userid);
