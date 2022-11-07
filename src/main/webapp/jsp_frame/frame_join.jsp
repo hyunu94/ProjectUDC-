@@ -255,8 +255,8 @@
 				<input class="input5" type="text" id="sample6_detailAddress" placeholder="상세주소" /><br>
 				<input class="btn_add2" type="button" value="주소 확인" onclick="addressChk()" /> <br> <!-- 이거 꼭 눌러야 xy좌표 구함 -->
 				<input type="hidden" id="sample6_extraAddress" placeholder="참고항목" />
-				<input type="text" id="x" value="" title="x좌표" /> 
-				<input type="text" id="y" value="" title="y좌표" /> 
+				<input type="hidden" id="x" value="" title="x좌표" /> 
+				<input type="hidden" id="y" value="" title="y좌표" /> 
 				<!-- ================== -->
 			</div>
 			<!-- <div class = "realize">
