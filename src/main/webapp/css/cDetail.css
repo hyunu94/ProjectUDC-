@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+.body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+div{
+	margin: 0px;
+	padding: 0px;
+}
+.main_img{
+	width: 800px;
+	height: 450px;
+}
+table{
+	border-collapse: collapse;
+}
+table *{
+	margin: 0px;
+	padding: 0px;
+}
+.question, .answer{
+	font-size: 11pt;
+}
+td{
+	width:400px;
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+td:first-child {
+	text-align: left;
+}
+td:last-child {
+	text-align: right;
+}

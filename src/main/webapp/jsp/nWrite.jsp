@@ -44,6 +44,15 @@
 					<option>같이 가요 게시판</option>
 				</select>
 			</div>
+			<div class="div1" id="con_select">
+				<p class="p1">공연선택</p>
+				<select class="sel1" name="con_list" id="con_list">
+					<option>보기</option>
+				<!-- 반복구간? -->
+					<option></option>
+				<!-- 반복구간? -->
+				</select>
+			</div>
 			<div class="div1">
 				<p class="p1">제목</p>
 				<input type="text" class="input1" id="title" name="title">
