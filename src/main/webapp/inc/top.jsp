@@ -80,27 +80,28 @@ form[role=search] {
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+						aria-current="page" href="../jsp/index.jsp">Home</a></li>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">공연 정보</a></li>
+					<li class="nav-item"><a class="nav-link" href="../jsp/cDetail.jsp">공연 정보</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#"
+						class="nav-link dropdown-toggle" href="../jsp/tabs.jsp"
 						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" id="dropdown" href="#">후기</a>
-							<li><a class="dropdown-item" id="dropdown" href="#">잡담</a>
-							<li><a class="dropdown-item" id="dropdown" href="#">같이
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">전체</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">후기</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">잡담</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">같이
 									가요</a>
 						</ul></li>
-					<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link" href="../jsp/faq.jsp">FAQ</a></li>
 				</ul>
 			</div>
 			<!-- 검색, 로그인, 회원가입 버튼 -->
 			<div>
 				<form role="search">
+
 					<button type="button" class="btn btn-outline-light me-2">Login</button>
-					<button type="button" class="btn btn-outline-light me-2">Sign
-						up</button>
+					<button type="button" class="btn btn-outline-light me-2">Sign up</button>
 				</form>
 			</div>
 		</div>
