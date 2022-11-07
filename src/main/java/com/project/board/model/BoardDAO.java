@@ -27,15 +27,9 @@ public class BoardDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "insert into board(boardNo,title,content,";
+			String sql = "insert into board(boardNo,title,content,img,memberNo,concertNo,categoryNo)\r\n"
+					+ "values(board_seq.nextval,?,?,?,?,?,?)";
 			
-			if(vo.getImg()!=null && !vo.getImg().isEmpty()) { //이미지가 있을경우
-				sql += "img,memberNo,concertNo,categoryNo)\r\n"
-						+ "values(board_seq.nextval,?,?,?,?,?,?)"; 
-				}else {
-					sql += "memberNo,concertNo,categoryNo)\r\n"
-						+ "values(board_seq.nextval,?,?,?,?,?)"; 
-				}
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, vo.getTitle());

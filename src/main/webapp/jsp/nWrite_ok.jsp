@@ -1,3 +1,5 @@
+<%@page import="com.project.concert.model.ConcertService"%>
+<%@page import="com.project.concert.model.ConcertVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.Clob"%>
 <%@page import="com.project.board.model.BoardVO"%>
@@ -15,36 +17,49 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	
-	String category = request.getParameter("category"); //카테고리 이름
-	String concertNo = request.getParameter("concertNo"); //카테고리 번호
-	String content = request.getParameter("content"); //내용
-	String title = request.getParameter("title"); // 제목
-	String img = request.getParameter("attach"); //이미지
-	int categoryNo = 0;
+	String concerttitle = request.getParameter("concerttitle"); //공연 이름
 	
-	if(category.equals("후기 게시판")){
-		categoryNo = 1;
-	}else if(category.equals("같이가요 게시판")){
-		categoryNo = 2;
-	}else if(category.equals("잡담 게시판")){
-		categoryNo = 3;
+	String title = request.getParameter("title"); // 게시판 제목
+	String content = request.getParameter("content"); //게시판 내용
+	String img = request.getParameter("img"); //이미지
+	
+	
+	String catename = request.getParameter("catename"); //카테고리 이름
+	int cateNo = 0; //카테고리 번호
+	
+	if(catename.equals("후기 게시판")){
+		cateNo = 1;
+	}else if(catename.equals("같이가요 게시판")){
+		cateNo = 2;
+	}else if(catename.equals("잡담 게시판")){
+		cateNo = 3;
 	}
+	
+	ConcertService service = new ConcertService();
+	int concertNo = service.selectConcertNo(concerttitle); // 공연번호
 	
 	BoardVO vo = new BoardVO();
 	vo.setTitle(title);
 	vo.setContent(content);
 	vo.setImg(img);
-	vo.setMemberNo(10);
-	vo.setConcertNo(Integer.parseInt(concertNo));
-	vo.setCateNo(categoryNo);
-	/* vo.setMemberNo(memberNo); */
+	vo.setMemberNo(11); // 미정
+	vo.setConcertNo(concertNo);
+	vo.setCateNo(cateNo);
+	
+	BoardService boardservice = new BoardService();
+	try{
+		int cnt = boardservice.insertBoard(vo);
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
 	
 %>  
 </body>
-<h3><%=category %></h3>
-<h3><%=concertNo %></h3>
-<h3><%=title %></h3>
-<h3><%=content %></h3>
-<h3><%=img %></h3>
-<h3><%=categoryNo %></h3>
+<h3>게시판제목<%=title %></h3>
+<h3>게시판내용<%=content %></h3>
+<h3>이미지<%=img %></h3>
+<h3>콘서트번호<%=concertNo%></h3>
+<h3>콘서트이름<%=concerttitle %></h3>
+<h3>카테고리이름<%=catename %></h3>
+<h3>카테고리번호<%=cateNo %></h3>
 </html>

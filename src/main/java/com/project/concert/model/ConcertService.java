@@ -1,5 +1,8 @@
 package com.project.concert.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -28,5 +31,9 @@ public class ConcertService {
 	
 	public List<ConcertVO> selectNoTitle() throws SQLException{ //공연 제목만 보기
 		return dao.selectTitle();
+	}
+	
+	public int selectConcertNo(String title) throws SQLException{ //공연 번호찾기
+		return dao.selectConcertNo(title);
 	}
 }

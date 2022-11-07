@@ -49,20 +49,19 @@ public class ConcertDAO {
 			
 			String sql = "insert into concert\r\n"
 					+ "values(concert_seq.nextval,?,?,?,\r\n"
-					+ "?,?,?,?,?,\r\n"
+					+ "?,?,?,?,\r\n"
 					+ "?,?,?);";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, vo.getArtist());
 			ps.setString(2, vo.getTitle());
 			ps.setString(3, vo.getContent());
 			ps.setTimestamp(4, vo.getStartdate());
-			ps.setTimestamp(5, vo.getEnddate());
-			ps.setString(6, vo.getTime());
-			ps.setInt(7, vo.getPrice());
-			ps.setString(8, vo.getLink());
-			ps.setString(9, vo.getThumbimg());
-			ps.setInt(10, vo.getMemberNo());
-			ps.setInt(11, vo.getLocationNo());
+			ps.setString(5, vo.getTime());
+			ps.setInt(6, vo.getPrice());
+			ps.setString(7, vo.getLink());
+			ps.setString(8, vo.getThumbimg());
+			ps.setInt(9,vo.getMemberNo());
+			ps.setInt(10, vo.getLocationNo());
 			
 			cnt = ps.executeUpdate();
 			
@@ -87,7 +86,7 @@ public class ConcertDAO {
 			
 			String sql = "update concert\r\n"
 					+ "set artist = ? , title = ? , content = ? , \r\n"
-					+ "startdate = ? , enddate = ? , time = ? , \r\n"
+					+ "startdate = ? , time = ? , \r\n"
 					+ "price = ? , link = ? , thumbimg = ? , locationNo = ?\r\n"
 					+ "where concertNo = ?";
 			ps = con.prepareStatement(sql);
@@ -95,12 +94,11 @@ public class ConcertDAO {
 			ps.setString(2, vo.getTitle());
 			ps.setString(3, vo.getContent());
 			ps.setTimestamp(4, vo.getStartdate());
-			ps.setTimestamp(5, vo.getEnddate());
-			ps.setString(6, vo.getTime());
-			ps.setInt(7, vo.getPrice());
-			ps.setString(8, vo.getLink());
-			ps.setString(9, vo.getThumbimg());
-			ps.setInt(10, vo.getConcertNo());
+			ps.setString(5, vo.getTime());
+			ps.setInt(6, vo.getPrice());
+			ps.setString(7, vo.getLink());
+			ps.setString(8, vo.getThumbimg());
+			ps.setInt(9, vo.getConcertNo());
 			
 			cnt = ps.executeUpdate();
 			
@@ -148,24 +146,50 @@ public class ConcertDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "select concertNo,title from concert";
+			String sql = "select title from concert";
 			ps = con.prepareStatement(sql);
 			
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				int concertNo = rs.getInt(1);
-				String title = rs.getString(2);
+				String title = rs.getString(1);
 				
 				ConcertVO vo= new ConcertVO();
-				vo.setConcertNo(concertNo);
 				vo.setTitle(title);
+				System.out.println("title : " + vo.getTitle());
 				
 				list.add(vo);
 			}
 			System.out.println("공연 제목 찾기 list.size = " + list.size());
 			
 			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	public int selectConcertNo(String title) throws SQLException{ //공연 번호찾기
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		int concertNo = 0;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select concertNo from concert\r\n"
+					+ " where title like '%' || ? || '%'";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, title);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				concertNo = rs.getInt(1);
+			}
+			System.out.println(title + "의 번호 : " + concertNo);
+			
+			return concertNo;
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}

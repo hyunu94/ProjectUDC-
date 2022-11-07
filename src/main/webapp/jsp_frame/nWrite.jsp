@@ -38,9 +38,9 @@
 				<p class="p1">카테고리</p>
 				<select class="sel1" name="category" id="category">
 					<option >분류</option>
-					<option>잡담</option>
-					<option>후기</option>
-					<option>같이 가요</option>
+					<option>잡담 게시판</option>
+					<option>후기 게시판</option>
+					<option>같이가요 게시판</option>
 				</select>
 			</div>
 			<div class="div1">

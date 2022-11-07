@@ -32,15 +32,12 @@
 		});
 		
 		val content = $('#content').html();
-		val concertNo = $('con_list').val();
-		
-		location.href = "nWrite_ok.jsp?content=" + content + "&concertNo=" + concertNo;
+		location.href = "nWrite_ok.jsp?content=" + content;
 	});
 </script>
 <%
 ConcertService service = new ConcertService();
 List<ConcertVO> list = null;
-ConcertVO vo = null;
 
 try {
 	list = service.selectNoTitle();
@@ -51,7 +48,7 @@ try {
 		<form class="frm1" name="frm1" method="post" action="nWrite_ok.jsp">
 			<div class="div1">
 				<p class="p1">카테고리</p>
-				<select class="sel1" name="category" id="category">
+				<select class="sel1" name="catename" id="catename">
 					<option>분류</option>
 					<option>잡담 게시판</option>
 					<option>후기 게시판</option>
@@ -60,11 +57,12 @@ try {
 			</div>
 			<div class="div1" id="con_select">
 				<p class="p1">공연선택</p>
-				<select class="sel1" name="content" id="con_list">
+				<select class="sel1" name="concerttitle" id="concerttitle">
 					<option>보기</option>
 				<%for (int i = 0; i < list.size(); i++) {
+					ConcertVO vo = new ConcertVO();
 					vo = list.get(i);%>
-					<option value="<%=vo.getConcertNo()%>"><%=vo.getTitle() %></option>
+					<option><%=vo.getTitle() %></option>
 					<%}%>
 				</select>
 				<%} catch (SQLException e) {
@@ -80,7 +78,7 @@ try {
 				<textarea class="input2" id="content" name="content" rows="10"
 					cols="30"></textarea>
 				<p class="p2"></p>
-				<input type="file" class="input3" name="attach" id="attach">
+				<input type="file" class="input3" name="img" id="img">
 			</div>
 			<div class=div3>
 				<input type="submit" value="등록" id="sub1">
