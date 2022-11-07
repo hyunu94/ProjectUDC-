@@ -122,8 +122,8 @@
 </script>
 </head>
 <body>
-	<h3>가입 정보를 입력해 주세요.</h3>
 	<div class="div0">
+		<h3>가입 정보를 입력해 주세요.</h3>
 		<form id ="regist" method="post" action="join_ok.jsp">
 			<div class = "first_regi">
 				<p class = "p1">회원 유형</p>

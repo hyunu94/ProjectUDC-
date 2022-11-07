@@ -50,8 +50,14 @@ p{
 	padding-left: 2px;
 	display: none;
 }
+.p_low{
+	font-weight: 300;
+	font-size: 11pt;
+	margin-bottom: 2px;
+	height:20px;
+}
 #sub1{
-	width: 622px;
+	width: 813px;
 	height: 40px;
 	padding-left: 10px;
 	padding-right: 20px;
@@ -114,8 +120,28 @@ p{
 .div1{
 	border-bottom: 1px solid #e5e5e5;
 }
+.div2{
+	border-bottom: 1px solid #e5e5e5;
+	padding-top:40px;
+	padding-bottom:100px;
+		
+}
 .div_inner{
 	display: inline-block;
+}.div_comm{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}.div_comm1{
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	height:50px;
+	line-height: 50px;
+}
+.div_comm1 *{
+	text-align: left;
 }
 td{
 	width:400px;
@@ -126,6 +152,10 @@ td:first-child {
 }
 td:last-child {
 	text-align: right;
+}
+.td_low{
+	height:50px;
+	text-align: left;
 }
 #comment{
 	margin-top:10px;
