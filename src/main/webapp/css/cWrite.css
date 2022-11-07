@@ -5,9 +5,9 @@ body{
 	font-family: 'Noto Sans KR', sans-serif;
 	width:1000px;
 	padding: 20px;
+	border: 1px solid black;
 	margin-left:auto;
 	margin-right:auto;
-	border: 1px solid black;
 }
 .div0{
 	margin-top: 50px;
@@ -21,6 +21,11 @@ body{
 	vertical-align: middle;
 	border: 1px solid #9d9d9d;
 	border-radius:5px 5px 5px 5px;
+}
+.div1, .div2, .div3{
+	width: 630px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .input2{
 	width: 600px;

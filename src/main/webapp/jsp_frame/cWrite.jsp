@@ -120,8 +120,10 @@
 </script>
 </head>
 <body>
-	<h3>공연정보를 입력해 주세요</h3>
 	<div class="div0">
+		<div class="div1">
+			<h3>공연정보를 입력해 주세요</h3>
+		</div>
 		<form name="frm1" action="" method="post" >
 			<div class="div1">
 				<p class="p1">공연자 / ARTIST</p>

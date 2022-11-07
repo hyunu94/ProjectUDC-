@@ -8,8 +8,8 @@
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-	<h3>비밀번호 변경</h3>
 	<div class="div0">
+		<h3>비밀번호 변경</h3>
 		<form name="frm1" action="" method="post" >
 			<div class="div1">
 				<p class="p1">아이디</p>
