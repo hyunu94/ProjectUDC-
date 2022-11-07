@@ -8,11 +8,18 @@
 	margin-left:auto;
 	margin-right:auto;
 }
+
+.div0,.div1,.div2,.div3 {
+    width:630px;
+    margin:0 auto
+}
+
 .div0{
 	margin-top: 50px;
 }
+
 .input1{
-	width: 600px;
+	width: 622px;
 	height: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -102,3 +109,9 @@
 	height: 30px;
 	line-height: 30px;
 }
+
+input::-webkit-input-placeholder { font-size: 80%; }
+input::-moz-placeholder { font-size: 80%; }
+input:-ms-input-placeholder { font-size: 80%; }
+input:-moz-placeholder { font-size: 80%; }
+input::placeholder { font-size: 80%; }

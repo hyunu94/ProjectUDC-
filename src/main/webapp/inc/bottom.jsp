@@ -7,8 +7,7 @@
 		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">공연
 				정보</a></li>
 		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">커뮤니티</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
 	</ul>
 	<p class="text-center text-muted">&copy 2022 Company, Inc</p>
 </footer>
