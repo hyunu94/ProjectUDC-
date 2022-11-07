@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.project.db.ConnectionPoolMgr2;
 
@@ -134,6 +136,38 @@ public class ConcertDAO {
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	public List<ConcertVO> selectTitle() throws SQLException{ //공연 제목만 보기
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ConcertVO> list = new ArrayList<>();
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select concertNo,title from concert";
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int concertNo = rs.getInt(1);
+				String title = rs.getString(2);
+				
+				ConcertVO vo= new ConcertVO();
+				vo.setConcertNo(concertNo);
+				vo.setTitle(title);
+				
+				list.add(vo);
+			}
+			System.out.println("공연 제목 찾기 list.size = " + list.size());
+			
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
 		}
 	}
 }

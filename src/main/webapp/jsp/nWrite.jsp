@@ -1,3 +1,7 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.concert.model.ConcertVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.project.concert.model.ConcertService"%>
 <%@page import="com.project.member.model.MemberService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -28,9 +32,19 @@
 		});
 		
 		val content = $('#content').html();
-		location.href = "nWrite_ok.jsp?content=" + content;
+		val concertNo = $('con_list').val();
+		
+		location.href = "nWrite_ok.jsp?content=" + content + "&concertNo=" + concertNo;
 	});
 </script>
+<%
+ConcertService service = new ConcertService();
+List<ConcertVO> list = null;
+ConcertVO vo = null;
+
+try {
+	list = service.selectNoTitle();
+	%>
 <div class="body">
 	<h3>일반게시판 > 글쓰기</h3>
 	<div class="div0">
@@ -46,12 +60,16 @@
 			</div>
 			<div class="div1" id="con_select">
 				<p class="p1">공연선택</p>
-				<select class="sel1" name="con_list" id="con_list">
+				<select class="sel1" name="content" id="con_list">
 					<option>보기</option>
-				<!-- 반복구간? -->
-					<option></option>
-				<!-- 반복구간? -->
+				<%for (int i = 0; i < list.size(); i++) {
+					vo = list.get(i);%>
+					<option value="<%=vo.getConcertNo()%>"><%=vo.getTitle() %></option>
+					<%}%>
 				</select>
+				<%} catch (SQLException e) {
+					e.printStackTrace();
+					}%>
 			</div>
 			<div class="div1">
 				<p class="p1">제목</p>

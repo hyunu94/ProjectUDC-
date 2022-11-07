@@ -16,7 +16,8 @@
 	request.setCharacterEncoding("UTF-8");
 	
 	String category = request.getParameter("category"); //카테고리 이름
-	String content = request.getParameter("content");
+	String concertNo = request.getParameter("concertNo"); //카테고리 번호
+	String content = request.getParameter("content"); //내용
 	String title = request.getParameter("title"); // 제목
 	String img = request.getParameter("attach"); //이미지
 	int categoryNo = 0;
@@ -33,34 +34,17 @@
 	vo.setTitle(title);
 	vo.setContent(content);
 	vo.setImg(img);
-	vo.setConcertNo(concertNo);
+	vo.setMemberNo(10);
+	vo.setConcertNo(Integer.parseInt(concertNo));
 	vo.setCateNo(categoryNo);
-	vo.setMemberNo(memberNo);
+	/* vo.setMemberNo(memberNo); */
 	
-	
-	//title,content,memberNo,concertNo,categoryNo
-	BoardService service = new BoardService();
-	try{
-		int cnt = service.insertBoard(vo);
-		
-		if(cnt>0){%>
-		<script type="text/javascript">
-			alert('글 등록되었습니다.');
-			location.href="list.jsp";
-		</script>
-	<%}else{%>
-		<script type="text/javascript">
-			alert('글 등록 실패!');
-			history.back();
-		</script>			
-	<%}		
-	}catch(SQLException e){
-		e.printStackTrace();
-	}
-%>
+%>  
 </body>
 <h3><%=category %></h3>
+<h3><%=concertNo %></h3>
 <h3><%=title %></h3>
 <h3><%=content %></h3>
 <h3><%=img %></h3>
+<h3><%=categoryNo %></h3>
 </html>

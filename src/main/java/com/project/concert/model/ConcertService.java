@@ -1,6 +1,7 @@
 package com.project.concert.model;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class ConcertService {
 	private ConcertDAO dao;
@@ -23,5 +24,9 @@ public class ConcertService {
 	
 	public int deleteCon(int concertNo) throws SQLException { //공연정보 삭제
 		return dao.deleteCon(concertNo);
+	}
+	
+	public List<ConcertVO> selectNoTitle() throws SQLException{ //공연 제목만 보기
+		return dao.selectTitle();
 	}
 }
