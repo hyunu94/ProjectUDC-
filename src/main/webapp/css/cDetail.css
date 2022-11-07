@@ -23,13 +23,15 @@ table *{
 	font-size: 11pt;
 }
 td{
-	width:400px;
+	width:390px;
 	height: 50px;
 	border-bottom: 1px solid #e5e5e5;
 }
 td:first-child {
 	text-align: left;
+	padding-left:10px;
 }
 td:last-child {
 	text-align: right;
+	padding-right:10px;
 }
