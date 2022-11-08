@@ -44,7 +44,7 @@
 			}
 			
 			msg=userid + "님 로그인되었습니다.";
-			url="../index.jsp";
+			url="../jsp/index.jsp";
 		} else if (result == MemberService.DISAGREE_PWD) {
 			msg = "비밀번호가 일치하지 않습니다.";
 		} else if (result == MemberService.NONE_USERID) {

@@ -362,7 +362,7 @@
 	function addressChk() {
 		var gap = address.value; // 주소검색어
 		if (gap == "") {
-			alert("주소 검색어를 입력해 주십시오.");
+			alert("주소를 입력하세요.");
 			address.focus();
 			return;
 		}
