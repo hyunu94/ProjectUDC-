@@ -35,6 +35,8 @@
 		location.href = "nWrite_ok.jsp?content=" + content;
 	});
 </script>
+</head>
+<body>
 <%
 ConcertService service = new ConcertService();
 List<ConcertVO> list = null;
@@ -58,7 +60,7 @@ try {
 			<div class="div1" id="con_select">
 				<p class="p1">공연선택</p>
 				<select class="sel1" name="concerttitle" id="concerttitle">
-					<option>보기</option>
+					<option>선택</option>
 				<%for (int i = 0; i < list.size(); i++) {
 					ConcertVO vo = new ConcertVO();
 					vo = list.get(i);%>
@@ -75,8 +77,7 @@ try {
 				<p class="p2">숨김 메시지 표시</p>
 			</div>
 			<div class="div1">
-				<textarea class="input2" id="content" name="content" rows="10"
-					cols="30"></textarea>
+				<textarea class="input2" id="content" name="content" rows="10" cols="30"></textarea>
 				<p class="p2"></p>
 				<input type="file" class="input3" name="img" id="img">
 			</div>

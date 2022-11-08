@@ -15,6 +15,7 @@ a.navbar-brand {
 .recent h1, .find h1 {
 	letter-spacing: -2px;
 	margin-top: 20px;
+	font-weight: 800;
 }
 </style>
 <!-- content - 바뀌는 부분 -->
