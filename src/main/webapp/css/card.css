@@ -1,14 +1,4 @@
 @charset "UTF-8";
-.map {
-	margin-top: 30px;
-	margin-bottom: 30px; /* 지도 위아래 간격 적용 */
-}
-
-#map {
-	max-width: 100%;
-	min-height: auto; /* 지도 화면 비율 고정*/
-}
-
 /* article border 속성 삭제*/
 .article_card {
 	border: none !important;
