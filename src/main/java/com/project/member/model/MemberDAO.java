@@ -329,4 +329,32 @@ public class MemberDAO {
 		}
 	}
 	
+	public String findPwd(int MemberNo ,String userid) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		String pwd = "";
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="select Pwd from member\r\n"
+					+ "where MemberNo=? and userid=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, MemberNo);
+			ps.setString(2, userid);
+			
+			
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				pwd=rs.getString("pwd");
+				System.out.println("비밀번호 조회 결과 pwd="+pwd+", 매개변수 MemberNo="+MemberNo+" userid="+userid);
+				return pwd;
+			}
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+		return pwd;
+	}
+	
 }
