@@ -71,6 +71,9 @@
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
+							<div class="btn_write" style="display: block;">
+								<input type="button" class="sub2" value="글쓰기">
+							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
 									<div class="addons2" style="display: block;">
@@ -133,6 +136,9 @@
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
+							<div class="btn_write" style="display: block;">
+								<input type="button" class="sub2" value="글쓰기">
+							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
 									<div class="addons2" style="display: block;">
@@ -195,6 +201,9 @@
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
+							<div class="btn_write" style="display: block;">
+								<input type="button" class="sub2" value="글쓰기">
+							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
 									<div class="addons2" style="display: block;">
@@ -257,6 +266,9 @@
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
+							<div class="btn_write" style="display: block;">
+								<input type="button" class="sub2" value="글쓰기">
+							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
 									<div class="addons2" style="display: block;">
@@ -277,6 +289,7 @@
 			</div>
 		</div>
 	</div>
+</body>
 	<script>
 		function openPage(pageName, elmnt, color) {
 			var i, tabcontent, tablinks;

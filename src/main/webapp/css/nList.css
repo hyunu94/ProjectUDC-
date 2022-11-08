@@ -86,7 +86,7 @@ div.grid-item1 {
 	margin-left:auto;
 	margin-right:auto;
 }
-.addons *:not(form, div){
+.addons *:not(form, div, span, a){
 	margin:0px;
 	padding:0px;
 	height: 30px;
@@ -96,17 +96,31 @@ div.grid-item1 {
 	font-size: 10pt;
 	font-weight: 300;
 }
+.sub2{
+	margin:0px;
+	margin-right:10px;
+	margin-top:5px;
+	padding:0px;
+	height: 30px;
+	border: 1px solid #9d9d9d;
+	border-radius: 5px 5px 5px 5px;
+	display:inline-block;
+	font-size: 10pt;
+	font-weight: 300;
+	width:70px;
+	
+}
 .addons2{
-	margin-left:250px;
+	margin-left:300px;
 }
 .sel1{
-	width:80px;
+	width:70px;
 }
 .keyw{
-	width:300px;
+	width:200px;
 }
 .sub1{
-	width:80px;
+	width:70px;
 }
 .sub1:hover {
 	background-color: #eeeeee;
@@ -114,6 +128,16 @@ div.grid-item1 {
 
 .sub1:active {
 	transform: translateY(2px);
+}
+.sub2:hover {
+	background-color: #eeeeee;
+}
+
+.sub2:active {
+	transform: translateY(2px);
+}
+.btn_write{
+	text-align: right;
 }
 
 td {
