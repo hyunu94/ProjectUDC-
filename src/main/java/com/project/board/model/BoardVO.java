@@ -1,6 +1,5 @@
 package com.project.board.model;
 
-import java.sql.Clob;
 import java.sql.Timestamp;
 
 public class BoardVO {
@@ -9,7 +8,6 @@ public class BoardVO {
 	private String content; /* 내용 */
 	private Timestamp regdate; /* 작성일 */
 	private double star; /* 별점 */
-	private int starcount; /* 별점 누른 인원수*/
 	private int count; /* 조회수 */
 	private String img; /* 이미지 */
 	private String delcheck; /* 삭제여부 */
@@ -21,7 +19,7 @@ public class BoardVO {
 		super();
 	}
 
-	public BoardVO(int boardNo, String title, String content, Timestamp regdate, double star, int starcount, int count,
+	public BoardVO(int boardNo, String title, String content, Timestamp regdate, double star, int count,
 			String img, String delcheck, int memberNo, int concertNo, int cateNo) {
 		super();
 		this.boardNo = boardNo;
@@ -29,7 +27,6 @@ public class BoardVO {
 		this.content = content;
 		this.regdate = regdate;
 		this.star = star;
-		this.starcount = starcount;
 		this.count = count;
 		this.img = img;
 		this.delcheck = delcheck;
@@ -78,14 +75,6 @@ public class BoardVO {
 		this.star = star;
 	}
 	
-	public int getStarcount() {
-		return starcount;
-	}
-
-	public void setStarcount(int starcount) {
-		this.starcount = starcount;
-	}
-
 	public int getCount() {
 		return count;
 	}
@@ -137,7 +126,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", regdate=" + regdate
-				+ ", star=" + star + ", starcount=" + starcount + ", count=" + count + ", img=" + img + ", delcheck="
+				+ ", star=" + star +", count=" + count + ", img=" + img + ", delcheck="
 				+ delcheck + ", memberNo=" + memberNo + ", concertNo=" + concertNo + ", cateNo=" + cateNo + "]";
 	}
 
