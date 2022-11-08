@@ -12,7 +12,7 @@
 	if(l_userid==null || l_userid.isEmpty()){ %>
 		<script type="text/javascript">
 			alert('로그인 하세요');
-			location.href="<%=request.getContextPath()%>/login/login.jsp";
+			location.href="login.jsp";
 		</script>
 	<% 	return;
 	}
