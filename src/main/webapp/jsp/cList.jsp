@@ -1,3 +1,8 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.v_list.model.ConcertListVO"%>
+<%@page import="java.util.List"%>
 <%@page import="com.project.concert.model.ConcertService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
@@ -12,10 +17,17 @@
 		}		
 	});
 </script>
-<%-- <%
+<% 
 	ConcertService concertservice = new ConcertService();
-	concertservice.
-%> --%>
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
+	List<ConcertListVO> list = null;
+	try{
+		list = concertservice.selectAll();	
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+%>
 </head>
 <body>
 	<div class="contents">
@@ -57,12 +69,15 @@
 										<td>2022-10-01</td>
 									</tr>
 									<!-- 반복구간(시작) -->
+									<%for(int i=0;i<list.size();i++){ 
+										ConcertListVO vo = list.get(i);%>
 									<tr>
-										<td>1</td>
-										<td><a href="#" style="text-decoration: none; color:black;">WHITNEY HOUSTON - 영원한 팝의 여왕의 귀환</a></td>
-										<td><a href="#" style="text-decoration: none; color:black;">천년동안도</a></td>
-										<td>2022-10-02</td>
+										<td><%=vo.getConcertNo() %></td>
+										<td><a href="cDetail.jsp?concertNo=<%=vo.getConcertNo() %>" style="text-decoration: none; color:black;"><%=vo.getArtist() + " - " + vo.getTitle() %></a></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getName() %></a></td>
+										<td><%=sdf.format(vo.getRegdate())%></td>
 									</tr>
+									<%}%>
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>

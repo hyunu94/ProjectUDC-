@@ -7,7 +7,8 @@ public class ConcertVO {
 	private String artist; /* 공연자 */
 	private String title; /* 공연제목 */
 	private String content; /* 공연소개 */
-	private Timestamp startdate; /* 날짜 */
+	private Timestamp startdate; /* 공연날짜 */
+	private Timestamp regdate; /* 공연등록날짜 */
 	private String time; /* 공연시간 */
 	private int price; /* 가격 */
 	private String link; /* 링크 */
@@ -19,7 +20,7 @@ public class ConcertVO {
 		super();
 	}
 
-	public ConcertVO(int concertNo, String artist, String title, String content, Timestamp startdate,
+	public ConcertVO(int concertNo, String artist, String title, String content, Timestamp startdate, Timestamp regdate,
 			String time, int price, String link, String thumbimg, int memberNo, int locationNo) {
 		super();
 		this.concertNo = concertNo;
@@ -27,6 +28,7 @@ public class ConcertVO {
 		this.title = title;
 		this.content = content;
 		this.startdate = startdate;
+		this.regdate = regdate;
 		this.time = time;
 		this.price = price;
 		this.link = link;
@@ -73,6 +75,14 @@ public class ConcertVO {
 
 	public void setStartdate(Timestamp startdate) {
 		this.startdate = startdate;
+	}
+	
+	public Timestamp getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Timestamp regdate) {
+		this.regdate = regdate;
 	}
 
 	public String getTime() {
@@ -126,10 +136,12 @@ public class ConcertVO {
 	@Override
 	public String toString() {
 		return "ConcertVO [concertNo=" + concertNo + ", artist=" + artist + ", title=" + title + ", content=" + content
-				+ ", startdate=" + startdate + ", time=" + time + ", price=" + price
-				+ ", link=" + link + ", thumbimg=" + thumbimg + ", memberNo=" + memberNo
-				+ ", locationNo=" + locationNo + "]";
+				+ ", startdate=" + startdate + ", regdate=" + regdate + ", time=" + time + ", price=" + price
+				+ ", link=" + link + ", thumbimg=" + thumbimg + ", memberNo=" + memberNo + ", locationNo=" + locationNo
+				+ "]";
 	}
+
+	
 	
 	
 }
