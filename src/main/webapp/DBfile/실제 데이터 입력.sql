@@ -1,7 +1,7 @@
 --크라잉넛 콘서트--
 
 select locationNo from location
-where address = '서울특별시 마포구 서교동' and addressdetail like '366-1~368-40';
+where address = '서울특별시 마포구 서교동' and addressdetail like '%368%';
 
 update location
 set axisx = 37.5515788223247 , axisy = 126.919828408783
@@ -35,6 +35,8 @@ insert into member(memberNo,name,mobile,kindNo)
 values(member_seq.nextval,'비회원','010-0203-0400',3);
 
 commit;
+
+select * from location;
 
 
 

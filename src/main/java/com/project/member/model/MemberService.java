@@ -20,11 +20,7 @@ public class MemberService {
 		dao = new MemberDAO();
 	}
 	
-	public int insertSeller(MemberVO vo) throws SQLException { //판매자 회원가입시
-		return dao.insertSeller(vo);
-	}
-	
-	public int insertMember(MemberVO vo) throws SQLException { //일반회원 회원가입시
+	public int insertMember(MemberVO vo) throws SQLException { // 회원가입시
 		return dao.insertMember(vo);
 	}
 	

@@ -76,7 +76,7 @@ public class LocationDAO {
 			con=pool.getConnection();
 			
 			String sql="insert into location(locationno, zipcode, address, addressdetail,axisx,axisy)\r\n"
-					+ "values(70001,?,?,?,?,?)";
+					+ "values(70005,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, vo.getZipcode());
 			ps.setString(2, vo.getAddress());
@@ -90,6 +90,35 @@ public class LocationDAO {
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	//우편번호, 주소로 로케이션고유번호 구하기
+	public int selectByAddress(String zipcode, String address) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="select * from location\r\n"
+					+ "where zipcode=? and address=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, zipcode);
+			ps.setString(2, address);
+			
+			int result=0;
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt("locationno");
+			}
+			System.out.println("매개변수 ="+zipcode+","+address+", result="+result);
+			
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, con);
+			
 		}
 	}
 }
