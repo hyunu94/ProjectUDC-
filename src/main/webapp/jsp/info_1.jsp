@@ -92,7 +92,7 @@ table.btn_mold th:nth-child(2) {
 			</colgroup>
 			<tr>
 				<td>
-					<button class="btn default">회원정보 수정</button>
+					<button class="btn default" onclick="">닉네임 변경</button>
 				</td>
 				<td>
 					<button class="btn default">비밀번호 변경</button>

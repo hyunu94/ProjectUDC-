@@ -8,7 +8,7 @@
 	<br>
 	<br>
 	<div style="width: 700px">
-		<form name="frmAgree" method="post" action="frame_join.jsp">
+		<form name="frmAgree" method="post" action="join.jsp">
 			<fieldset>
 				<div style="text-align: right;">
 					<input type="checkbox" name="chkAgree" id="chkAgree"> <label

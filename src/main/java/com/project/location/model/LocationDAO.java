@@ -14,30 +14,6 @@ public class LocationDAO {
 		pool = new ConnectionPoolMgr2();
 	}
 
-	public int selectByaddress(String address, String addressDetail) throws SQLException { // 주소명과 상세주소로 No 찾기
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		int locationNo = 0;
-		try {
-			con = pool.getConnection();
-
-			String sql = "select locationNo from location\r\n" + "where address = ? and addressdetail = ?";
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-
-			if (rs.next()) {
-				locationNo = rs.getInt(1);
-
-				if (locationNo > 0) {
-					System.out.println("찾은 locationNo = " + locationNo);
-				}
-			}
-			return locationNo;
-		} finally {
-			pool.dbClose(rs, ps, con);
-		}
-	}
 	
 	public String updateXY(int locationNo , double x , double y) throws SQLException { //x,y 얻었을 경우 파라미터 No로 업데이트하기
 		Connection con = null;
@@ -76,7 +52,7 @@ public class LocationDAO {
 			con=pool.getConnection();
 			
 			String sql="insert into location(locationno, zipcode, address, addressdetail,axisx,axisy)\r\n"
-					+ "values(70001,?,?,?,?,?)";
+					+ "values(70006,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, vo.getZipcode());
 			ps.setString(2, vo.getAddress());
@@ -90,6 +66,35 @@ public class LocationDAO {
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	//우편번호, 주소로 로케이션고유번호 구하기
+	public int selectByAddress(String zipcode, String address) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="select * from location\r\n"
+					+ "where zipcode=? and address=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, zipcode);
+			ps.setString(2, address);
+			
+			int result=0;
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt("locationno");
+			}
+			System.out.println("매개변수 ="+zipcode+","+address+", result="+result);
+			
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, con);
+			
 		}
 	}
 }

@@ -1,12 +1,17 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 .body {
 	width: fit-content;
 	margin: 0 auto;
 	max-width: 500px;
 }
-
-.body form {border: 3px solid #f1f1f1;}
+.body *:not h2{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:10pt;
+	font-weight: 300;
+}
+/* .body form {border: 3px solid #f1f1f1;} */
 
 .body input[type=text],.body input[type=password] {
   width: 100%;
@@ -15,6 +20,7 @@
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .body button {
@@ -25,6 +31,7 @@
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .body button:hover {
@@ -46,6 +53,15 @@
   padding-top: 16px;
 }
 
+.container{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.imgcontainer{
+	display: none;
+}
+.psw{
+	margin-bottom: 20px;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
  .body span.psw {

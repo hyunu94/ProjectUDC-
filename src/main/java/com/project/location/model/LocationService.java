@@ -9,9 +9,6 @@ public class LocationService {
 		dao = new LocationDAO();
 	}
 	
-	public int selectByaddress(String address, String addressDetail) throws SQLException { // 주소명과 상세주소로 No 찾기
-		return dao.selectByaddress(address, addressDetail);
-	}
 	
 	public String updateXY(int locationNo , double x , double y) throws SQLException { //x,y 얻었을 경우 파라미터 No로 업데이트하기
 		return dao.updateXY(locationNo, x, y);
@@ -19,5 +16,9 @@ public class LocationService {
 	
 	public int insertLocation(LocationVO vo) throws SQLException { //주소 등록
 		return dao.insertLocation(vo);
+	}
+	
+	public int selectByAddress(String zipcode, String address) throws SQLException { //우편번호와 주소로 locationNo 구하기
+		return dao.selectByAddress(zipcode, address);
 	}
 }

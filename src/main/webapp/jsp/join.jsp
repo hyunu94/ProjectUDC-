@@ -142,7 +142,8 @@
 </script>
 <div class="body">
 	<div class="div0">
-		<h3>가입 정보를 입력해 주세요.</h3>
+		<h3>회원 정보를 입력해 주세요.</h3>
+		<br>
 		<form id="regist" method="post" action="join_ok.jsp">
 			<div class="first_regi">
 				<p class="p1">회원 유형</p>
@@ -225,37 +226,6 @@
 			</div>
 			<!-- <div class = "realize">
          </div> 유효성 검사 칸-->
-			<div class="multi_radio1">
-				<p class="p1">관심지역</p>
-			</div>
-			<select id="interestlo" name="locationNo" class="sel1">
-				<option value="">지역선택</option>
-				<option value="1">강남구</option>
-				<option value="2">강동구</option>
-				<option value="3">강북구</option>
-				<option value="4">강서구</option>
-				<option value="5">관악구</option>
-				<option value="6">광진구</option>
-				<option value="7">구로구</option>
-				<option value="8">금천구</option>
-				<option value="9">노원구</option>
-				<option value="10">도봉구</option>
-				<option value="11">동대문구</option>
-				<option value="12">동작구</option>
-				<option value="13">마포구</option>
-				<option value="14">서대문구</option>
-				<option value="15">서초구</option>
-				<option value="16">성동구</option>
-				<option value="17">성북구</option>
-				<option value="18">송파구</option>
-				<option value="19">양천구</option>
-				<option value="20">영등포구</option>
-				<option value="21">용산구</option>
-				<option value="22">은평구</option>
-				<option value="23">종로구</option>
-				<option value="24">중구</option>
-				<option value="25">중랑구</option>
-			</select>
 			<div class="first_regi">
 				<p class="p1">주소</p>
 			</div>
