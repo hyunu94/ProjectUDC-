@@ -14,30 +14,6 @@ public class LocationDAO {
 		pool = new ConnectionPoolMgr2();
 	}
 
-	public int selectByaddress(String address, String addressDetail) throws SQLException { // 주소명과 상세주소로 No 찾기
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		int locationNo = 0;
-		try {
-			con = pool.getConnection();
-
-			String sql = "select locationNo from location\r\n" + "where address = ? and addressdetail = ?";
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-
-			if (rs.next()) {
-				locationNo = rs.getInt(1);
-
-				if (locationNo > 0) {
-					System.out.println("찾은 locationNo = " + locationNo);
-				}
-			}
-			return locationNo;
-		} finally {
-			pool.dbClose(rs, ps, con);
-		}
-	}
 	
 	public String updateXY(int locationNo , double x , double y) throws SQLException { //x,y 얻었을 경우 파라미터 No로 업데이트하기
 		Connection con = null;
