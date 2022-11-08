@@ -12,10 +12,10 @@
 		}		
 	});
 </script>
-<%
+<%-- <%
 	ConcertService concertservice = new ConcertService();
 	concertservice.
-%>
+%> --%>
 </head>
 <body>
 	<div class="contents">
@@ -36,12 +36,10 @@
 						<div class="in_content">
 							<table class="board">
 								<colgroup>
-									<col style="width: 9%;" />
-									<col style="width: 50%;" />
-									<col style="width: 14%;" />
-									<col style="width: 9%;" />
-									<col style="width: 9%;" />
-									<col style="width: 9%;" />
+									<col style="width: 10%;" />
+									<col style="width: 55%;" />
+									<col style="width: 20%;" />
+									<col style="width: 15%;" />
 								</colgroup>
 								<thead>
 									<tr>
@@ -49,8 +47,6 @@
 										<td scope="col" class="title" style="text-align: center;"><span>제목</span></td>
 										<td scope="col" class="writer"><span>글쓴이</span></td>
 										<td scope="col" class="regdate"><span>등록일</span></td>
-										<td scope="col" class="count"><span>조회</span></td>
-										<td scope="col" class="recommand"><span>추천</span></td>
 									</tr>
 								</thead>
 								<tbody>
@@ -59,8 +55,6 @@
 										<td><a href="#" style="text-decoration: none; color:black;">글쓰기 공지사항을 준수해주세요</a></td>
 										<td><a href="#" style="text-decoration: none; color:black;">관리자</a></td>
 										<td>2022-10-01</td>
-										<td>200</td>
-										<td>99</td>
 									</tr>
 									<!-- 반복구간(시작) -->
 									<tr>
@@ -68,8 +62,6 @@
 										<td><a href="#" style="text-decoration: none; color:black;">WHITNEY HOUSTON - 영원한 팝의 여왕의 귀환</a></td>
 										<td><a href="#" style="text-decoration: none; color:black;">천년동안도</a></td>
 										<td>2022-10-02</td>
-										<td>10</td>
-										<td>213</td>
 									</tr>
 									<!-- 반복구간(끝) -->
 								</tbody>
