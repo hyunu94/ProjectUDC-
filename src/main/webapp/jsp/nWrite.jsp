@@ -31,7 +31,7 @@
 			fCreator : "createSEditor2"
 		});
 		
-		val content = $('#content').html();
+		var content = $('#content').html();
 		location.href = "nWrite_ok.jsp?content=" + content;
 	});
 </script>
