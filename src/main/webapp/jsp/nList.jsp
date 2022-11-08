@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <!-- content -->
 <link rel="stylesheet" href="../css/board.css">
@@ -51,11 +50,9 @@ input.btn.btn-outline-dark.me-2 {
 		</div>
 
 		<div class="tab">
-			<button class="tablinks" onclick="openCity(event, 'Tokyo')">같이
-				가요</button>
+			<button class="tablinks" onclick="openCity(event, 'Tokyo')">같이 가요</button>
 			<button class="tablinks" onclick="openCity(event, 'Paris')">후기</button>
-			<button class="tablinks" onclick="openCity(event, 'London')"
-				id="defaultOpen">전체</button>
+			<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">전체</button>
 		</div>
 
 		<div class="tabcontent_mold">
@@ -103,19 +100,20 @@ input.btn.btn-outline-dark.me-2 {
 				<div class="board" style="display: block;">
 					<form name="frm" action="" method="get">
 						<div class="write">
-							<input type="button" class="btn.btn-outline-dark.me-2"
-								value="글쓰기">
+							<input type="button" class="btn.btn-outline-dark.me-2" value="글쓰기">
 						</div>
-						<input type="hidden" name="act" value=""> <input
-							type="hidden" name="vid" value=""> <input type="hidden"
-							name="mid" value="ktalk"> <input type="hidden"
-							name="category" value=""> <input type="hidden"
-							name="group_srl" value=""> <select name="search_target">
+						<input type="hidden" name="act" value=""> 
+						<input type="hidden" name="vid" value=""> 
+						<input type="hidden" name="mid" value="ktalk"> 
+						<input type="hidden" name="category" value=""> 
+						<input type="hidden" name="group_srl" value=""> 
+						<select name="search_target">
 							<option value="title_content">전체</option>
 							<option value="title">제목</option>
 							<option value="content">내용</option>
-						</select> <input type="text" name="search_keyword" value=""> <input
-							type="submit" value="검색">
+						</select> 
+						<input type="text" name="search_keyword" value=""> 
+						<input type="submit" value="검색">
 					</form>
 				</div>
 				<div class="page">
@@ -167,19 +165,20 @@ input.btn.btn-outline-dark.me-2 {
 				<div class="board" style="display: block;">
 					<form name="frm" action="" method="get">
 						<div class="write">
-							<input type="button" class="btn.btn-outline-dark.me-2"
-								value="글쓰기">
+							<input type="button" class="btn.btn-outline-dark.me-2" value="글쓰기">
 						</div>
-						<input type="hidden" name="act" value=""> <input
-							type="hidden" name="vid" value=""> <input type="hidden"
-							name="mid" value="ktalk"> <input type="hidden"
-							name="category" value=""> <input type="hidden"
-							name="group_srl" value=""> <select name="search_target">
+						<input type="hidden" name="act" value=""> 
+						<input type="hidden" name="vid" value=""> 
+						<input type="hidden" name="mid" value="ktalk"> 
+						<input type="hidden" name="category" value=""> 
+						<input type="hidden" name="group_srl" value=""> 
+						<select name="search_target">
 							<option value="title_content">전체</option>
 							<option value="title">제목</option>
 							<option value="content">내용</option>
-						</select> <input type="text" name="search_keyword" value=""> <input
-							type="submit" value="검색">
+						</select> 
+						<input type="text" name="search_keyword" value=""> 
+						<input type="submit" value="검색">
 					</form>
 				</div>
 				<div class="page">
@@ -231,19 +230,20 @@ input.btn.btn-outline-dark.me-2 {
 				<div class="board" style="display: block;">
 					<form name="frm" action="" method="get">
 						<div class="write">
-							<input type="button" class="btn.btn-outline-dark.me-2"
-								value="글쓰기">
+							<input type="button" class="btn.btn-outline-dark.me-2" value="글쓰기">
 						</div>
-						<input type="hidden" name="act" value=""> <input
-							type="hidden" name="vid" value=""> <input type="hidden"
-							name="mid" value="ktalk"> <input type="hidden"
-							name="category" value=""> <input type="hidden"
-							name="group_srl" value=""> <select name="search_target">
+						<input type="hidden" name="act" value=""> 
+						<input type="hidden" name="vid" value=""> 
+						<input type="hidden" name="mid" value="ktalk"> 
+						<input type="hidden" name="category" value=""> 
+						<input type="hidden" name="group_srl" value=""> 
+						<select name="search_target">
 							<option value="title_content">전체</option>
 							<option value="title">제목</option>
 							<option value="content">내용</option>
-						</select> <input type="text" name="search_keyword" value=""> <input
-							type="submit" value="검색">
+						</select> 
+						<input type="text" name="search_keyword" value=""> 
+						<input type="submit" value="검색">
 					</form>
 				</div>
 				<div class="page">
