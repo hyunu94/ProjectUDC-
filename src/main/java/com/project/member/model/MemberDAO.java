@@ -104,6 +104,38 @@ public class MemberDAO {
 		}
 	}
 	
+	public int duplicateNick(String nick) throws SQLException {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="select count(*) from member\r\n"
+					+ "where nick=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, nick);
+			
+			int result=0;
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				int cnt = rs.getInt(1);
+				
+				if(cnt>0) {
+					result=MemberService.EXIST_ID; //닉네임 이미존재
+				}else {
+					result=MemberService.NON_EXIST_ID; //사용가능
+				}
+			}
+			System.out.println("닉네임 중복확인 결과 result="+result+", 매개변수 nick="+nick);
+			
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
 	public int loginCheck(String userid, String pwd) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;

@@ -6,8 +6,8 @@ import com.project.member.model.MemberVO;
 
 public class MemberService {
 	//아이디 중복확인에서 사용할 상수
-	public static final int EXIST_ID=1; //이미 존재는 아이디
-	public static final int NON_EXIST_ID=2; //존재하지 않는 아이디 - 사용가능
+	public static final int EXIST_ID=1; //이미 존재하는 아이디,닉네임
+	public static final int NON_EXIST_ID=2; //존재하지 않는 아이디,닉네임 - 사용가능
 	
 	//로그인 처리시 사용할 상수
 		public static final int LOGIN_OK=1; //로그인 성공
@@ -41,5 +41,9 @@ public class MemberService {
 	
 	public int updateMember(MemberVO vo) throws SQLException {
 		return dao.updateMember(vo);
+	}
+	
+	public int duplicateNick(String nick) throws SQLException { //닉네임 중복확인
+		return dao.duplicateNick(nick);
 	}
 }

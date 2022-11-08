@@ -18,6 +18,12 @@
 		    		'width=500,height=300,left=0,top=0,location=yes,resizable=yes');	
 		    });
 		
+		 $('#btnChkNick').click(function(){
+		    	var nick=$('#nick').val();
+		    	open('checkNick.jsp?nick='+nick,'chk',
+		    		'width=500,height=300,left=0,top=0,location=yes,resizable=yes');	
+		    });
+		 
 		$('#wr_submit').click(
 				function() {
 					if ($('input[name=kind]:radio:checked').length < 1) {
@@ -198,6 +204,10 @@
 			<div class="second_regi">
 				<input class="input1" id="nick" type="text" name="nick">
 			</div>
+			<div class="btn_chkNick">
+				<input class="chkNick" id="btnChkNick" type="button" onclick="" value="닉네임 중복 확인" />
+			</div>
+			
 			<!-- <div class = "realize">
          </div> 유효성 검사 칸-->
 			<div class="first_regi">
