@@ -14,7 +14,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.104.2">
-<title>UDC : Uri Dle Concert</title>
+<title>UDC:우리동네콘서트</title>
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.2/examples/blog/">
 <script
@@ -47,7 +47,7 @@ form[role=search] {
 }
 
 a.navbar-brand {
-	font-size: 20pt;
+	font-size: 22pt;
 	font-weight: 800;
 }
 
@@ -74,7 +74,7 @@ a.navbar-brand {
 		<div class="container-xl">
 			<!-- UDC (reload) 아이콘 -->
 			<div>
-				<a class="navbar-brand" href="#">UDC</a>
+				<a class="navbar-brand" href="../jsp/index.jsp">UDC</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL"
 					aria-controls="navbarsExample07XL" aria-expanded="false"
@@ -87,13 +87,12 @@ a.navbar-brand {
 			<div class="collapse navbar-collapse" id="navbarsExample07XL">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="../jsp/index.jsp">Home</a></li>
-					</li>
+						aria-current="page" href="../jsp/index.jsp">&nbsp;HOME</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="../jsp/cDetail.jsp">공연 정보</a></li>
+						href="../jsp/cList.jsp">&nbsp;공연정보</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="../jsp/nList.jsp"
-						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
+						data-bs-toggle="dropdown" aria-expanded="false">&nbsp;커뮤니티</a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" id="dropdown"
 								href="../jsp/nList.jsp">전체</a>
@@ -104,7 +103,7 @@ a.navbar-brand {
 							<li><a class="dropdown-item" id="dropdown"
 								href="../jsp/nList.jsp">같이 가요</a>
 						</ul></li>
-					<li class="nav-item"><a class="nav-link" href="../jsp/FAQ.jsp">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link" href="../jsp/FAQ.jsp">&nbsp;FAQ</a></li>
 				</ul>
 			</div>
 			<!-- 검색, 로그인, 회원가입 버튼 -->
