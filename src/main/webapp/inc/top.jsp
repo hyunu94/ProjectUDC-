@@ -42,10 +42,6 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 	z-index: 12; /*nav postion stick 상단바 고정*/
 }
 
-ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
-	margin: auto;
-}
-
 form[role=search] {
 	margin-bottom: 0px;
 }
@@ -55,10 +51,11 @@ a.navbar-brand {
 	font-weight: 800;
 }
 
-.session {
+.section {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 </style>
 <!-- Custom styles for this template -->
 <link
@@ -121,5 +118,5 @@ a.navbar-brand {
 		</div>
 	</nav>
 	<!-- /nav -->
-	<section class="session">
+	<section class="section">
 		<article>

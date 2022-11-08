@@ -11,16 +11,16 @@
 	});
 </script>
 <style type="text/css">
-body * {
+.body * {
 	font-family: 'Noto Sans KR', sans-serif;
 	margin-left: auto;
 	margin-right: auto;
-	min-width
 }
 
 .container {
 	margin-top: 100px;
 	margin-bottom: 100px;
+	width: fit-content;
 }
 
 .faq {
@@ -100,6 +100,10 @@ body * {
 .one a:hover {
 	font-weight: bold;
 }
+
+.inquiry {
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
@@ -162,7 +166,7 @@ body * {
 		<div class="one">
 			<br> <br>
 			<p>기타 문의는 1:1문의하기를 이용바랍니다.</p>
-			<div>
+			<div class="inquiry">
 				<a href="#">1:1 문의하기</a>
 			</div>
 		</div>
