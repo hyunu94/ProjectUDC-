@@ -9,6 +9,7 @@
 		$('#userid').focus();
 
 		$('#userid').prop('readonly', true);
+		$('#nick').prop('readonly', true);
 		$('#sample6_postcode').prop('readonly', true);
 		$('#sample6_address').prop('readonly', true);
 		
@@ -109,6 +110,10 @@
 						alert('아이디 중복확인을 해야 합니다.');
 						$('#btnChkId').focus();
 						event.preventDefault();			
+					}else if($('#chNick').val()!='Y'){
+						alert('닉네임 중복확인을 해야 합니다.');
+						$('#btnChkNick').focus();
+						event.preventDefault();			
 					}
 
 				});
@@ -202,7 +207,7 @@
 				<p class="p1">닉네임</p>
 			</div>
 			<div class="second_regi">
-				<input class="input1" id="nick" type="text" name="nick">
+				<input class="input1" id="nick" type="text" name="nick" placeholder="닉네임 중복확인을 누르세요">
 			</div>
 			<div class="btn_chkNick">
 				<input class="chkNick" id="btnChkNick" type="button" onclick="" value="닉네임 중복 확인" />
@@ -262,6 +267,7 @@
 				<input type="submit" id="wr_submit" value="가입 완료">
 			</div>
 			 <input type ="hidden" name="chkId" id="chkId"> <!-- 아이디 체크 유무 -->
+			 <input type ="hidden" name="chNick" id="chNick"> <!-- 닉네임 체크 유무 -->
 		</form>
 	</div>
 </div>
