@@ -90,55 +90,60 @@
 				</div>
 
 				<div id="Review" class="tabcontent">
+					<!-- content - 바뀌는 부분 -->
 					<div class="community_content">
 						<div class="in_content">
 							<table class="board">
 								<colgroup>
-									<col style="width: 5%;" />
-									<col style="width: 70%;" />
-									<col style="width: 7%;" />
-									<col style="width: 7%;" />
-									<col style="width: 5%;" />
-									<col style="width: 5%;" />
+									<col style="width: 9%;" />
+									<col style="width: 55%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
 								</colgroup>
 								<thead>
 									<tr>
-										<th scope="col" class="no"><span>번호</span></th>
-										<th scope="col" class="title"><span>제목</span></th>
-										<th scope="col" class="writer"><span>글쓴이</span></th>
-										<th scope="col" class="regdate"><span>등록일</span></th>
-										<th scope="col" class="recommand"><span>추천</span></th>
-										<th scope="col" class="m_no"><span>조회</span></th>
+										<td scope="col" class="no"><span>번호</span></td>
+										<td scope="col" class="title" style="text-align: center;"><span>제목</span></td>
+										<td scope="col" class="writer"><span>글쓴이</span></td>
+										<td scope="col" class="regdate"><span>등록일</span></td>
+										<td scope="col" class="count"><span>조회</span></td>
+										<td scope="col" class="recommand"><span>추천</span></td>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td>공지</td>
+										<td><a href="#" style="text-decoration: none; color:black;">글쓰기 공지사항을 준수해주세요</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">관리자</a></td>
+										<td>2022-10-01</td>
+										<td>200</td>
+										<td>99</td>
 									</tr>
+									<!-- 반복구간(시작) -->
+									<tr>
+										<td>1</td>
+										<td><a href="#" style="text-decoration: none; color:black;">후기게시판</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
+										<td>2022-10-02</td>
+										<td>10</td>
+										<td>213</td>
+									</tr>
+									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
-							<div class="board">
-								<div class="fr"></div>
-							</div>
-							<div class="board" style="display: block;">
+							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
-									<input type="hidden" name="act" value=""> 
-									<input type="hidden" name="vid" value=""> 
-									<input type="hidden" name="mid" value="ktalk"> 
-									<input type="hidden" name="category" value=""> 
-									<input type="hidden" name="group_srl" value=""> 
-									<select name="search_target">
-										<option value="title_content">전체</option>
-										<option value="title">제목</option>
-										<option value="content">내용</option>
-									</select> 
-									<input type="text" name="search_keyword" value=""> 
-									<input type="submit" value="검색">
+									<div class="addons2" style="display: block;">
+										<select name="search_target" class="sel1">
+											<option value="title_content">전체</option>
+											<option value="title">제목</option>
+											<option value="content">내용</option>
+										</select> 
+										<input type="text" name="search_keyword" class="keyw" value="" > 
+										<input type="submit" class="sub1" value="검색">
+									</div>
 								</form>
 							</div>
 						</div>
@@ -147,55 +152,60 @@
 				</div>
 
 				<div id="Chat" class="tabcontent">
+					<!-- content - 바뀌는 부분 -->
 					<div class="community_content">
 						<div class="in_content">
 							<table class="board">
 								<colgroup>
-									<col style="width: 5%;" />
-									<col style="width: 70%;" />
-									<col style="width: 7%;" />
-									<col style="width: 7%;" />
-									<col style="width: 5%;" />
-									<col style="width: 5%;" />
+									<col style="width: 9%;" />
+									<col style="width: 55%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
 								</colgroup>
 								<thead>
 									<tr>
-										<th scope="col" class="no"><span>번호</span></th>
-										<th scope="col" class="title"><span>제목</span></th>
-										<th scope="col" class="writer"><span>글쓴이</span></th>
-										<th scope="col" class="regdate"><span>등록일</span></th>
-										<th scope="col" class="recommand"><span>추천</span></th>
-										<th scope="col" class="m_no"><span>조회</span></th>
+										<td scope="col" class="no"><span>번호</span></td>
+										<td scope="col" class="title" style="text-align: center;"><span>제목</span></td>
+										<td scope="col" class="writer"><span>글쓴이</span></td>
+										<td scope="col" class="regdate"><span>등록일</span></td>
+										<td scope="col" class="count"><span>조회</span></td>
+										<td scope="col" class="recommand"><span>추천</span></td>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td>공지</td>
+										<td><a href="#" style="text-decoration: none; color:black;">글쓰기 공지사항을 준수해주세요</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">관리자</a></td>
+										<td>2022-10-01</td>
+										<td>200</td>
+										<td>99</td>
 									</tr>
+									<!-- 반복구간(시작) -->
+									<tr>
+										<td>1</td>
+										<td><a href="#" style="text-decoration: none; color:black;">잡담게시판</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
+										<td>2022-10-02</td>
+										<td>10</td>
+										<td>213</td>
+									</tr>
+									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
-							<div class="board">
-								<div class="fr"></div>
-							</div>
-							<div class="board" style="display: block;">
+							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
-									<input type="hidden" name="act" value=""> 
-									<input type="hidden" name="vid" value=""> 
-									<input type="hidden" name="mid" value="ktalk"> 
-									<input type="hidden" name="category" value=""> 
-									<input type="hidden" name="group_srl" value=""> 
-									<select name="search_target">
-										<option value="title_content">전체</option>
-										<option value="title">제목</option>
-										<option value="content">내용</option>
-									</select> 
-									<input type="text" name="search_keyword" value=""> 
-									<input type="submit" value="검색">
+									<div class="addons2" style="display: block;">
+										<select name="search_target" class="sel1">
+											<option value="title_content">전체</option>
+											<option value="title">제목</option>
+											<option value="content">내용</option>
+										</select> 
+										<input type="text" name="search_keyword" class="keyw" value="" > 
+										<input type="submit" class="sub1" value="검색">
+									</div>
 								</form>
 							</div>
 						</div>
@@ -204,55 +214,60 @@
 				</div>
 
 				<div id="together" class="tabcontent">
+					<!-- content - 바뀌는 부분 -->
 					<div class="community_content">
 						<div class="in_content">
 							<table class="board">
 								<colgroup>
-									<col style="width: 5%;" />
-									<col style="width: 70%;" />
-									<col style="width: 7%;" />
-									<col style="width: 7%;" />
-									<col style="width: 5%;" />
-									<col style="width: 5%;" />
+									<col style="width: 9%;" />
+									<col style="width: 55%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
+									<col style="width: 9%;" />
 								</colgroup>
 								<thead>
 									<tr>
-										<th scope="col" class="no"><span>번호</span></th>
-										<th scope="col" class="title"><span>제목</span></th>
-										<th scope="col" class="writer"><span>글쓴이</span></th>
-										<th scope="col" class="regdate"><span>등록일</span></th>
-										<th scope="col" class="recommand"><span>추천</span></th>
-										<th scope="col" class="m_no"><span>조회</span></th>
+										<td scope="col" class="no"><span>번호</span></td>
+										<td scope="col" class="title" style="text-align: center;"><span>제목</span></td>
+										<td scope="col" class="writer"><span>글쓴이</span></td>
+										<td scope="col" class="regdate"><span>등록일</span></td>
+										<td scope="col" class="count"><span>조회</span></td>
+										<td scope="col" class="recommand"><span>추천</span></td>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td>공지</td>
+										<td><a href="#" style="text-decoration: none; color:black;">글쓰기 공지사항을 준수해주세요</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">관리자</a></td>
+										<td>2022-10-01</td>
+										<td>200</td>
+										<td>99</td>
 									</tr>
+									<!-- 반복구간(시작) -->
+									<tr>
+										<td>1</td>
+										<td><a href="#" style="text-decoration: none; color:black;">같이가요 게시판</a></td>
+										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
+										<td>2022-10-02</td>
+										<td>10</td>
+										<td>213</td>
+									</tr>
+									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
-							<div class="board">
-								<div class="fr"></div>
-							</div>
-							<div class="board" style="display: block;">
+							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
-									<input type="hidden" name="act" value=""> 
-									<input type="hidden" name="vid" value=""> 
-									<input type="hidden" name="mid" value="ktalk"> 
-									<input type="hidden" name="category" value=""> 
-									<input type="hidden" name="group_srl" value=""> 
-									<select name="search_target">
-										<option value="title_content">전체</option>
-										<option value="title">제목</option>
-										<option value="content">내용</option>
-									</select> 
-									<input type="text" name="search_keyword" value=""> 
-									<input type="submit" value="검색">
+									<div class="addons2" style="display: block;">
+										<select name="search_target" class="sel1">
+											<option value="title_content">전체</option>
+											<option value="title">제목</option>
+											<option value="content">내용</option>
+										</select> 
+										<input type="text" name="search_keyword" class="keyw" value="" > 
+										<input type="submit" class="sub1" value="검색">
+									</div>
 								</form>
 							</div>
 						</div>
