@@ -53,9 +53,9 @@
 	locationVo.setAxisy(axisy);
 
 	
-	String msg="회원가입 실패!", url="register.jsp";
+	String msg="회원가입 실패!", url="join.jsp";
 	try{
-		int cnt = locationService.insertLocation(locationVo); //location테이블에 저장
+		int cnt = locationService.insertLocation(locationVo); //location테이블에 데이터 저장
 		
 		if(cnt>0){
 			int locationNo = locationService.selectByAddress(zipcode, address);

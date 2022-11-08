@@ -42,10 +42,13 @@ CREATE TABLE location  (
 	axisy NUMBER /* y좌표 */
 );
 
+drop table location;
+
 create sequence location_seq
 increment by 1
 start with 1
 nocache;
+
 /* FAQ */
 CREATE TABLE notice  (
 	noticeNo NUMBER primary key, /* 고유번호 */
@@ -156,4 +159,6 @@ start with 1
 nocache;
 
 select * from user_tables;
+select * from user_sequences;
+
 select * from user_sequences;
