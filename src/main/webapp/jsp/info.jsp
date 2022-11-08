@@ -26,7 +26,7 @@
 
 	<div id="Tokyo" class="tabcontent">
 		<h3>예매/결제 내역</h3>
-		<p>Tokyo is the capital of Japan.</p>
+		<p>업데이트 중입니다</p>
 	</div>
 </div>
 <script>
