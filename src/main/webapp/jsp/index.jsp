@@ -3,24 +3,31 @@
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/card.css">
 <style type="text/css">
-
 footer.py-3.my-4 {
-    background: #212529;
+	background: #212529;
 }
 
+a.navbar-brand {
+	font-size: 20pt;
+	font-weight: 800;
+}
 
+.recent h1, .find h1 {
+	letter-spacing: -2px;
+	margin-top: 20px;
+}
 </style>
 <!-- content - 바뀌는 부분 -->
 <div class="container">
 	<main class="container">
-		<div>
-			<h1>Finding Place</h1>
+		<div class="find">
+			<h1>FINDING PLACE</h1>
 		</div>
 		<div class="map">
 			<%@ include file="../api/main.jsp"%>
 		</div>
 		<div class="recent">
-			<h1>Recent Update</h1>
+			<h1>RECENT UPDATE</h1>
 		</div>
 		<div class="row mb-2">
 			<div class="col-md-6">
