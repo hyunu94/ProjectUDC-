@@ -117,6 +117,12 @@
 					}
 
 				});
+		
+		$('#addChBt').click(function(){
+			if($('#sample6_address').val().length>0){
+				alert('확인되었습니다.');
+			}
+		});
 
 	});
 
@@ -252,7 +258,7 @@
 				<input class="input5" type="text" id="sample6_address" name="address" placeholder="주소" /> 
 				<input class="input5" type="text" id="sample6_detailAddress" name="detailAdd" placeholder="상세주소" /><br> 
 				<input
-					class="btn_add2" type="button" value="주소 확인" onclick="addressChk()" />
+					class="btn_add2" type="button" value="주소 확인" id="addChBt" onclick="addressChk()" />
 				<br>
 				<!-- 이거 꼭 눌러야 xy좌표 구함 -->
 				<input type="hidden" id="sample6_extraAddress" placeholder="참고항목" />
