@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../inc/top.jsp"%>
+<%@ include file="../inc/smallTop.jsp"%>
 <!-- content -->
 <title>회원탈퇴</title>
 <link rel="stylesheet" type="text/css" href="../css/common.css" />
@@ -37,4 +37,4 @@
 		</form>
 	</div>
 </div>
-<%@ include file="../inc/bottom.jsp"%>
+<%@ include file="../inc/smallBottom.jsp"%>

@@ -84,16 +84,16 @@ form[role=search] {
 					</li>
 					<li class="nav-item"><a class="nav-link" href="../jsp/cDetail.jsp">공연 정보</a></li>
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="../jsp/tabs.jsp"
+						class="nav-link dropdown-toggle" href="../jsp/nList.jsp"
 						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">전체</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">후기</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">잡담</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/tabs.jsp">같이
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">전체</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">후기</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">잡담</a>
+							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">같이
 									가요</a>
 						</ul></li>
-					<li class="nav-item"><a class="nav-link" href="../jsp/faq.jsp">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link" href="../jsp/FAQ.jsp">FAQ</a></li>
 				</ul>
 			</div>
 			<!-- 검색, 로그인, 회원가입 버튼 -->
