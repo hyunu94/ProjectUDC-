@@ -67,7 +67,8 @@
 						alert('주민번호 뒷자리를 입력하세요.');
 						$('#jumin2').focus();
 						event.preventDefault();
-					} else if ($('#jumin2').val().length != 7) {
+					} else if ($('#jumin2').
+							val().length != 7) {
 						alert('주민번호 뒷자리 7자를 입력하셔야합니다.');
 						$('#jumin2').focus();
 						event.preventDefault();
