@@ -8,6 +8,10 @@
 <style type="text/css">
 footer.py-3.my-4 {
 	background: #212529;
+	margin: 0!important;
+}
+footer.py-3.my-4 p {
+	margin: 0;
 }
 </style>
 <script
