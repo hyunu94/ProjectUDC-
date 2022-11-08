@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<style type="text/css">
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap')
+	;
+</style>
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,10 +50,14 @@ form[role=search] {
 	margin-bottom: 0px;
 }
 
+a.navbar-brand {
+	font-size: 20pt;
+	font-weight: 800;
+}
+
 .session {
 	margin-top: 10px;
 	margin-bottom: 10px;
-	
 }
 </style>
 <!-- Custom styles for this template -->
@@ -82,16 +91,20 @@ form[role=search] {
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="../jsp/index.jsp">Home</a></li>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="../jsp/cDetail.jsp">공연 정보</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="../jsp/cDetail.jsp">공연 정보</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="../jsp/nList.jsp"
 						data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">전체</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">후기</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">잡담</a>
-							<li><a class="dropdown-item" id="dropdown" href="../jsp/nList.jsp">같이
-									가요</a>
+							<li><a class="dropdown-item" id="dropdown"
+								href="../jsp/nList.jsp">전체</a>
+							<li><a class="dropdown-item" id="dropdown"
+								href="../jsp/nList.jsp">후기</a>
+							<li><a class="dropdown-item" id="dropdown"
+								href="../jsp/nList.jsp">잡담</a>
+							<li><a class="dropdown-item" id="dropdown"
+								href="../jsp/nList.jsp">같이 가요</a>
 						</ul></li>
 					<li class="nav-item"><a class="nav-link" href="../jsp/FAQ.jsp">FAQ</a></li>
 				</ul>
@@ -100,9 +113,9 @@ form[role=search] {
 			<div>
 				<form role="search">
 					<button type="button" class="btn btn-outline-light me-2"
-					onclick="location.href='../login/login.jsp'">Login</button>
+						onclick="location.href='../login/login.jsp'">Login</button>
 					<button type="button" class="btn btn-outline-light me-2"
-					 onclick="location.href='../jsp/agreement.jsp'">Sign up</button>
+						onclick="location.href='../jsp/agreement.jsp'">Sign up</button>
 				</form>
 			</div>
 		</div>

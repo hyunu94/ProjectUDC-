@@ -7,11 +7,6 @@ footer.py-3.my-4 {
 	background: #212529;
 }
 
-a.navbar-brand {
-	font-size: 20pt;
-	font-weight: 800;
-}
-
 .recent h1, .find h1 {
 	letter-spacing: -2px;
 	margin-top: 20px;
