@@ -22,7 +22,7 @@
 				<tr>
 					<td><p>홍길동대장</p></td>
 					<td><p>
-							<input type="text">
+							<input type="text" size="10">
 						</p></td>
 				</tr>
 			</tbody>

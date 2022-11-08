@@ -45,10 +45,6 @@
 	text-align: center;
 }
 
-input[type="text"] {
-	width: 80%;
-}
-
 tfoot td {
 	padding: 10px;
 }
