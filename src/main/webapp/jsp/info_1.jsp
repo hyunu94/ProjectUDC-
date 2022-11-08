@@ -92,7 +92,10 @@ table.btn_mold th:nth-child(2) {
 			</colgroup>
 			<tr>
 				<td>
-					<button class="btn default" onclick="">닉네임 변경</button>
+					<button class="btn default"
+					 onclick="window.open('nickchange.jsp',
+							 'window_name',
+							 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=500, height=400, location=no, status=no');">닉네임 변경</button>
 				</td>
 				<td>
 					<button class="btn default">비밀번호 변경</button>
