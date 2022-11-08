@@ -1,3 +1,4 @@
+<%@page import="com.project.concert.model.ConcertService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/cList.css">
@@ -11,6 +12,10 @@
 		}		
 	});
 </script>
+<%
+	ConcertService concertservice = new ConcertService();
+	concertservice.
+%>
 </head>
 <body>
 	<div class="contents">
