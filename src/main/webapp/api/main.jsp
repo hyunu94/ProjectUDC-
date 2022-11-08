@@ -93,8 +93,7 @@
 		<input type="button" id="search" value="검색" onclick="addressChk()">
 	</div>
 		<!-- 부트스트랩 primary 버튼 -->
-	<img src="../img/myloca.png" class="btn btn-lg btn-primary" id="getMyPositionBtn"
-		onclick="getCurrentPosBtn()" />
+	<img src="../img/myloca.png" class="btn btn-lg btn-primary" id="getMyPositionBtn" onclick="getCurrentPosBtn()" />
 </div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f45b93b9d4d2b1538f1f65bd30241ea9&libraries=services"></script>
