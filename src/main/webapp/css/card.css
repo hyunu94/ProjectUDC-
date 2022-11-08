@@ -11,9 +11,7 @@
 	border: none !important;
 }
 /*---------------------*/
-ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
-	margin: auto; /*메뉴 가운데 고정*/
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 /* for debugging, remove/disable when done */
 /* * { outline: 1px dashed }/**/
