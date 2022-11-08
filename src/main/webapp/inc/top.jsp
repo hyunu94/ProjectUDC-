@@ -54,6 +54,7 @@ a.navbar-brand {
 .section {
 	margin-top: 10px;
 	margin-bottom: 10px;
+    min-height: 1200px;
 }
 
 </style>
