@@ -107,7 +107,7 @@ table.btn_mold th:nth-child(2) {
 					<button class="btn default"
 					 onclick="window.open('Out.jsp',
 							 'window_name',
-							 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=815, height=560, location=no, status=no');">회원 탈퇴</button>
+							 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=815, height=360, location=no, status=no');">회원 탈퇴</button>
 				</td>
 			</tr>
 		</table>
