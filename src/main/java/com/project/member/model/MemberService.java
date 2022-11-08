@@ -2,8 +2,6 @@ package com.project.member.model;
 
 import java.sql.SQLException;
 
-import com.project.member.model.MemberVO;
-
 public class MemberService {
 	//아이디 중복확인에서 사용할 상수
 	public static final int EXIST_ID=1; //이미 존재하는 아이디,닉네임
@@ -20,7 +18,7 @@ public class MemberService {
 		dao = new MemberDAO();
 	}
 	
-	public int insertMember(MemberVO vo) throws SQLException { // 회원가입시
+	public int insertMember(MemberVO vo) throws SQLException { //회원가입시
 		return dao.insertMember(vo);
 	}
 	
@@ -31,19 +29,32 @@ public class MemberService {
 	public int duplicateUserid(String userid) throws SQLException { //아이디 중복확인
 		return dao.duplicateUserid(userid);
 	}
-	public int loginCheck(String userid, String pwd) throws SQLException {
-		return dao.loginCheck(userid, pwd);
-	}
-	
-	public MemberVO selectByUserid(String userid) throws SQLException {
-		return dao.selectByUserid(userid);
-	}
-	
-	public int updateMember(MemberVO vo) throws SQLException {
-		return dao.updateMember(vo);
-	}
 	
 	public int duplicateNick(String nick) throws SQLException { //닉네임 중복확인
 		return dao.duplicateNick(nick);
+	}
+	
+	public int loginCheck(String userid, String pwd) throws SQLException { //로그인 체크
+		return dao.loginCheck(userid, pwd);
+	}
+	
+	public MemberVO selectByUserid(String userid) throws SQLException { //아이디로 사용자정보 찾기
+		return dao.selectByUserid(userid);
+	}
+	
+	public boolean selectKindNo(int memberNo) throws SQLException { //관리자 여부 확인
+	     return dao.selectKindNo(memberNo);
+	}
+	
+	public int updateNick(int MemberNo , String nick) throws SQLException { //닉네임 변경
+		return dao.updateNick(MemberNo, nick);
+	}
+	
+	public int updatePwd(int MemberNo , String pwd) throws SQLException { //비밀번호 변경
+		return dao.updatePwd(MemberNo, pwd);
+	}
+	
+	public int updateDel(int MemberNo) throws SQLException { //회원 탈퇴
+		return dao.updateDel(MemberNo);
 	}
 }

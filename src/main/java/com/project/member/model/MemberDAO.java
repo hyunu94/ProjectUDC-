@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-
-import com.project.member.model.MemberService;
-import com.project.member.model.MemberVO;
 import com.project.db.ConnectionPoolMgr2;
 
 public class MemberDAO {
@@ -17,7 +13,7 @@ public class MemberDAO {
 		pool = new ConnectionPoolMgr2();
 	}
 	
-	public int insertMember(MemberVO vo) throws SQLException { //일반회원 회원가입시
+	public int insertMember(MemberVO vo) throws SQLException { //회원가입시
 		Connection con = null;
 		PreparedStatement ps = null;
 		int cnt = 0;
@@ -104,7 +100,7 @@ public class MemberDAO {
 		}
 	}
 	
-	public int duplicateNick(String nick) throws SQLException {
+	public int duplicateNick(String nick) throws SQLException { //닉네임 중복확인
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -136,7 +132,7 @@ public class MemberDAO {
 		}
 	}
 	
-	public int loginCheck(String userid, String pwd) throws SQLException {
+	public int loginCheck(String userid, String pwd) throws SQLException { //로그인 비밀번호 체크
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -146,7 +142,7 @@ public class MemberDAO {
 			con=pool.getConnection();
 			//3
 			String sql="select pwd from member where userid=?"
-					+ " and outdate is null";
+					+ " and delcheck = 'N'";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, userid);
 			
@@ -175,7 +171,7 @@ public class MemberDAO {
 		}
 	}
 	
-	public MemberVO selectByUserid(String userid) throws SQLException {
+	public MemberVO selectByUserid(String userid) throws SQLException { //아이디로 사용자 정보찾기
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -221,27 +217,112 @@ public class MemberDAO {
 		
 	}
 	
-	public int updateMember(MemberVO vo) throws SQLException {
-		Connection con=null;
-		PreparedStatement ps=null;
+	public boolean selectKindNo(int memberNo) throws SQLException { //관리자 여부 확인
+	      Connection con=null;
+	      PreparedStatement ps=null;
+	      ResultSet rs = null;
+	      int kindNo = 0;
+	      boolean bool;
+	      
+	      try {
+	         con=pool.getConnection();
+	         
+	         String sql="select kindNo from member where memberNo = ?";
+	         ps=con.prepareStatement(sql);
+	         ps.setInt(1,memberNo);
+	         rs = ps.executeQuery();
+	         
+	         if(rs.next()){
+	            kindNo = rs.getInt(1);
+	         }
+
+	         if(kindNo == 1){
+	            bool = true;
+	         }else{
+	            bool = false;
+	         }
+	         
+	         System.out.println("관리자 여부 bool = " + bool);
+	         return bool;
+	      }finally {
+	         pool.dbClose(rs,ps, con);
+	      }
+	   }
+	
+	public int updateNick(int MemberNo , String nick) throws SQLException { //닉네임 변경
+		Connection con = null;
+		PreparedStatement ps= null;
+		int cnt = 0 ;
 		
 		try {
-			con=pool.getConnection();
+			con = pool.getConnection();
 			
-			String sql="update member\r\n"
-					+ "set name=?, nick=?, \r\n"
-					+ " mobile=?, locationNo=?"
-					+ "where userid=?";
-			ps=con.prepareStatement(sql);
-			ps.setString(1, vo.getName());
-			ps.setString(2, vo.getNick());
-			ps.setString(3, vo.getMobile());
-			ps.setInt(4, vo.getLocationNo());
-			ps.setString(5, vo.getUserid());
+			String sql = "update member\r\n"
+					+ "set nick = ?\r\n"
+					+ "where memberNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, nick);
+			ps.setInt(2, MemberNo);
 			
-			int cnt = ps.executeUpdate();
+			cnt = ps.executeUpdate();
 			
-			System.out.println("업뎃 결과 cnt="+cnt+", 매개변수 vo="+vo);
+			if(cnt>0) {
+				System.out.println("닉네임 변경 번호 : " + MemberNo + ",변경 후 nick : " + nick);
+			}
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
+	
+	public int updatePwd(int MemberNo , String pwd) throws SQLException { //비밀번호 변경
+		Connection con = null;
+		PreparedStatement ps = null;
+		int cnt = 0;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "update member\r\n"
+					+ "set pwd = ?\r\n"
+					+ "where memberNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, pwd);
+			ps.setInt(2, MemberNo);
+			
+			cnt = ps.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("비밀번호 변경 번호 : " + MemberNo + ",변경 후 pwd : " + pwd);
+			}
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
+	
+	public int updateDel(int MemberNo) throws SQLException { //회원 탈퇴
+		Connection con = null;
+		PreparedStatement ps = null;
+		int cnt = 0;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "update member\r\n"
+					+ "set delcheck = 'Y'\r\n"
+					+ "where memberNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, MemberNo);
+			
+			cnt = ps.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("회원탈퇴한 번호 : " + MemberNo);
+			}
+			
 			return cnt;
 		}finally {
 			pool.dbClose(ps, con);
