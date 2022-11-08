@@ -15,7 +15,7 @@
 		right: 10px;
 		bottom: 10px;
 		z-index: 10;
-		width: 20px;
+		width: 30px;
 		border: 1px solid #cccccc;
 		background-color: white;
 		padding: 5px;

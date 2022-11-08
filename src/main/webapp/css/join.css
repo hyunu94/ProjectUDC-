@@ -32,6 +32,22 @@
 	vertical-align: middle;
 	border: 1px solid #9d9d9d;
 	border-radius: 5px 5px 5px 5px;
+	font-size:10pt;
+}
+.chkId{
+	width: 120px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 20px;
+	margin: 0px;
+	margin-bottom: 5px;
+	margin-left:10px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius: 5px 5px 5px 5px;
+	font-size:10pt;
+	font-weight: 300;
+	cursor: pointer;
 }
 
 .input2 {
@@ -43,6 +59,7 @@
 	vertical-align: middle;
 	border: 1px solid #9d9d9d;
 	border-radius: 5px 5px 5px 5px;
+	font-size:10pt;
 }
 
 .input4 {
@@ -58,7 +75,7 @@
 }
 
 .input5 {
-	width: 600px;
+	width: 620px;
 	height: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -68,7 +85,33 @@
 	border: 1px solid #9d9d9d;
 	border-radius: 5px 5px 5px 5px;
 }
-
+.input6 {
+	width: 480px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius: 5px 5px 5px 5px;
+	display: inline-block;
+}
+.chkNick{
+	width: 120px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 20px;
+	margin: 0px;
+	margin-bottom: 5px;
+	margin-left:10px;
+	vertical-align: middle;
+	border: 1px solid #9d9d9d;
+	border-radius: 5px 5px 5px 5px;
+	font-size:10pt;
+	font-weight: 300;
+	cursor: pointer;
+	display: inline-block;
+}
 .sel1 {
 	width: 622px;
 	height: 40px;
@@ -181,6 +224,4 @@
 
 .btn_chkId {
 	grid-column: 2;
-	padding-top: 5px;
-	padding-left: 6px;
 }

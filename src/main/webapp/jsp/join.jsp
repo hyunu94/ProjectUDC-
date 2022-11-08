@@ -213,9 +213,7 @@
 				<p class="p1">닉네임</p>
 			</div>
 			<div class="second_regi">
-				<input class="input1" id="nick" type="text" name="nick" placeholder="닉네임 중복확인을 누르세요">
-			</div>
-			<div class="btn_chkNick">
+				<input class="input6" id="nick" type="text" name="nick" placeholder="닉네임 중복확인을 누르세요">
 				<input class="chkNick" id="btnChkNick" type="button" onclick="" value="닉네임 중복 확인" />
 			</div>
 			
