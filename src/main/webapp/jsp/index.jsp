@@ -4,12 +4,23 @@
 <link rel="stylesheet" href="../css/card.css">
 <style type="text/css">
 
+footer.py-3.my-4 {
+    background: #212529;
+}
+
+
 </style>
 <!-- content - 바뀌는 부분 -->
 <div class="container">
 	<main class="container">
+		<div>
+			<h1>Finding Place</h1>
+		</div>
 		<div class="map">
 			<%@ include file="../api/main.jsp"%>
+		</div>
+		<div class="recent">
+			<h1>Recent Update</h1>
 		</div>
 		<div class="row mb-2">
 			<div class="col-md-6">

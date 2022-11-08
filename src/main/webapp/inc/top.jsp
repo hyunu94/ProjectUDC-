@@ -46,8 +46,8 @@ form[role=search] {
 }
 
 .session {
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	
 }
 </style>

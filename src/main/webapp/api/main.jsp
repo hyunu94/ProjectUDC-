@@ -60,7 +60,7 @@
 <body>
 
 <!-- ============================== -->
-<div id="map" style="width:1270px;height:500px;">
+<div id="map" style="width:auto;height:500px;">
 	<div class="divSearch">
 		<select id="borough">
 			<option value="동작구">동작구</option>
