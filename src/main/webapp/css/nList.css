@@ -8,23 +8,12 @@
 .contents {
 	max-width: 1000px;
 	margin: 0 auto;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 10pt;
 }
 
 /* Style tab links */
-.tablink {
-	background-color: #55555580;
-	color: white;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	font-size: 17px;
-}
 
-.tablink:hover {
-	background-color: #777;
-}
 .tab {
 	overflow: hidden;
 	/* border: 1px solid #ccc; */
@@ -43,7 +32,15 @@
 	padding: 14px 16px;
 	transition: 0.3s;
 }
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #eeeeee;
+}
 
+/* Create an active/current tablink class */
+.tab button:active {
+	background-color: #eeeeee;
+}
 .grid-container {
 	display: grid;
 	grid-template-columns: 15%;
@@ -62,10 +59,13 @@ div.grid-item1 {
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
-	color: white;
 	display: none;
-	padding: 25px 20px;
-	height: 100%;
+	width: 1000px;
+	padding: 20px 20px;
+	border: 1px solid #eeeeee;
+	margin-top: 10px;
+/* 	margin-left: auto;
+	margin-right: auto; */
 }
 
 #All, #quest, #Review, #Chat, #together {
@@ -77,29 +77,57 @@ div.grid-item1 {
 	font-weight: bold;
 	color: black;
 }
-
-.board {
+.board{
 	width: 100%;
 }
-
-.board th {
-	color: gray;
+.addons {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.addons *:not(form, div){
+	margin:0px;
+	padding:0px;
+	height: 30px;
+	border: 1px solid #9d9d9d;
+	border-radius: 5px 5px 5px 5px;
+	display:inline-block;
+	font-size: 10pt;
+	font-weight: 300;
+}
+.addons2{
+	margin-left:250px;
+}
+.sel1{
+	width:80px;
+}
+.keyw{
+	width:300px;
+}
+.sub1{
+	width:80px;
+}
+.sub1:hover {
+	background-color: #eeeeee;
 }
 
-.board tr {
-	border-bottom: 1px solid lightgray;
-
+.sub1:active {
+	transform: translateY(2px);
 }
 
-input[type="submit"] {
-	background: #ffffff;
-	color: #212529;
-	border-radius: 0.5em;
+td {
+	height: 40px;
+	border-bottom: 1px solid #eeeeee;
+}
+/* td:not(:first-child, :nth-child(2)){
+	text-align: right;
+} */
+td:not(:nth-child(2)){
+	text-align: center;
 }
 
-input[type="submit"]:hover {
-	background: #212529;
-	color: white;
-	border-radius: 0.5em;
-	transition: 0.5s;
+tbody tr:first-child td{
+	background-color: #eeeeee;
 }
+
