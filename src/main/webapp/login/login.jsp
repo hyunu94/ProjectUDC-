@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/login.css">
 <%
@@ -18,32 +17,28 @@
 
 </style>
 <div class="body">
-	<h2>Login</h2>
-
+	<h2>&nbsp;Login</h2>
 	<form action="frmLogin" method="post" action="login_ok.jsp">
 		<div class="imgcontainer">
 			<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
 				fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
+				<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+				<path fill-rule="evenodd"
 					d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
+			</svg>
 		</div>
 		<div class="container">
-			<label for="userid"><b>아이디</b></label>
-			<input type="text" placeholder="Enter Username"
-			 name="userid" id="userid" value="<%=ck_value%>" required> 
-			 <label for="psw"><b>비밀번호</b></label>
-			 <input type="password" placeholder="Enter Password"
-			  name="pwd"  id="pwd" required>
+			<label for="userid">아이디</label>
+			<input type="text" placeholder="Enter Username" name="userid" id="userid" value="<%=ck_value%>" required> 
+			<label for="psw">비밀번호</label>
+			<input type="password" placeholder="Enter Password" name="pwd"  id="pwd" required>
 
 			<button type="submit">Login</button>
-			<label> 
-			<input type="checkbox" name="chkSave" id="chkSave"
-			>
+			<label></label>
+			<input type="checkbox" name="chkSave" id="chkSave">
 			<label for="chkSave">아이디 저장하기</label>
 		</div>
-			<span class="psw">Forgot <a href="#">password?</a></span>
+			<span class="psw">Forgot <a href="#" style="text-decoration: none;">password?</a></span>
 	</form>
 </div>
 
