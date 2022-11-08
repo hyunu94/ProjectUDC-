@@ -76,7 +76,7 @@ public class LocationDAO {
 			con=pool.getConnection();
 			
 			String sql="insert into location(locationno, zipcode, address, addressdetail,axisx,axisy)\r\n"
-					+ "values(70005,?,?,?,?,?)";
+					+ "values(70006,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, vo.getZipcode());
 			ps.setString(2, vo.getAddress());
