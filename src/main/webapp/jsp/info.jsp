@@ -14,12 +14,14 @@
 	MemberService service = new MemberService();
 	MemberVO memberVo = new MemberVO();
 	
+	
 	try {
 		memberVo = service.selectByUserid(userid);
 		
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
+
 	
 	// 결과처리
 

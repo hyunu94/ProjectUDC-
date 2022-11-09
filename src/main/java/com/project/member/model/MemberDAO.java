@@ -355,4 +355,31 @@ public class MemberDAO {
 		}
 	}
 	
+	public String findAdd(int locationNo) throws SQLException {
+		Connection con = null;
+		PreparedStatement ps =null;
+		ResultSet rs = null;
+		String address = "";
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql = "select address from location\n"
+					+ "where locationNo\n"
+					+ "= (select locationNo from member where memberNo = ?)";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, locationNo);
+			
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				address = rs.getString(1);
+				System.out.println("위치고유번호로 조회 결과 address="+address+", 매개변수 locationNo="+locationNo);
+			}
+			return address;
+		} finally {
+			pool.dbClose(rs, ps, con);
+		}
+		
+	}
+	
 }

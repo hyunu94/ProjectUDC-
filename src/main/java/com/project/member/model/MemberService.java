@@ -58,7 +58,11 @@ public class MemberService {
 		return dao.updateDel(MemberNo);
 	}
 	
-	public String findPwd(int MemberNo ,String userid) throws SQLException {
+	public String findPwd(int MemberNo ,String userid) throws SQLException { //회원번호와 아이디로 비밀번호 찾기
 		return dao.findPwd(MemberNo, userid);
+	}
+	
+	public String findAdd(int locationNo) throws SQLException { //위치고유번호로 주소 찾기
+		return dao.findAdd(locationNo);
 	}
 }

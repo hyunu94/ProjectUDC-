@@ -1,5 +1,31 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.member.model.MemberVO"%>
+<%@page import="com.project.member.model.MemberService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	request.setCharacterEncoding("UTF-8");
+
+	String userid= (String)request.getAttribute("userid");
+	
+	MemberService service = new MemberService();
+	MemberVO memberVo = new MemberVO();
+	int locationNo = 0;
+
+	try {
+		memberVo = service.selectByUserid(userid);//유저 아이디로 내 회원정보 찾기
+		locationNo = memberVo.getLocationNo(); //내 위치 고유 번호 읽어오기
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+		String address = service.findAdd(locationNo);//위치고유번호로 주소 찾기
+		
+			
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
+%>
 <style type="text/css">
 table.btn_mold {
 	border: none;
@@ -55,23 +81,23 @@ table.btn_mold th:nth-child(2) {
 			</tr>
 			<tr>
 				<td>아이디</td>
-				<td id="userid">honggildong</td>
+				<td id="userid"><%=userid %></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td id="username">홍길동</td>
+				<td id="username"><%=memberVo.getName() %></td>
 			</tr>
 			<tr>
 				<td>닉네임</td>
-				<td id="nickname">전우치</td>
+				<td id="nickname"><%=memberVo.getNick() %></td>
 			</tr>
 			<tr>
 				<td>전화번호</td>
-				<td id="tel">010-1234-5678</td>
+				<td id="tel"><%=memberVo.getMobile() %></td>
 			</tr>
 			<tr>
 				<td>주소</td>
-				<td id="address">서울특별시 서대문구 신촌로 141 위고인빌딩 1층 이젠아카데미 컴퓨터학원 </td>
+				<td id="address"><%=address %></td>
 			</tr>
 			<tr>
 				<td>성별</td>
@@ -79,7 +105,7 @@ table.btn_mold th:nth-child(2) {
 			</tr>
 			<tr>
 				<td>가입일</td>
-				<td id="joindate">2022-10-01</td>
+				<td id="joindate"><%=sdf.format(memberVo.getName()) %></td>
 			</tr>
 		</table>
 	</div>
