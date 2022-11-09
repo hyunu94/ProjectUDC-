@@ -1,3 +1,5 @@
+<%@page import="com.project.member.model.MemberVO"%>
+<%@page import="com.project.member.model.MemberService"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.sql.SQLException"%>
@@ -18,15 +20,31 @@
 	});
 </script>
 <% 
+	String cl_userid=(String)session.getAttribute("userid");
+	boolean cl_login = false;
+	
+	if(cl_userid!=null && !cl_userid.isEmpty()){ //세션에 값이 있으면 로그인된 상태
+		cl_login = true;
+	}
+	
+	MemberService memberService = new MemberService();
+
 	ConcertService concertservice = new ConcertService();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	List<ConcertListVO> list = null;
+	MemberVO memberVo=null;
 	try{
 		list = concertservice.selectAll();	
+		
+		if(cl_userid!=null && !cl_userid.isEmpty()){
+			memberVo=memberService.selectByUserid(cl_userid);
+		}
+		
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
+	
 %>
 </head>
 <body>
@@ -82,7 +100,12 @@
 								</tbody>
 							</table>
 							<div class="btn_write" style="display: block;">
-								<input type="button" class="sub2" value="글쓰기">
+							<%if(cl_login){ 
+								if(memberVo.getKindNo()==2){%>
+								<input type="button" class="sub2" value="글쓰기" onclick="location.href='cWrite.jsp'">
+							<% }%>	
+							
+							<%} %>
 							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">
