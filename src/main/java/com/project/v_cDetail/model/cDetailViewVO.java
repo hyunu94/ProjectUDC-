@@ -18,7 +18,10 @@ public class cDetailViewVO {
 		super();
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	public cDetailViewVO(int concertNo, String artist, String title, String content, String startdate, String time,
 			int price, String thumbimg, String address, String locationName, String mobile) {
 		super();
@@ -68,12 +71,18 @@ public class cDetailViewVO {
 		this.content = content;
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	public String getStartdate() {
 		return startdate;
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	public void setStartdate(String startdate) {
 		this.startdate = startdate;
 	}
