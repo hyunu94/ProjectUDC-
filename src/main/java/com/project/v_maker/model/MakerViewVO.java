@@ -1,8 +1,8 @@
 package com.project.v_maker.model;
 
-import java.sql.Timestamp;
 
 public class MakerViewVO {
+	private int concertno; //공연번호
 	private String artist; //공연자
 	private String startdate; //공연시작일
 	private String locationname; /* 장소이름 */
@@ -13,21 +13,11 @@ public class MakerViewVO {
 	public MakerViewVO() {
 		super();
 	}
-
-
-	public String getStartdate() {
-		return startdate;
-	}
-
-
-	public void setStartdate(String startdate) {
-		this.startdate = startdate;
-	}
-
-
-	public MakerViewVO(String artist, String startdate, String locationname, double axisx, double axisy,
+	
+	public MakerViewVO(int concertno, String artist, String startdate, String locationname, double axisx, double axisy,
 			String thumbimg) {
 		super();
+		this.concertno = concertno;
 		this.artist = artist;
 		this.startdate = startdate;
 		this.locationname = locationname;
@@ -36,6 +26,21 @@ public class MakerViewVO {
 		this.thumbimg = thumbimg;
 	}
 
+	public String getStartdate() {
+		return startdate;
+	}
+
+	public int getConcertno() {
+		return concertno;
+	}
+
+	public void setConcertno(int concertno) {
+		this.concertno = concertno;
+	}
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
 
 	public String getArtist() {
 		return artist;
@@ -77,11 +82,16 @@ public class MakerViewVO {
 		this.thumbimg = thumbimg;
 	}
 
+
+
+
 	@Override
 	public String toString() {
-		return "MakerViewVO [artist=" + artist + ", startdate=" + startdate + ", locationname=" + locationname
-				+ ", axisx=" + axisx + ", axisy=" + axisy + ", thumbimg=" + thumbimg + "]";
+		return "MakerViewVO [concertno=" + concertno + ", artist=" + artist + ", startdate=" + startdate
+				+ ", locationname=" + locationname + ", axisx=" + axisx + ", axisy=" + axisy + ", thumbimg=" + thumbimg
+				+ "]";
 	}
+
 	
 	
 	

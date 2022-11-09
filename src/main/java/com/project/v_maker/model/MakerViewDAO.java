@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class MakerViewDAO {
 			
 			rs=ps.executeQuery();
 			while(rs.next()) {
+				int concertno=rs.getInt("concertno");
 				String artist=rs.getString("artist");
 				String startdate=rs.getString("startdate");
 				String locationname=rs.getString("locationname");
@@ -39,7 +39,7 @@ public class MakerViewDAO {
 				double axisy=rs.getDouble("axisy");
 				String thumbimg=rs.getString("thumbimg");
 				
-				MakerViewVO vo = new MakerViewVO(artist, startdate, locationname, axisx, axisy, thumbimg);
+				MakerViewVO vo = new MakerViewVO(concertno, artist, startdate, locationname, axisx, axisy, thumbimg);
 				list.add(vo);
 				
 			}
