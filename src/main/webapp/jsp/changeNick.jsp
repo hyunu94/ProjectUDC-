@@ -1,3 +1,4 @@
+<%@page import="com.project.member.model.MemberVO"%>
 <%@page import="com.project.member.model.MemberService"%>
 <%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
@@ -9,13 +10,16 @@
 <%
 request.setCharacterEncoding("utf-8");
 
+String userid = (String)session.getAttribute("userid");
 String MemberNo = request.getParameter("MemberNo");
-String nick = request.getParameter("nick");
+
+MemberVO vo = memberService.selectByUserid(userid);
+
 
 int result = 0;
-if (nick != null && !nick.isEmpty()) {
+if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
 	try {
-		result = memberService.duplicateNick(nick);
+		result = memberService.duplicateNick(vo.getNick());
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
@@ -37,7 +41,7 @@ if (nick != null && !nick.isEmpty()) {
       });
       
    $('#btUse').click(function(){
-         $('input[name=nick]').find('#nick').val("<%=nick%>");
+	   $('input[name=nick]').find('#nick').val("<%=vo.getNick()%>");
          $(opener.document).find("#chNick").val("Y");
 			self.close();
 		});
@@ -58,7 +62,7 @@ if (nick != null && !nick.isEmpty()) {
 		</div>
 		<div class="nick_mold">
 			<table class="nick_tb">
-				<form name="frmNick" method="post" action="changeNick.jsp">
+				<form name="frmNick" method="post" action="changeNick.jsp?nick=<%=vo.getNick()%>">
 					<colgroup>
 						<col style="width: 50%;" />
 						<col style="width: 50%;" />
@@ -71,10 +75,10 @@ if (nick != null && !nick.isEmpty()) {
 					</thead>
 					<tbody>
 						<tr>
-							<td><span>현재 사용자 닉네임</span></td>
+							<td><span><%=vo.getNick()%></span></td>
 							<td>
 								<input type="text" name="nick"
-								id="nick" size="15">
+								value="<%=vo.getNick() %>" id="nick" size="15">
 								<input type="submit" value="중복확인" id="nickck">
 								<%
 									if (result == MemberService.EXIST_ID) {
