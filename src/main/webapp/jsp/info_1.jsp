@@ -21,7 +21,6 @@
 		e.printStackTrace();
 	}
 		String address = service.findAdd(locationNo);//위치고유번호로 주소 찾기
-		
 			
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
@@ -98,10 +97,6 @@ table.btn_mold th:nth-child(2) {
 			<tr>
 				<td>주소</td>
 				<td id="address"><%=address %></td>
-			</tr>
-			<tr>
-				<td>성별</td>
-				<td id="gender">M</td>
 			</tr>
 			<tr>
 				<td>가입일</td>
