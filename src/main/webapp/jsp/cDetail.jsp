@@ -117,7 +117,28 @@
 		<div class=div3> 
 				<input type="button" value="예매하기" id="sub1">
 		</div>
-		
+		<div class="div_btns" >
+			<table style="width:800px; margin-bottom: 40px;">
+				<colgroup>
+					<col style="width: 50%;" />
+					<col style="width: 50%;" />
+				</colgroup>
+				<tr>
+					<td style="padding-left:0px; border: none;">
+						<div>
+							<input type="button" class="btns" value="목록">
+							<input type="button" class="btns" value="수정">
+							<input type="button" class="btns" value="삭제">
+						</div>
+					</td>
+					<td style="padding-right:0px; border: none;">
+						<div>
+							<input type="button" class="btns" value="글쓰기">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
 <%@ include file="../inc/bottom.jsp"%>

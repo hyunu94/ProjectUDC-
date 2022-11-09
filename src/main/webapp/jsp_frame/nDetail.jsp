@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>일반게시판 > 내용보기</title>
-<link rel="stylesheet" type="text/css" href="../css/detail.css" />
+<link rel="stylesheet" type="text/css" href="../css/ndetail.css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script type="text/javascript" src="../smartEdit/js/service/HuskyEZCreator.js" charset="utf-8"></script>  
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
