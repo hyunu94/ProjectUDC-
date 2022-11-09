@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size:10pt;
+		font-weight: 300;
+	}
+
+	div{
+		display: block;
+		width: 330px;
+		height:290px; 
+		border:2px solid #c0c0c0;
+	}
+	img{
+		width:320px;
+		margin-top:5px;
+		margin-left:5px;
+		margin-right:5px;
+	}
+	table{
+		width:320px;
+		margin-left:5px;
+		margin-right:5px;
+		margin-bottom:5px;
+		border-collapse: collapse;
+	}
+	td{
+		border-bottom:1px solid #eeeeee;
+	}
+	td:first-child {
+		padding-left:5px;
+	}
+	td:last-child {
+		padding-right:5px;
+		text-align: right;
+	}
+	tr:hover{
+		background-color: #eeeeee;
+	}
+	.btn{
+		width: 320px;	
+		height: 30px;
+		vertical-align: middle;
+		border: 1px solid #eeeeee;
+		border-radius:5px 5px 5px 5px;
+		margin-left:5px;
+		margin-right:5px;
+		font-weight: 400;
+	}
+	.btn:hover{
+		background-color: #c0c0c0;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img src="../img/11.jpg" />
+		<table>
+			<colgroup>
+				<col style="width: 50%;" />
+				<col style="width: 50%;" />
+			</colgroup>
+			<tr>
+				<td>WHO?</td>
+				<td>WHITNEY HOUSTON</td>
+			</tr>
+			<tr>
+				<td>WHEN?</td>
+				<td>2022-12-23</td>
+			</tr>
+			<tr>
+				<td>WHERE?</td>
+				<td>CLUBEZEN 홍대</td>
+			</tr>
+		</table>
+		<input type="button" class="btn" value="공연 상세보기" onclick=""/>
+	</div>
+</body>
+</html>
