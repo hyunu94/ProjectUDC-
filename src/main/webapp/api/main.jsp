@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.project.v_maker.model.MakerViewVO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.sql.SQLException"%>
@@ -7,7 +8,7 @@
 <jsp:useBean id="makerViewVO" class="com.project.v_maker.model.MakerViewVO"></jsp:useBean>
 <%
 
-		List<MakerViewVO> list = null;
+		List<MakerViewVO> list = new ArrayList<>();
 	try{
 		list = makerViewService.selectAll();	
 		
@@ -193,7 +194,7 @@
 			 
 		%>
 		    {
-		        content: '<div class="div_map"><img class="img_map" src="../ConcertImg_upload/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 180px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>', 
+		        content: '<div class="div_map"><img class="img_map" src="../ConcertImg_upload/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 180px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><form method="post" action="cDetail.jsp?concertNo=<%=makerViewVO.getConcertno()%>"><input type="submit" class="btn_map" value="공연 상세보기" /></form></div>', 
 		        latlng: new kakao.maps.LatLng(<%=makerViewVO.getAxisx()%>, <%=makerViewVO.getAxisy()%>)
 		    }<%if(i<list.size()-1){%>
 		    	,
