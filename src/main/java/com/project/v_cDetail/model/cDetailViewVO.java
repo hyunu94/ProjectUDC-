@@ -1,13 +1,12 @@
 package com.project.v_cDetail.model;
 
-import java.sql.Timestamp;
 
 public class cDetailViewVO {
 	private int concertNo; 
 	private String artist; 
 	private String title; 
 	private String content; 
-	private Timestamp startdate; 
+	private String startdate; 
 	private String time; 
 	private int price;
 	private String thumbimg;
@@ -19,8 +18,9 @@ public class cDetailViewVO {
 		super();
 	}
 	
-	public cDetailViewVO(int concertNo, String artist, String title, String content, Timestamp startdate, String time,
-			int price, String thumbimg, String address,  String locationName, String mobile) {
+
+	public cDetailViewVO(int concertNo, String artist, String title, String content, String startdate, String time,
+			int price, String thumbimg, String address, String locationName, String mobile) {
 		super();
 		this.concertNo = concertNo;
 		this.artist = artist;
@@ -34,6 +34,7 @@ public class cDetailViewVO {
 		this.locationName = locationName;
 		this.mobile = mobile;
 	}
+
 
 	public int getConcertNo() {
 		return concertNo;
@@ -67,13 +68,16 @@ public class cDetailViewVO {
 		this.content = content;
 	}
 
-	public Timestamp getStartdate() {
+
+	public String getStartdate() {
 		return startdate;
 	}
 
-	public void setStartdate(Timestamp startdate) {
+
+	public void setStartdate(String startdate) {
 		this.startdate = startdate;
 	}
+
 
 	public String getTime() {
 		return time;
