@@ -246,7 +246,7 @@ public class ConcertDAO {
 				String artist = rs.getString(2);
 				String title = rs.getString(3);
 				String content = rs.getString(4);
-				Timestamp startdate = rs.getTimestamp(5);
+				String startdate = rs.getString(5);
 				String time = rs.getString(6);
 				int price = rs.getInt(7);
 				String thumbimg = rs.getString(8);
