@@ -38,16 +38,19 @@ if ( nick != null && !nick.isEmpty()) {
             alert('닉네임은 영문, 한글만 가능합니다.');
             $('#nick').focus();
             event.preventDefault();
-         }
+         } 
       });
       
    $('#btUse').click(function(){
-	   $('input[name=nick]').val("<%=nick%>");
-         $('input[name=nick]').find("#chNick").val("Y");
+		$('input[name=nick]').find("#nick").val("<%=nick%>");
 			self.close();
 		});
-
+   <%-- 
+	$('#nickck').submit(function() {//중복확인을 눌렀을 때 값을 input[name=nick]에 입력
+		$('input[name=nick]').val("<%=nick%>");
 	});
+	 --%>
+   });
 
 	//닉네임 영문, 한글만 가능
 	function validate_nick(nick) {
@@ -78,12 +81,7 @@ if ( nick != null && !nick.isEmpty()) {
 						<tr>
 							<td><span><%=curNick %></span></td>
 							<td>
-								<input type="text" name="nick"
-								value="
-								<%=if(nick==null || nick.isEmpty()){%>
-									
-								<%} %>
-								" id="nick" size="15">
+								<input type="text" name="nick" id="nick" size="15" value="<%=curNick %>">
 								<input type="hidden" value="<%=memberVo.getMemberNo() %>"/>
 								<input type="submit" value="중복확인" id="nickck">
 								<%
