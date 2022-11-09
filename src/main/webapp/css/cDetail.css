@@ -63,7 +63,7 @@ td:last-child {
 	padding-right:20px;
 	border-right: 1px solid #eeeeee;
 }
-tr:hover{
+tr:not(:last-child):hover{
 	background-color: #dedede;
 }
 #sub1{
@@ -74,7 +74,7 @@ tr:hover{
 	padding-right: 20px;
 	margin: 0px;
 	margin-top: 10px;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 	vertical-align: middle;
 	border: 1px solid #eeeeee;
 	border-radius:5px 5px 5px 5px;
@@ -84,5 +84,20 @@ tr:hover{
 	transform: translateY(2px);
 }
 #sub1:hover{
+	background-color: #dedede;
+}
+.btns{
+	width: 60px;
+	height: 30px;
+	margin: 0px;
+	vertical-align: middle;
+	border: 1px solid #eeeeee;
+	border-radius:5px 5px 5px 5px;
+	font-weight: 400;
+}
+.btns:active {
+	transform: translateY(2px);
+}
+.btns:hover{
 	background-color: #dedede;
 }

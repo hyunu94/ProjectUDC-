@@ -132,6 +132,7 @@
 		<div class=div3> 
 				<input type="button" value="예매하기" id="sub1">
 		</div>
+		
 	</div>
 </div>
 <%@ include file="../inc/bottom.jsp"%>
