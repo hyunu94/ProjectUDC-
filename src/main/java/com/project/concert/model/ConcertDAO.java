@@ -254,9 +254,8 @@ public class ConcertDAO {
 				int price = rs.getInt(7);
 				String thumbimg = rs.getString(8);
 				String address = rs.getString(9);
-				String addressDetail = rs.getString(10);
-				String locationname = rs.getString(11);
-				String mobile = rs.getString(12);
+				String locationname = rs.getString(10);
+				String mobile = rs.getString(11);
 				
 				vo.setConcertNo(concertno);
 				vo.setArtist(artist);
@@ -267,7 +266,6 @@ public class ConcertDAO {
 				vo.setPrice(price);
 				vo.setThumbimg(thumbimg);
 				vo.setAddress(address);
-				vo.setAddressDetail(addressDetail);
 				vo.setLocationName(locationname);
 				vo.setMobile(mobile);
 			}

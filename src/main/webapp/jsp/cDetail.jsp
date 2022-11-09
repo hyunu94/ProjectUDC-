@@ -11,21 +11,6 @@
 	ConcertService concertservice = new ConcertService();
 	cDetailViewVO vo = concertservice.selectbyNo(Integer.parseInt(concertNo));
 	
-	String addressDetail = "";
-	
-	if(vo.getAddressDetail()!=null && !vo.getAddressDetail().isEmpty()){
-		addressDetail = vo.getAddressDetail();		
-	}else{
-		addressDetail = "";
-	}
-	
-	String locationame = "";
-	
-	if(vo.getLocationName()!=null && !vo.getLocationName().isEmpty()){
-		locationame = vo.getLocationName();		
-	}else{
-		locationame = "미정";
-	}
 %>
 <div class="body">
 	<div class="div0">
@@ -108,7 +93,7 @@
 						<span class="question">공연 장소</span>
 					</td>
 					<td>
-						<span class="answer" id="location"><%=locationame%></span>
+						<span class="answer" id="location"><%=vo.getLocationName()%></span>
 					</td>
 				</tr>			
 				<tr>
@@ -116,7 +101,7 @@
 						<span class="question">주소</span>
 					</td>
 					<td>
-						<span class="answer" id="address"><%= vo.getAddress() + addressDetail %><a href="#" style="text-decoration: none;">&nbsp;[위치보기]</a> </span>
+						<span class="answer" id="address"><%= vo.getAddress() %><a href="#" style="text-decoration: none;">&nbsp;[위치보기]</a> </span>
 					</td>
 				</tr>			
 				<tr>

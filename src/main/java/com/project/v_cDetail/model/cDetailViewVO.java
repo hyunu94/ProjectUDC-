@@ -12,7 +12,6 @@ public class cDetailViewVO {
 	private int price;
 	private String thumbimg;
 	private String address; 
-	private String addressDetail; 
 	private String locationName;
 	private String mobile;
 	
@@ -21,7 +20,7 @@ public class cDetailViewVO {
 	}
 	
 	public cDetailViewVO(int concertNo, String artist, String title, String content, Timestamp startdate, String time,
-			int price, String thumbimg, String address, String addressDetail, String locationName, String mobile) {
+			int price, String thumbimg, String address,  String locationName, String mobile) {
 		super();
 		this.concertNo = concertNo;
 		this.artist = artist;
@@ -32,7 +31,6 @@ public class cDetailViewVO {
 		this.price = price;
 		this.thumbimg = thumbimg;
 		this.address = address;
-		this.addressDetail = addressDetail;
 		this.locationName = locationName;
 		this.mobile = mobile;
 	}
@@ -109,14 +107,6 @@ public class cDetailViewVO {
 		this.address = address;
 	}
 
-	public String getAddressDetail() {
-		return addressDetail;
-	}
-
-	public void setAddressDetail(String addressDetail) {
-		this.addressDetail = addressDetail;
-	}
-
 	public String getLocationName() {
 		return locationName;
 	}
@@ -137,9 +127,10 @@ public class cDetailViewVO {
 	public String toString() {
 		return "cDetailViewVO [concertNo=" + concertNo + ", artist=" + artist + ", title=" + title + ", content="
 				+ content + ", startdate=" + startdate + ", time=" + time + ", price=" + price + ", thumbimg="
-				+ thumbimg + ", address=" + address + ", addressDetail=" + addressDetail + ", locationName="
-				+ locationName + ", mobile=" + mobile + "]";
+				+ thumbimg + ", address=" + address + ", locationName=" + locationName + ", mobile=" + mobile + "]";
 	}
+
+
 
 	
 

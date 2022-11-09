@@ -112,7 +112,7 @@
 		<div class="div1">
 			<h3>공연정보를 입력해 주세요</h3>
 		</div>
-		<form name="frm1" action="" method="post" >
+		<form name="frm1" action="cWrite_ok" method="post" >
 			<div class="div1">
 				<p class="p1">ARTIST</p>
 				<input type="text" class="input1" id="artist" name="artist" placeholder="출연 아티스트를 입력하세요" /><br>
@@ -124,11 +124,11 @@
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
-				<p class="p1">START DATE</p>
-				<input type="text" class="input1" id="start" name="start" placeholder="공연시작날짜를 입력하세요"/>
+				<p class="p1">DATE</p>
+				<input type="text" class="input1" id="start" name="startdate" placeholder="공연날짜를 입력하세요"/>
 				<p class="p2"></p>
 			</div>
-			<div class="div1">
+			<div class="div1" style="display: none;">
 				<p class="p1">END DATE</p>
 				<input type="text" class="input1" id="end" name="end" placeholder="공연이 끝나는 날짜를 입력하세요" />
 				<p class="p2"></p>
