@@ -12,14 +12,14 @@ request.setCharacterEncoding("utf-8");
 
 String userid = (String)session.getAttribute("userid");
 String MemberNo = request.getParameter("MemberNo");
-
+String nick = request.getParameter("nick");
 MemberVO vo = memberService.selectByUserid(userid);
-
+String curNick = vo.getNick();
 
 int result = 0;
-if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
+if ( nick != null && !nick.isEmpty()) {
 	try {
-		result = memberService.duplicateNick(vo.getNick());
+		result = memberService.duplicateNick(nick);
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
@@ -41,8 +41,8 @@ if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
       });
       
    $('#btUse').click(function(){
-	   $('input[name=nick]').find('#nick').val("<%=vo.getNick()%>");
-         $(opener.document).find("#chNick").val("Y");
+	   $('input[name=nick]').find('#nick').val("<%=nick%>");
+         $('input[name=nick]').find("#chNick").val("Y");
 			self.close();
 		});
 
@@ -62,7 +62,7 @@ if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
 		</div>
 		<div class="nick_mold">
 			<table class="nick_tb">
-				<form name="frmNick" method="post" action="changeNick.jsp?nick=<%=vo.getNick()%>">
+				<form name="frmNick" method="post" action="changeNick.jsp?nick=<%=nick%>">
 					<colgroup>
 						<col style="width: 50%;" />
 						<col style="width: 50%;" />
@@ -75,10 +75,10 @@ if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
 					</thead>
 					<tbody>
 						<tr>
-							<td><span><%=vo.getNick()%></span></td>
+							<td><span><%=curNick %></span></td>
 							<td>
 								<input type="text" name="nick"
-								value="<%=vo.getNick() %>" id="nick" size="15">
+								value="<%=nick%>" id="nick" size="15">
 								<input type="submit" value="중복확인" id="nickck">
 								<%
 									if (result == MemberService.EXIST_ID) {
@@ -87,7 +87,7 @@ if ( vo.getNick() != null && !vo.getNick().isEmpty()) {
 								<%
 									} else if (result == MemberService.NON_EXIST_ID) {
 									%>
-								<input type="button" value="사용하기" id="btUse">
+								<input type="button" value="사용하기" id="btUse" onclick="location.href='changeNick_ok.jsp'">
 								<p>사용가능한 닉네임</p>
 								<%
 								}
