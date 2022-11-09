@@ -41,8 +41,8 @@ public class ConcertService {
 		return dao.selectConcertNo(title);
 	}
 	
-	public List<ConcertListVO> selectAll() throws SQLException { //공연 정보 리스트 내용 전부 가져오기
-		return dao.selectAll();
+	public List<ConcertListVO> selectAll(String condition,String keyword) throws SQLException { //공연 정보 리스트 내용 전부 가져오기
+		return dao.selectAll(condition,keyword);
 	}
 	
 	public cDetailViewVO selectbyNo(int concertNo) throws SQLException { //공연번호로 전체조회

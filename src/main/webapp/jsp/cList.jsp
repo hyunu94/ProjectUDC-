@@ -27,6 +27,12 @@
 		cl_login = true;
 	}
 	
+	request.setCharacterEncoding("utf-8");
+	String condition=request.getParameter("search_Condition");	
+	String keyword=request.getParameter("search_Keyword");	
+
+	if(keyword==null) keyword="";
+	
 	MemberService memberService = new MemberService();
 
 	ConcertService concertservice = new ConcertService();
@@ -35,7 +41,7 @@
 	List<ConcertListVO> list = null;
 	MemberVO memberVo=null;
 	try{
-		list = concertservice.selectAll();	
+		list = concertservice.selectAll(condition, keyword);	
 		
 		if(cl_userid!=null && !cl_userid.isEmpty()){
 			memberVo=memberService.selectByUserid(cl_userid);
@@ -44,6 +50,31 @@
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
+	
+	//페이징 처리
+	
+	int currentPage=1;
+	
+	if(request.getParameter("currentPage")!=null){
+		currentPage=Integer.parseInt(request.getParameter("currentPage"));
+	}
+	
+	int totalRecord=0;  
+	if(list!=null && !list.isEmpty()){
+		totalRecord=list.size();				
+	}
+	
+	int pageSize=5;  
+	int totalPage = (int)Math.ceil((float)totalRecord/pageSize); 
+	int blockSize=10; 
+	
+	int firstPage=currentPage-((currentPage-1)%blockSize); 
+	
+	int lastPage=firstPage+(blockSize-1);
+	
+	int curPos = (currentPage-1)*pageSize; 
+	
+	int num=totalRecord-curPos; 
 	
 %>
 </head>
@@ -87,8 +118,12 @@
 										<td>2022-10-01</td>
 									</tr>
 									<!-- 반복구간(시작) -->
-									<%for(int i=0;i<list.size();i++){ 
-										ConcertListVO vo = list.get(i);%>
+									<%for(int i=0;i<pageSize;i++){
+										if(num<1) break;
+										
+										ConcertListVO vo = list.get(curPos++);
+										num--;	
+									%>
 									<tr>
 										<td><%=vo.getConcertNo() %></td>
 										<td><a href="cDetail.jsp?concertNo=<%=vo.getConcertNo() %>" style="text-decoration: none; color:black;"><%=vo.getArtist() + " - " + vo.getTitle() %></a></td>
@@ -104,18 +139,50 @@
 								if(memberVo.getKindNo()==2){%>
 								<input type="button" class="sub2" value="글쓰기" onclick="location.href='cWrite.jsp'">
 							<% }%>	
-							
 							<%} %>
 							</div>
+							<div class="divPage">
+					<%	if(firstPage>1){ %>
+					<a href="cList.jsp?currentPage=<%=firstPage-1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
+						<img src="../img/first.JPG">
+					</a>	
+					<%	}	%>
+
+			<%for(int i=firstPage;i<=lastPage;i++){
+					if(i>totalPage) break;
+			
+					if(i==currentPage){%>
+				<span style="color:blue;font-weight: bold;font-size: 1em">
+					<%=i %></span>
+					<%}else{ %>
+				<a href ="cList.jsp?currentPage=<%=i%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
+					[<%=i %>]</a>
+			<%} %>
+			<%	}	%>	
+	
+			<%if(lastPage<totalPage){ %>
+			<a href="cList.jsp?currentPage=<%=lastPage+1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
+				<img src="../img/last.JPG">
+			</a>
+			<%} %>
+	</div>
 							<div class="addons" style="display: block;">
-								<form name="frm" action="" method="get">
+								<form name="frm" action="cList.jsp" method="post">
 									<div class="addons2" style="display: block;">
-										<select name="search_target" class="sel1">
+										<select name="search_Condition" class="sel1">
 											<option value="title_content">전체</option>
-											<option value="title">제목</option>
-											<option value="content">내용</option>
+											<option value="title"
+												<%if("title".equals(condition)){ %>
+													selected = "selected"
+												<%} %>
+											>제목</option>
+											<option value="content"
+												<%if("content".equals(condition)){ %>
+													selected = "selected"
+												<%} %>
+											>내용</option>
 										</select> 
-										<input type="text" name="search_keyword" class="keyw" value="" > 
+										<input type="text" name="search_Keyword" class="keyw" value="<%=keyword%>"> 
 										<input type="submit" class="sub1" value="검색">
 									</div>
 								</form>

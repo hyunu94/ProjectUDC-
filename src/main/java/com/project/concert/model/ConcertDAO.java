@@ -195,7 +195,7 @@ public class ConcertDAO {
 		}
 	}
 	
-	public List<ConcertListVO> selectAll() throws SQLException { //공연 정보 리스트 내용 전부 가져오기
+	public List<ConcertListVO> selectAll(String condition,String keyword) throws SQLException { //공연 정보 리스트 내용 전부 가져오기
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -204,10 +204,20 @@ public class ConcertDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "select * from v_list order by concertNo desc";
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
+			String sql = "select * from v_list";
 			
+			if(keyword!=null && !keyword.isEmpty()) {
+				sql+=" where "+ condition +" like '%' || ? || '%'";
+			}
+			
+			sql+=" order by concertNo desc";
+			ps = con.prepareStatement(sql);
+			
+			if(keyword!=null && !keyword.isEmpty()) {
+				ps.setString(1, keyword);
+			}
+			
+			rs = ps.executeQuery();
 			while(rs.next()) {
 				int concertNo = rs.getInt(1);
 				String artist = rs.getString(2);
