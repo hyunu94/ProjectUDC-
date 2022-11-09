@@ -67,27 +67,23 @@
 </style>
 </head>
 <body>
-	<div class="div_map">
-		<img class="img_map" src="../img/11.jpg" />
-		<table class="tab_map">
-			<colgroup>
-				<col style="width: 50%;" />
-				<col style="width: 50%;" />
-			</colgroup>
-			<tr>
-				<td>WHO?</td>
-				<td>WHITNEY HOUSTON</td>
-			</tr>
-			<tr>
-				<td>WHEN?</td>
-				<td>2022-12-23</td>
-			</tr>
-			<tr>
-				<td>WHERE?</td>
-				<td>CLUBEZEN 홍대</td>
-			</tr>
-		</table>
-		<input type="button" class="btn_map" value="공연 상세보기" onclick=""/>
-	</div>
+<div class="div_map"><img class="img_map" src="../img/11.jpg" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td>WHITNEY HOUSTON</td></tr><tr><td>WHEN?</td><td>2022-12-23</td></tr><tr><td>WHERE?</td><td>CLUBEZEN 홍대</td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>
+
+<!-- content: '<div class="div_map"><img class="img_map" src="../img/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 130px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>', 
+	        latlng: new kakao.maps.LatLng(<%=makerViewVO.getAxisx()%>, <%=makerViewVO.getAxisy()%>) -->
+
+ <!--  {
+	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains1.jpg" style="width:150px;height: 130px"><br>장르 : 재즈<br>일시 : 2022.12.03<br>~ 2022.12.05<br>출연 : 철수 <br>위치 : 서대문구</div>', 
+	        latlng: new kakao.maps.LatLng(37.5822045, 126.9358821)
+	    },
+	    {
+	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains2.jpg" style="width:150px;height: 130px"><br>장르 : 가요<br>일시 : 2022.11.07<br>출연 : 김봉중 <br>위치 : 강남</div>', 
+	        latlng: new kakao.maps.LatLng(37.4959668, 127.0674358)
+	    },
+	    {
+	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains2.jpg" style="width:150px;height: 130px"><br>장르 : 어쿠스틱<br>일시 : 2022.11.07<br>출연 : 김봉중 <br>위치 : 이화여대</div>',
+	        latlng: new kakao.maps.LatLng(37.5626293, 126.94743724)
+	    } -->
+
 </body>
 </html>
