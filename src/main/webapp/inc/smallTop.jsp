@@ -45,22 +45,10 @@
 	text-align: center;
 }
 
-tfoot td {
+.nick_tb th, .nick_tb td{
 	padding: 10px;
 }
 
-button.nick_btn, button.nick_close {
-	background: white;
-	border: 2px solid #212529;
-	border-radius: 0.5em;
-}
-
-button.nick_btn:hover, button.nick_close:hover {
-	background: #212529;
-	border: 2px solid #ffffff;
-	border-radius: 0.5em;
-	color: white;
-}
 </style>
 </head>
 <body>
@@ -69,3 +57,4 @@ button.nick_btn:hover, button.nick_close:hover {
 			<a class="navbar-brand" href="#">UDC</a>
 		</div>
 	</nav>
+	<div class="small_body">
