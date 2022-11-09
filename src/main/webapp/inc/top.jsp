@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String t_userid=(String)session.getAttribute("userid");
+	boolean t_login = false;
+	
+	if(t_userid!=null && !t_userid.isEmpty()){ //세션에 값이 있으면 로그인된 상태
+		t_login = true;
+	}
+%>
 <style type="text/css">
 @import
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap')
@@ -109,10 +117,17 @@ a.navbar-brand {
 			<!-- 검색, 로그인, 회원가입 버튼 -->
 			<div>
 				<form role="search">
+				<%if(t_login){ %>
+					<button type="button" class="btn btn-outline-light me-2"
+						onclick="location.href='../login/logout.jsp'">Logout</button>
+					<button type="button" class="btn btn-outline-light me-2"
+						onclick="location.href='../jsp/info.jsp'">My Page</button>
+				<%}else{ %>
 					<button type="button" class="btn btn-outline-light me-2"
 						onclick="location.href='../login/login.jsp'">Login</button>
 					<button type="button" class="btn btn-outline-light me-2"
 						onclick="location.href='../jsp/agreement.jsp'">Sign up</button>
+				<%} %>
 				</form>
 			</div>
 		</div>

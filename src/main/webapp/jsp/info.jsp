@@ -1,6 +1,49 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.member.model.MemberVO"%>
+<%@page import="com.project.member.model.MemberService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
+<%@ include file="../login/checkLogin.jsp" %>
+<%
+	// 요청 파라미터 읽어오기
+	request.setCharacterEncoding("UTF-8");	
+	String userid= (String)request.getAttribute("userid");
+	
+	String memberNo = request.getParameter("memberNo");
+	String pwd = request.getParameter("pwd");
+	String name = request.getParameter("name");
+	String nick = request.getParameter("nick");
+	String Jumin = request.getParameter("Jumin");
+	String mobile = request.getParameter("mobile");
+	String outdate = request.getParameter("outdate");
+	String kindNo = request.getParameter("kindNo");
+	String location = request.getParameter("location");
+	
+	// DB 작업
+	MemberService service = new MemberService();
+	MemberVO memberVo = new MemberVO();
+	
+	try {
+		memberVo = service.selectByUserid(userid);
+		
+		memberVo.setMemberNo(Integer.parseInt(memberNo));
+		memberVo.setPwd(pwd);
+		memberVo.setName(name);
+		memberVo.setNick(nick);
+		memberVo.setJumin(Jumin);
+		memberVo.setMobile(mobile);
+		memberVo.setOutdate(outdate);
+		memberVo.setKindNo(Integer.parseInt(kindNo));
+		memberVo.setLocationNo(Integer.parseInt(location));
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+	// 결과처리
+
+%>
 <!-- content -->
 <link rel="stylesheet" href="../css/table.css">
 <div class="container">
