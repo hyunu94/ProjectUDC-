@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.List;
+
+import com.project.v_cDetail.model.cDetailViewVO;
+import com.project.v_list.model.ConcertListVO;
 
 public class ConcertService {
 	private ConcertDAO dao;
@@ -35,5 +39,13 @@ public class ConcertService {
 	
 	public int selectConcertNo(String title) throws SQLException{ //공연 번호찾기
 		return dao.selectConcertNo(title);
+	}
+	
+	public List<ConcertListVO> selectAll() throws SQLException { //공연 정보 리스트 내용 전부 가져오기
+		return dao.selectAll();
+	}
+	
+	public cDetailViewVO selectbyNo(int concertNo) throws SQLException { //공연번호로 전체조회
+		return dao.selectbyNo(concertNo);
 	}
 }

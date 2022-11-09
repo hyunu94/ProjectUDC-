@@ -213,9 +213,7 @@
 				<p class="p1">닉네임</p>
 			</div>
 			<div class="second_regi">
-				<input class="input1" id="nick" type="text" name="nick" placeholder="닉네임 중복확인을 누르세요">
-			</div>
-			<div class="btn_chkNick">
+				<input class="input6" id="nick" type="text" name="nick" placeholder="닉네임 중복확인을 누르세요">
 				<input class="chkNick" id="btnChkNick" type="button" onclick="" value="닉네임 중복 확인" />
 			</div>
 			
@@ -362,7 +360,7 @@
 	function addressChk() {
 		var gap = address.value; // 주소검색어
 		if (gap == "") {
-			alert("주소 검색어를 입력해 주십시오.");
+			alert("주소를 입력하세요.");
 			address.focus();
 			return;
 		}

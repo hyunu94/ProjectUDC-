@@ -1,13 +1,37 @@
+<%@page import="com.project.v_cDetail.model.cDetailViewVO"%>
+<%@page import="com.project.concert.model.ConcertService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <!-- content -->
 <link rel="stylesheet" type="text/css" href="../css/cDetail.css" />
+<%
+	String concertNo = request.getParameter("concertNo");
+
+	ConcertService concertservice = new ConcertService();
+	cDetailViewVO vo = concertservice.selectbyNo(Integer.parseInt(concertNo));
+	
+	String addressDetail = "";
+	
+	if(vo.getAddressDetail()!=null && !vo.getAddressDetail().isEmpty()){
+		addressDetail = vo.getAddressDetail();		
+	}else{
+		addressDetail = "";
+	}
+	
+	String locationame = "";
+	
+	if(vo.getLocationName()!=null && !vo.getLocationName().isEmpty()){
+		locationame = vo.getLocationName();		
+	}else{
+		locationame = "미정";
+	}
+%>
 <div class="body">
 	<div class="div0">
 		<h3>공연정보</h3>
 		<div class="div_img">
-			<input type="image" src="../img/11.jpg" name="main_img" class="main_img">
+			<input type="image" src="../ConcertImg_upload/<%=vo.getThumbimg() %>" name="main_img" class="main_img">
 		</div>
 		<div class="div_table">
 			<table>
@@ -20,7 +44,7 @@
 						<span class="question">출연 아티스트</span>
 					</td>
 					<td>
-						<span class="answer" id="artist">휘트니 휴스턴 Whitney Houston</span>
+						<span class="answer" id="artist"><%=vo.getArtist() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -28,7 +52,7 @@
 						<span class="question"> 공연 제목</span>
 					</td>
 					<td>
-						<span class="answer" id="title">영원한 팝의 여왕의 귀환</span>
+						<span class="answer" id="title"><%=vo.getTitle() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -36,7 +60,7 @@
 						<span class="question">소개</span>
 					</td>
 					<td style="border-bottom: none;">
-						<span class="answer" id="content1">The night we held on till the morning</span>
+						<span class="answer" id="content1"><%=vo.getContent() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -60,7 +84,7 @@
 						<span class="question">공연 일정</span>
 					</td>
 					<td>
-						<span class="answer" id="date">2022-12-23 ~ 2022-12-24</span>
+						<span class="answer" id="date"><%=vo.getStartdate() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -68,7 +92,7 @@
 						<span class="question">공연 시각</span>
 					</td>
 					<td>
-						<span class="answer" id="time">19:00</span>
+						<span class="answer" id="time"><%=vo.getTime() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -76,7 +100,7 @@
 						<span class="question">공연 가격</span>
 					</td>
 					<td>
-						<span class="answer" id="price">50,000</span>
+						<span class="answer" id="price"><%=vo.getPrice() %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -84,7 +108,7 @@
 						<span class="question">공연 장소</span>
 					</td>
 					<td>
-						<span class="answer" id="location">이젠 아카데미 신촌</span>
+						<span class="answer" id="location"><%=locationame%></span>
 					</td>
 				</tr>			
 				<tr>
@@ -92,7 +116,7 @@
 						<span class="question">주소</span>
 					</td>
 					<td>
-						<span class="answer" id="address">서울특별시 서대문구 신촌로 141 위고인빌딩 1층 <a href="#" style="text-decoration: none;">&nbsp;[위치보기]</a> </span>
+						<span class="answer" id="address"><%= vo.getAddress() + addressDetail %><a href="#" style="text-decoration: none;">&nbsp;[위치보기]</a> </span>
 					</td>
 				</tr>			
 				<tr>
@@ -100,7 +124,7 @@
 						<span class="question">문의 전화</span>
 					</td>
 					<td>
-						<span class="answer" id="tel">010-7878-8787</span>
+						<span class="answer" id="tel"><%=vo.getMobile() %></span>
 					</td>
 				</tr>			
 			</table>

@@ -57,4 +57,8 @@ public class MemberService {
 	public int updateDel(int MemberNo) throws SQLException { //회원 탈퇴
 		return dao.updateDel(MemberNo);
 	}
+	
+	public String findPwd(int MemberNo ,String userid) throws SQLException {
+		return dao.findPwd(MemberNo, userid);
+	}
 }

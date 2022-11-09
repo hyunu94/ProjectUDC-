@@ -15,7 +15,7 @@
 		right: 10px;
 		bottom: 10px;
 		z-index: 10;
-		width: 20px;
+		width: 30px;
 		border: 1px solid #cccccc;
 		background-color: white;
 		padding: 5px;
@@ -37,6 +37,7 @@
 		height: 25px;
 		border: 1px solid #9d9d9d;
 		border-radius:5px 5px 5px 5px;
+		font-size: 10pt;
 	}
 	#search{
 		position: absolute;
@@ -47,6 +48,7 @@
 		height: 25px;
 		border: 1px solid #9d9d9d;
 		border-radius:5px 5px 5px 5px;
+		font-size: 10pt;
 	}
 	#search:active {
 	  background-color: ;

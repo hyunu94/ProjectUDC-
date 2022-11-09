@@ -3,10 +3,6 @@
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/card.css">
 <style type="text/css">
-footer.py-3.my-4 {
-	background: #212529;
-}
-
 .recent h1, .find h1 {
 	letter-spacing: -2px;
 	margin-top: 20px;

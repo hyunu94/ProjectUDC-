@@ -2,13 +2,16 @@
 </section>
 <!-- footer -->
 <footer class="py-3 my-4">
-	<hr>
 	<p class="text-center text-muted">&copy 2022 Company, Inc</p>
 </footer>
 <!-- /footer -->
 <style type="text/css">
-hr {
-	color:#6c757d;
+footer.py-3.my-4 {
+	background: #212529;
+	margin: 0!important;
+}
+footer.py-3.my-4 p {
+	margin: 0;
 }
 </style>
 <script

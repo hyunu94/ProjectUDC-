@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.project.db.ConnectionPoolMgr2;
+import com.project.v_cDetail.model.cDetailViewVO;
+import com.project.v_list.model.ConcertListVO;
 
 public class ConcertDAO {
 	private ConnectionPoolMgr2 pool;
@@ -193,5 +196,86 @@ public class ConcertDAO {
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}
+	}
+	
+	public List<ConcertListVO> selectAll() throws SQLException { //공연 정보 리스트 내용 전부 가져오기
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ConcertListVO> list = new ArrayList<>();
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select * from v_list order by concertNo desc";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int concertNo = rs.getInt(1);
+				String artist = rs.getString(2);
+				String title = rs.getString(3);
+				Timestamp regdate = rs.getTimestamp(4);
+				String name = rs.getString(5);
+				
+				ConcertListVO vo 
+					= new ConcertListVO(concertNo, artist, title, regdate, name);
+				list.add(vo);
+			}
+			System.out.println("list.size = " + list.size());
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	public cDetailViewVO selectbyNo(int concertNo) throws SQLException { //공연번호로 전체조회
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		cDetailViewVO vo = new cDetailViewVO();
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select * from v_cDetailview\r\n"
+					+ "where concertNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, concertNo);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				int concertno = rs.getInt(1);
+				String artist = rs.getString(2);
+				String title = rs.getString(3);
+				String content = rs.getString(4);
+				Timestamp startdate = rs.getTimestamp(5);
+				String time = rs.getString(6);
+				int price = rs.getInt(7);
+				String thumbimg = rs.getString(8);
+				String address = rs.getString(9);
+				String addressDetail = rs.getString(10);
+				String locationname = rs.getString(11);
+				String mobile = rs.getString(12);
+				
+				vo.setConcertNo(concertno);
+				vo.setArtist(artist);
+				vo.setTitle(title);
+				vo.setContent(content);
+				vo.setStartdate(startdate);
+				vo.setTime(time);
+				vo.setPrice(price);
+				vo.setThumbimg(thumbimg);
+				vo.setAddress(address);
+				vo.setAddressDetail(addressDetail);
+				vo.setLocationName(locationname);
+				vo.setMobile(mobile);
+			}
+			System.out.println("view 로 만든 vo = " + vo);
+			return vo;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+		
 	}
 }
