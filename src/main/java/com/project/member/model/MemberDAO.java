@@ -251,7 +251,7 @@ public class MemberDAO {
 			
 			String sql = "update member\r\n"
 					+ "set nick = ?\r\n"
-					+ "where memberNo = ?";
+					+ "where memberno = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, nick);
 			ps.setInt(2, MemberNo);
@@ -278,7 +278,7 @@ public class MemberDAO {
 			
 			String sql = "update member\r\n"
 					+ "set pwd = ?\r\n"
-					+ "where memberNo = ?";
+					+ "where memberno = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, pwd);
 			ps.setInt(2, MemberNo);

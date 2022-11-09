@@ -1,22 +1,23 @@
-<%@page import="com.project.member.model.MemberVO"%>
 <%@page import="com.project.member.model.MemberService"%>
 <%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="memberService"
 	class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
+<jsp:useBean id="memberVo" class="com.project.member.model.MemberVO"
+	scope="page"></jsp:useBean>
 <%@ include file="../inc/smallTop.jsp"%>
 <!-- content -->
 <%
 request.setCharacterEncoding("utf-8");
 
 String userid = (String)session.getAttribute("userid");
-String MemberNo = request.getParameter("MemberNo");
-String nick = request.getParameter("nick");
-MemberVO vo = memberService.selectByUserid(userid);
-String curNick = vo.getNick();
+String nick = (String)session.getAttribute("nick");
+memberVo = memberService.selectByUserid(userid);
+String curNick = memberVo.getNick();
 
 int result = 0;
+
 if ( nick != null && !nick.isEmpty()) {
 	try {
 		result = memberService.duplicateNick(nick);
@@ -41,7 +42,7 @@ if ( nick != null && !nick.isEmpty()) {
       });
       
    $('#btUse').click(function(){
-	   $('input[name=nick]').find('#nick').val("<%=nick%>");
+	   $('input[name=nick]').val("<%=nick%>");
          $('input[name=nick]').find("#chNick").val("Y");
 			self.close();
 		});
@@ -79,6 +80,7 @@ if ( nick != null && !nick.isEmpty()) {
 							<td>
 								<input type="text" name="nick"
 								value="<%=nick%>" id="nick" size="15">
+								<input type="hidden" value="<%=memberVo.getMemberNo() %>"/>
 								<input type="submit" value="중복확인" id="nickck">
 								<%
 									if (result == MemberService.EXIST_ID) {
