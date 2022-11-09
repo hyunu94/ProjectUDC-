@@ -5,10 +5,10 @@ import java.util.Date;
 public class Utility {
 	   public static final String CONCERT_UPLOAD_DIR ="ConcertImg_upload"; 
 	   public static final String CONCERT_TEST_DIR
-	   ="C:\\Users\\EZEN202\\git\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
+	   ="C:\\lecture\\workplace_list\\java_ws\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
 	   public static final String BOARD_UPLOAD_DIR ="BoardImg_upload"; 
 	   public static final String BOARD_TEST_DIR
-	   ="C:\\Users\\EZEN202\\git\\ProjectUDC-\\src\\main\\webapp\\BoardImg_upload";
+	   ="C:\\lecture\\workplace_list\\java_ws\\ProjectUDC-\\src\\main\\webapp\\BoardImg_upload";
 	   
 
 	   
