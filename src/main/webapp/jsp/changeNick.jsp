@@ -79,7 +79,11 @@ if ( nick != null && !nick.isEmpty()) {
 							<td><span><%=curNick %></span></td>
 							<td>
 								<input type="text" name="nick"
-								value="<%=nick%>" id="nick" size="15">
+								value="
+								<%=if(nick==null || nick.isEmpty()){%>
+									
+								<%} %>
+								" id="nick" size="15">
 								<input type="hidden" value="<%=memberVo.getMemberNo() %>"/>
 								<input type="submit" value="중복확인" id="nickck">
 								<%
