@@ -176,12 +176,11 @@ public class MemberDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		
-		MemberVO memberVo= new MemberVO();
+		MemberVO memberVo=null;
 		try {
 			con=pool.getConnection();
 			
-			String sql="select * from member\r\n"
-					+ "where userid=?";
+			String sql="select * from member where userid=?";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, userid);
 			
@@ -189,24 +188,17 @@ public class MemberDAO {
 			if(rs.next()) {
 				
 				int memberNo=rs.getInt("memberNo");
+				String userid2=rs.getString("userid");
 				String pwd=rs.getString("pwd");
 				String name=rs.getString("name");
 				String nick=rs.getString("nick");
 				String Jumin=rs.getString("Jumin");
 				String mobile=rs.getString("mobile");
-				String outdate=rs.getString("outdate");
+				String delcheck=rs.getString("delcheck");
 				int kindNo=rs.getInt("kindNo");
-				int location=rs.getInt("location");
+				int locationNo=rs.getInt("locationNo");
 				
-				memberVo.setMemberNo(memberNo);
-				memberVo.setPwd(pwd);
-				memberVo.setName(name);
-				memberVo.setNick(nick);
-				memberVo.setJumin(Jumin);
-				memberVo.setMobile(mobile);
-				memberVo.setOutdate(outdate);
-				memberVo.setKindNo(kindNo);
-				memberVo.setLocationNo(location);
+				memberVo = new MemberVO(memberNo, userid2, pwd, name, nick, Jumin, mobile, delcheck, kindNo, locationNo);
 				
 			}
 			System.out.println("회원조회 결과 memberVo="+memberVo+", 매개변수 userid="+userid);

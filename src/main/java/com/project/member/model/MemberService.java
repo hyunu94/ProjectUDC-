@@ -8,9 +8,9 @@ public class MemberService {
 	public static final int NON_EXIST_ID=2; //존재하지 않는 아이디,닉네임 - 사용가능
 	
 	//로그인 처리시 사용할 상수
-		public static final int LOGIN_OK=1; //로그인 성공
-		public static final int DISAGREE_PWD=2; //비밀번호 불일치
-		public static final int NONE_USERID=3; //해당 아이디 존재하지 않음
+	public static final int LOGIN_OK=1; //로그인 성공
+	public static final int DISAGREE_PWD=2; //비밀번호 불일치
+	public static final int NONE_USERID=3; //해당 아이디 존재하지 않음
 
 	private MemberDAO dao;
 	
