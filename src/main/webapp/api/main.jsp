@@ -193,7 +193,7 @@
 			makerViewVO=list.get(i);
 		%>
 		    {
-		        content: '<div class="div_map"><img class="img_map" src="../ThumImg/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 180px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>', 
+		        content: '<div class="div_map"><img class="img_map" src="../ConcertImg_upload/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 180px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>', 
 		        latlng: new kakao.maps.LatLng(<%=makerViewVO.getAxisx()%>, <%=makerViewVO.getAxisy()%>)
 		    }<%if(i<list.size()-1){%>
 		    	,
