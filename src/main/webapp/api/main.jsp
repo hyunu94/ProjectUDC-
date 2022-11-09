@@ -137,7 +137,6 @@
 
 <!-- ============================== -->
 <div id="map" style="width:auto;height:500px;">
-<%=makerViewVO.getArtist() %>
 	<div class="divSearch">
 		<select id="borough">
 			<option value="동작구">동작구</option>

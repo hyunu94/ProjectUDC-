@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class MakerViewVO {
 	private String artist; //공연자
-	private Timestamp startdate; //공연시작일
+	private String startdate; //공연시작일
 	private String locationname; /* 장소이름 */
 	private double axisx; /* x좌표 */
 	private double axisy; /* y좌표 */
@@ -14,7 +14,18 @@ public class MakerViewVO {
 		super();
 	}
 
-	public MakerViewVO(String artist, Timestamp startdate, String locationname, double axisx, double axisy,
+
+	public String getStartdate() {
+		return startdate;
+	}
+
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
+
+
+	public MakerViewVO(String artist, String startdate, String locationname, double axisx, double axisy,
 			String thumbimg) {
 		super();
 		this.artist = artist;
@@ -25,20 +36,13 @@ public class MakerViewVO {
 		this.thumbimg = thumbimg;
 	}
 
+
 	public String getArtist() {
 		return artist;
 	}
 
 	public void setArtist(String artist) {
 		this.artist = artist;
-	}
-
-	public Timestamp getStartdate() {
-		return startdate;
-	}
-
-	public void setStartdate(Timestamp startdate) {
-		this.startdate = startdate;
 	}
 
 	public String getLocationname() {

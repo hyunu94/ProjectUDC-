@@ -33,17 +33,17 @@ public class MakerViewDAO {
 			rs=ps.executeQuery();
 			while(rs.next()) {
 				String artist=rs.getString("artist");
-				Timestamp startdate=rs.getTimestamp("startdate");
+				String startdate=rs.getString("startdate");
 				String locationname=rs.getString("locationname");
 				double axisx=rs.getDouble("axisx");
 				double axisy=rs.getDouble("axisy");
 				String thumbimg=rs.getString("thumbimg");
 				
 				MakerViewVO vo = new MakerViewVO(artist, startdate, locationname, axisx, axisy, thumbimg);
-				
 				list.add(vo);
 				
 			}
+			System.out.println(list.size());
 			return list;
 		}finally {
 			pool.dbClose(rs, ps, con);
