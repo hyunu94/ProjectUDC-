@@ -65,4 +65,9 @@ public class MemberService {
 	public String findAdd(int locationNo) throws SQLException { //위치고유번호로 주소 찾기
 		return dao.findAdd(locationNo);
 	}
+	
+	public String findKindName(String userid) throws SQLException {//아이디로 구분번호 조회해서 회원구분이름 찾기
+		return dao.findKindName(userid);
+	}
+
 }
