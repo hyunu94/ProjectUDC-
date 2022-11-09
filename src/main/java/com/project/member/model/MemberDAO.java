@@ -338,23 +338,21 @@ public class MemberDAO {
 		try {
 			con=pool.getConnection();
 			
-			String sql="select Pwd from member\r\n"
-					+ "where MemberNo=? and userid=?";
+			String sql="select Pwd from member\n"
+					+ "where MemberNo=? and userid like '%' || ? || '%'";
 			ps=con.prepareStatement(sql);
 			ps.setInt(1, MemberNo);
 			ps.setString(2, userid);
 			
-			
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				pwd=rs.getString("pwd");
+				pwd=rs.getString(1);
 				System.out.println("비밀번호 조회 결과 pwd="+pwd+", 매개변수 MemberNo="+MemberNo+" userid="+userid);
-				return pwd;
 			}
+			return pwd;
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}
-		return pwd;
 	}
 	
 }

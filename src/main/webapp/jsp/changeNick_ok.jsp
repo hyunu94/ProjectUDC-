@@ -16,13 +16,13 @@
 	request.setCharacterEncoding("utf-8");
 
 	String MemberNo = request.getParameter("MemberNo");
-	String userid = request.getParameter("userid");
+	String nick = request.getParameter("nick");
 	
 	memberVo.setNick(nick);
 	
 	String msg = "닉네임 변경 실패...", url="changeNick.jsp";
 	try {
-		int cnt = memberService.updateNick(MemberNo, userid);
+		int cnt = memberService.updateNick(Integer.parseInt(MemberNo), nick);
 
 		if(cnt>0){
 			msg="닉네임이 변경되었습니다!";
