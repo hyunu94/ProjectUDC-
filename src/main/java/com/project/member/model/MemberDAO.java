@@ -354,7 +354,7 @@ public class MemberDAO {
 		String address = "";
 		
 		try {
-			con=pool.getConnection();
+			con = pool.getConnection();
 			
 			String sql = "select address from location\n"
 					+ "where locationNo\n"
@@ -362,12 +362,38 @@ public class MemberDAO {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, locationNo);
 			
-			rs=ps.executeQuery();
+			rs = ps.executeQuery();
 			if(rs.next()) {
 				address = rs.getString(1);
 				System.out.println("위치고유번호로 조회 결과 address="+address+", 매개변수 locationNo="+locationNo);
 			}
 			return address;
+		} finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	public String findKindName(String userid) throws SQLException {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String kindName = "";
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select kindname from kind\n"
+					+ "where kindno= (select kindno from member where userid=?)";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				kindName = rs.getString(1);
+				System.out.println("아이디-구분번호로 조회 결과 kindName="+kindName+", 매개변수 userid="+userid );
+			}
+			
+			return kindName;
 		} finally {
 			pool.dbClose(rs, ps, con);
 		}

@@ -14,12 +14,14 @@
 request.setCharacterEncoding("UTF-8");
 String userid = (String) session.getAttribute("userid");
 int locationNo = 0;
+String kindName = "";
 // DB 작업
 
 try {
 	memberVo = memberService.selectByUserid(userid);//유저 아이디로 내 회원정보 찾기
 	locationNo = memberVo.getLocationNo(); //내 위치 고유 번호 읽어오기
-	
+	kindName = memberService.findKindName(userid);
+
 } catch (SQLException e) {
 	e.printStackTrace();
 }
@@ -52,7 +54,7 @@ try {
 				</colgroup>
 				<tr>
 					<td>회원유형</td>
-					<td id="userid">일반회원</td>
+					<td id="userid"><%=kindName %></td>
 				</tr>
 				<tr>
 					<td>아이디</td>

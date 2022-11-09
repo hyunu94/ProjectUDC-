@@ -27,6 +27,7 @@
 	System.out.println("testDir = " + saveDir);
 	
 	int maxSize = 10 * 1024 * 1024 ;
+	String img="";
 	
 	try{
 		DefaultFileRenamePolicy policy=new DefaultFileRenamePolicy();
@@ -43,6 +44,8 @@
 			fileSize=file.length();
 			
 			originalFName=mr.getOriginalFileName("img");
+			System.out.println("filename = " + fileName + ",ori = " + originalFName);
+			img = fileName;
 		}	
 	String artist = mr.getParameter("artist");
 	String title = mr.getParameter("title");
@@ -53,17 +56,13 @@
 	String content2 = mr.getParameter("content2");
 	String content3 = mr.getParameter("content3");
 	String link = mr.getParameter("link");
-	String img = mr.getParameter("img");
 	
 	String content = content1 + "/" + content2 + "/" + content3;
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-	String date = sdf.format(startdate);
 	
 	ConcertVO vo = new ConcertVO();
 	vo.setArtist(artist);
 	vo.setTitle(title);
-	vo.setStartdate(date);
+	vo.setStartdate(startdate);
 	vo.setTime(time);
 	vo.setPrice(Integer.parseInt(price));
 	vo.setContent(content);
