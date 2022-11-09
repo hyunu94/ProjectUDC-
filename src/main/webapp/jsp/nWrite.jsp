@@ -31,8 +31,6 @@
 			fCreator : "createSEditor2"
 		});
 		
-		var content = $('#content').html();
-		location.href = "nWrite_ok.jsp?content=" + content;
 	});
 </script>
 </head>

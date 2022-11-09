@@ -50,10 +50,8 @@ public class ConcertDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "insert into concert\r\n"
-					+ "values(concert_seq.nextval,?,?,?,\r\n"
-					+ "?,?,?,?,\r\n"
-					+ "?,?,?);";
+			String sql = "insert into concert(concertNo,artist,title,starttime,time,price,content,link,img,memberNo)\r\n"
+					+ "values(concert_seq.nextval,?,?,?,?,?,?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, vo.getArtist());
 			ps.setString(2, vo.getTitle());
@@ -64,7 +62,6 @@ public class ConcertDAO {
 			ps.setString(7, vo.getLink());
 			ps.setString(8, vo.getThumbimg());
 			ps.setInt(9,vo.getMemberNo());
-			ps.setInt(10, vo.getLocationNo());
 			
 			cnt = ps.executeUpdate();
 			

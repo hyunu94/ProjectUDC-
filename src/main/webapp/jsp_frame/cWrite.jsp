@@ -31,10 +31,6 @@
 				alert('시작날짜를 선택하세요');
 				$('#start').focus();
 				event.preventDefault();
-	    	}else if($('#end').val().length<1){
-				alert('끝나는날짜 입력하세요');
-				$('#end').focus();
-				event.preventDefault();
 	    	}else if($('#time').val().length<1){
 				alert('공연시각을 입력하세요');
 				$('#time').focus();
@@ -135,7 +131,7 @@
 			</div>
 			<div class="div1">
 				<p class="p1">END DATE</p>
-				<input type="text" class="input1" id="end" name="end" placeholder="공연이 끝나는 날짜를 입력하세요" />
+				<input type="text" class="input1" id="end" name="end"/>
 				<p class="p2"></p>
 			</div>
 			<div class="div1">

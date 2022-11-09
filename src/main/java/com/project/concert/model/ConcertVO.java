@@ -7,21 +7,20 @@ public class ConcertVO {
 	private String artist; /* 공연자 */
 	private String title; /* 공연제목 */
 	private String content; /* 공연소개 */
-	private Timestamp startdate; /* 공연날짜 */
+	private String startdate; /* 공연날짜 */
 	private Timestamp regdate; /* 공연등록날짜 */
 	private String time; /* 공연시간 */
 	private int price; /* 가격 */
 	private String link; /* 링크 */
 	private String thumbimg; /* 썸네일 */
 	private int memberNo; /* 회원번호 */
-	private int locationNo;/* 위치고유번호 */
 	
 	public ConcertVO() {
 		super();
 	}
 
-	public ConcertVO(int concertNo, String artist, String title, String content, Timestamp startdate, Timestamp regdate,
-			String time, int price, String link, String thumbimg, int memberNo, int locationNo) {
+	public ConcertVO(int concertNo, String artist, String title, String content, String startdate, Timestamp regdate,
+			String time, int price, String link, String thumbimg, int memberNo) {
 		super();
 		this.concertNo = concertNo;
 		this.artist = artist;
@@ -34,7 +33,6 @@ public class ConcertVO {
 		this.link = link;
 		this.thumbimg = thumbimg;
 		this.memberNo = memberNo;
-		this.locationNo = locationNo;
 	}
 
 	public int getConcertNo() {
@@ -69,11 +67,11 @@ public class ConcertVO {
 		this.content = content;
 	}
 
-	public Timestamp getStartdate() {
+	public String getStartdate() {
 		return startdate;
 	}
 
-	public void setStartdate(Timestamp startdate) {
+	public void setStartdate(String startdate) {
 		this.startdate = startdate;
 	}
 	
@@ -125,21 +123,14 @@ public class ConcertVO {
 		this.memberNo = memberNo;
 	}
 
-	public int getLocationNo() {
-		return locationNo;
-	}
-
-	public void setLocationNo(int locationNo) {
-		this.locationNo = locationNo;
-	}
-
 	@Override
 	public String toString() {
 		return "ConcertVO [concertNo=" + concertNo + ", artist=" + artist + ", title=" + title + ", content=" + content
 				+ ", startdate=" + startdate + ", regdate=" + regdate + ", time=" + time + ", price=" + price
-				+ ", link=" + link + ", thumbimg=" + thumbimg + ", memberNo=" + memberNo + ", locationNo=" + locationNo
-				+ "]";
+				+ ", link=" + link + ", thumbimg=" + thumbimg + ", memberNo=" + memberNo + "]";
 	}
+
+
 
 	
 	

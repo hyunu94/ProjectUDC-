@@ -6,9 +6,7 @@
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript">
-	
 	$(function() {
-		
 		  $('#artist').focus();
 		
 		$('#sub1').click(function(){
@@ -26,10 +24,6 @@
 	    	}else if($('#start').val().length<1){
 				alert('시작날짜를 선택하세요');
 				$('#start').focus();
-				event.preventDefault();
-	    	}else if($('#end').val().length<1){
-				alert('끝나는날짜 입력하세요');
-				$('#end').focus();
 				event.preventDefault();
 	    	}else if($('#time').val().length<1){
 				alert('공연시각을 입력하세요');
@@ -56,9 +50,10 @@
 				alert('공연소개를 입력하세요');
 	    		$('#content1').focus();
 	    		event.preventDefault();
-			}else if($('#attach').val()<1){
-				alert('사진 파일 첨부는 필수 항목입니다.')
-				event.preventDefault();
+			}
+			
+			if($('#img').val()<1){
+				$('#img').val("");
 			}
 	    });
 	
@@ -112,7 +107,7 @@
 		<div class="div1">
 			<h3>공연정보를 입력해 주세요</h3>
 		</div>
-		<form name="frm1" action="cWrite_ok" method="post" >
+		<form name="frm1" action="cWrite_ok.jsp" enctype="multipart/form-data" method="post" >
 			<div class="div1">
 				<p class="p1">ARTIST</p>
 				<input type="text" class="input1" id="artist" name="artist" placeholder="출연 아티스트를 입력하세요" /><br>
@@ -126,11 +121,6 @@
 			<div class="div1">
 				<p class="p1">DATE</p>
 				<input type="text" class="input1" id="start" name="startdate" placeholder="공연날짜를 입력하세요"/>
-				<p class="p2"></p>
-			</div>
-			<div class="div1" style="display: none;">
-				<p class="p1">END DATE</p>
-				<input type="text" class="input1" id="end" name="end" placeholder="공연이 끝나는 날짜를 입력하세요" />
 				<p class="p2"></p>
 			</div>
 			<div class="div1">
@@ -165,7 +155,7 @@
 			</div>
 			<div class="div1">
 				<p class="p1">사진 첨부 (가로 800px 이상의 사진으로 업로드하세요)</p>
-				<input type="file" class="input3" name="attach" id="attach">
+				<input type="file" class="input3" name="img" id="img">
 				<p class="p2"></p>
 			</div>
 			<div class=div3> 
