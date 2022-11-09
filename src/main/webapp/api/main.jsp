@@ -1,7 +1,23 @@
+<%@page import="com.project.v_maker.model.MakerViewVO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<jsp:useBean id="makerViewService" class="com.project.v_maker.model.MakerViewService"></jsp:useBean>
+<jsp:useBean id="makerViewVO" class="com.project.v_maker.model.MakerViewVO"></jsp:useBean>
 <%
+
+		List<MakerViewVO> list = null;
+	try{
+		list = makerViewService.selectAll();	
+		
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+	
+	//확인용
+	/*  makerViewVO = list.get(6); */ 
+
 	
 %>
 <!DOCTYPE html>
@@ -61,12 +77,67 @@
 	.divSearch{
 		background-color: black;
 	}
+	
+	/* 마커인포 */
+	.div_map *{
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-size:10pt;
+		font-weight: 300;
+	}
+	.div_map{
+		display: block;
+		width: 330px;
+		height:290px; 
+		border:2px solid #c0c0c0;
+	}
+	.img_map{
+		width:320px;
+		margin-top:5px;
+		margin-left:5px;
+		margin-right:5px;
+	}
+	.tab_map{
+		width:320px;
+		margin-left:5px;
+		margin-right:5px;
+		margin-bottom:5px;
+		border-collapse: collapse;
+	}
+	td{
+		border-bottom:1px solid #eeeeee;
+	}
+	td:first-child {
+		padding-left:5px;
+	}
+	td:last-child {
+		padding-right:5px;
+		text-align: right;
+	}
+	tr:hover{
+		background-color: #eeeeee;
+	}
+	.btn_map{
+		width: 320px;	
+		height: 30px;
+		vertical-align: middle;
+		border: 1px solid #eeeeee;
+		border-radius:5px 5px 5px 5px;
+		margin-left:5px;
+		margin-right:5px;
+		font-weight: 400;
+	}
+	.btn_map:hover{
+		background-color: #c0c0c0;
+	}
 </style> 
 </head>
 <body>
 
 <!-- ============================== -->
 <div id="map" style="width:auto;height:500px;">
+<%=makerViewVO.getArtist() %>
 	<div class="divSearch">
 		<select id="borough">
 			<option value="동작구">동작구</option>
@@ -118,29 +189,23 @@
 	 
 	// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 => foe문 돌려서 공연정보랑 좌표 넣어주면 될듯?
 	var positions = [
-	    {
-	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains3.jpg" style="width:150px;height: 130px"><br>장르 : 락<br>일시 : 2022.11.03<br>~ 2022.11.05<br>출연 : 신짱구<br>위치 : 신촌역<br><a href="https://www.naver.com/">상세보기</a></div>', 
-	        latlng: new kakao.maps.LatLng(37.555776, 126.93687162)
-	    },
-	    {
-	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains1.jpg" style="width:150px;height: 130px"><br>장르 : 재즈<br>일시 : 2022.12.03<br>~ 2022.12.05<br>출연 : 철수 <br>위치 : 서대문구</div>', 
-	        latlng: new kakao.maps.LatLng(37.5822045, 126.9358821)
-	    },
-	    {
-	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains2.jpg" style="width:150px;height: 130px"><br>장르 : 가요<br>일시 : 2022.11.07<br>출연 : 김봉중 <br>위치 : 강남</div>', 
-	        latlng: new kakao.maps.LatLng(37.4959668, 127.0674358)
-	    },
-	    {
-	        content: '<div style="width:150px;height: 250px;"><img src="../img/mountains2.jpg" style="width:150px;height: 130px"><br>장르 : 어쿠스틱<br>일시 : 2022.11.07<br>출연 : 김봉중 <br>위치 : 이화여대</div>',
-	        latlng: new kakao.maps.LatLng(37.5626293, 126.94743724)
-	    }
+		<%for(int i=0;i<list.size(); i++){
+			makerViewVO=list.get(i);
+		%>
+		    {
+		        content: '<div class="div_map"><img class="img_map" src="../ThumImg/<%=makerViewVO.getThumbimg() %>"  style="width:320px;height: 180px" /><table class="tab_map"><colgroup><col style="width: 50%;" /><col style="width: 50%;" /></colgroup><tr><td>WHO?</td><td><%=makerViewVO.getArtist()%></td></tr><tr><td>WHEN?</td><td><%=makerViewVO.getStartdate()%></td></tr><tr><td>WHERE?</td><td><%=makerViewVO.getLocationname()%></td></tr></table><input type="button" class="btn_map" value="공연 상세보기" onclick=""/></div>', 
+		        latlng: new kakao.maps.LatLng(<%=makerViewVO.getAxisx()%>, <%=makerViewVO.getAxisy()%>)
+		    }<%if(i<list.size()-1){%>
+		    	,
+			<%}%>
+		<%}%>
 	];
 	
 	    
 	    //====================================================
 	for (var i = 0; i < positions.length; i ++) {
 		
-	var imageSrc = '../img/saxophone.png', // 마커이미지의 주소입니다    //if문 써서 장르별로 이미지 주면 될듯?
+	var imageSrc = '../img/pin.png', // 마커이미지의 주소입니다    //if문 써서 장르별로 이미지 주면 될듯?
 	    imageSize = new kakao.maps.Size(80, 80), // 마커이미지의 크기입니다
 	    imageOption = {offset: new kakao.maps.Point(40, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 	

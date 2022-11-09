@@ -19,7 +19,7 @@
 			<%@ include file="../api/main.jsp"%>
 		</div>
 		<div class="recent">
-			<h1>RECENT UPDATE</h1>
+			<h1><a href="cList.jsp" style="text-decoration: none; color:black;">RECENT UPDATE</a></h1>
 		</div>
 		<div class="row mb-2">
 			<div class="col-md-6">
