@@ -16,6 +16,8 @@
 	request.setCharacterEncoding("UTF-8");
 
 	String userid = (String)session.getAttribute("userid");
+	String pdw = request.getParameter("pwd");
+	
 	int memberNo = 0; 
 	
 	memberVo = memberService.selectByUserid(userid);
@@ -27,7 +29,7 @@
 		
 		if(cnt>0) {
 			msg = "회원 탈퇴 되었습니다.";
-			url="../jsp/close.jsp";
+			url="../js/close.jsp";
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();

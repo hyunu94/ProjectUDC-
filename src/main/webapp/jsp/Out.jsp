@@ -20,16 +20,16 @@ memberVo = memberService.selectByUserid(userid);
 		$('#sub1').click(function(){
 			if(confirm('삭제하시겠습니까?')==false){
 				alert('취소되었습니다');
-				alert('<%=memberVo.getPwd()%>');
 				return false;
 			}else{
-				alert($('#pwd').val());
 				
 				if($('#pwd').val()!=<%=memberVo.getPwd()%>){
 					alert('비밀번호가 일치하지않습니다.');
 					return false;
 				} else {
 					location.href="out_ok.jsp";
+					self.close();
+					
 				}
 			}
 		});
