@@ -57,7 +57,7 @@ class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 
 							<div class="content">
 								<ul> 
-									<li class="title">UDC SuperConcert#00<%=(i+1) %>&nbsp;&nbsp;<%=vo.getTitle() %></li>
+									<li class="title"><%=vo.getTitle() %></li>
 									<%String content = vo.getContent(); 
 								String [] contents = content.split("/");%>
 									<li><%=contents[0] %></li>
