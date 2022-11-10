@@ -1,5 +1,5 @@
 <%@page import="java.sql.SQLException"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:useBean id="memberService"
 	class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
@@ -12,24 +12,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	request.setCharacterEncoding("utf-8");
-	
+<%
+	request.setCharacterEncoding("UTF-8");
+
 	String userid = (String)session.getAttribute("userid");
-	String nick = request.getParameter("nick");
-	int memberNo = 0;
+	int memberNo = 0; 
 	
 	memberVo = memberService.selectByUserid(userid);
 	memberNo = memberVo.getMemberNo();
 	
-	memberVo.setNick(nick);
-	
-	String msg = "닉네임 변경 실패...", url="changeNick.jsp";
+	String msg = "회원 탈퇴 실패...", url = "Out.jsp";
 	try {
-		int cnt = memberService.updateNick(memberNo, nick);
-
-		if(cnt>0){
-			msg="닉네임이 변경되었습니다!";
+		int cnt = memberService.updateDel(memberNo);
+		
+		if(cnt>0) {
+			msg = "회원 탈퇴 되었습니다.";
 			url="../jsp/close.jsp";
 		}
 	} catch (SQLException e) {

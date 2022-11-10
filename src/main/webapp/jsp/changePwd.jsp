@@ -6,6 +6,8 @@
 	scope="page"></jsp:useBean>	
 <%@ include file="../inc/smallTop.jsp"%>
 <!-- content -->
+<title>비밀번호 변경</title>
+
 <%
 	request.setCharacterEncoding("UTF-8");
 

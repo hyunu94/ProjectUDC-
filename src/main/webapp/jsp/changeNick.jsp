@@ -8,6 +8,8 @@
 	scope="page"></jsp:useBean>
 <%@ include file="../inc/smallTop.jsp"%>
 <!-- content -->
+<title>닉네임 변경</title>
+
 <%
 request.setCharacterEncoding("utf-8");
 
