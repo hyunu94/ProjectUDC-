@@ -28,7 +28,7 @@ public class BoardDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "insert into board(boardNo,title,content,img,memberNo,concertNo,categoryNo)\r\n"
+			String sql = "insert into board(boardNo,title,content,img,memberNo,concertNo,cateNo)\r\n"
 					+ "values(board_seq.nextval,?,?,?,?,?,?)";
 			
 			ps = con.prepareStatement(sql);

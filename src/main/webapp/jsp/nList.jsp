@@ -103,7 +103,7 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 								</tbody>
 							</table>
 							<div class="btn_write" style="display: block;">
-								<input type="button" class="sub2" value="글쓰기">
+								<input type="submit" class="sub2" value="글쓰기" onclick="location.href='nWrite.jsp'">
 							</div>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="" method="get">

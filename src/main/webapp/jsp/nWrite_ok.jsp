@@ -43,13 +43,17 @@
 	vo.setTitle(title);
 	vo.setContent(content);
 	vo.setImg(img);
-	vo.setMemberNo(11); // 미정
+	vo.setMemberNo(3); // 미정
 	vo.setConcertNo(concertNo);
 	vo.setCateNo(cateNo);
 	
 	BoardService boardservice = new BoardService();
 	try{
+		int cnt = boardservice.insertBoard(vo);
 		
+		if(cnt>0){
+			response.sendRedirect("nList.jsp");
+		}
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
