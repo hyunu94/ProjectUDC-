@@ -1,6 +1,5 @@
 <%@page import="com.project.v_index.model.IndexVO"%>
-<%@ page language="java" contentType="text/html;charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/card.css">
 <style type="text/css">
@@ -9,11 +8,11 @@
 	margin-top: 20px;
 	font-weight: 800;
 }
-
 </style>
 
-<jsp:useBean id="concertService" 
-class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
+
+
+<jsp:useBean id="concertService" class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 <%
 	List<IndexVO> inlist = null;
 	String content1 = "";
@@ -39,27 +38,30 @@ class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 							<%for(int i=0;i<inlist.size();i++){
 								IndexVO vo = inlist.get(i);%>
 			<div class="col-md-6">
-				
 				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 					<div class="article_card">
 						<div class="bg-pic">
-							<img src="../ConcertImg_upload/<%=vo.getThumbimg() %>" alt="" aria-hidden="true" />
+							
+								<img src="../ConcertImg_upload/<%=vo.getThumbimg() %>" alt="" aria-hidden="true" />
+							
 						</div>
 						<div class="inner">
 							<div class="header">
 								<!-- <div class="prix">JOHN MAYER</div> -->
 							</div>
 							<div class="footer">
-								<span class="prix"><a href="cDetail.jsp?concertNo=<%=vo.getConcertNo()%>" style="text-decoration: none; color:white;  text-shadow: 1px 1px 1px black;"><%=vo.getArtist() %></a></span>
+								<span class="prix"><a href="cDetail.jsp?concertNo=<%=vo.getConcertNo()%>" style="text-decoration: none; color:white;"><%=vo.getArtist() %></a></span>
 								<span class="unit"> <!-- &euro; --></span>
-								<div><%=vo.getStartdate() + " , " + vo.getLocationname() %></div>
+								<div>
+									<%=vo.getStartdate() + " , " + vo.getLocationname() %>
+								</div>
 							</div>
 
 							<div class="content">
 								<ul> 
 									<li class="title">UDC SuperConcert#00<%=(i+1) %>&nbsp;&nbsp;<%=vo.getTitle() %></li>
-									<%String content = vo.getContent(); 
-								String [] contents = content.split("/");%>
+										<%String content = vo.getContent(); 
+										String [] contents = content.split("/");%>
 									<li><%=contents[0] %></li>
 									<li><%=contents[1] %></li>
 									<li><%=contents[2] %></li>
@@ -69,6 +71,7 @@ class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 					</div>
 				</div>
 			</div>
+			
 			<% } //for
 		}catch(SQLException e){
 		e.printStackTrace();

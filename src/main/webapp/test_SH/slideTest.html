@@ -18,6 +18,7 @@
     width: 800px; /* not responsive!! */
     aspect-ratio: 2/1;
     font-family: 'Noto Sans KR', sans-serif;
+    text-shadow: 1px 1px 1px black;
     
     display: inline-block;
 }
@@ -33,7 +34,8 @@
 /* Flexbox container over card background image */
 .card .inner {
     z-index: 1;
-    display: flex; flex-flow: column wrap;
+    display: flex; 
+    flex-flow: column wrap;
     padding: 1rem;
 
     justify-content: flex-end; /* move all elements to .inner bottom */
@@ -71,7 +73,6 @@
 }
 
 .card .bg-pic {
-    opacity: 1;
     transition: var(--tr-s);
 }
 .card:hover .bg-pic  {
@@ -102,7 +103,7 @@ ul, li { padding: 0; list-style-type: none }
 
 .card > * {
      /* obfuscate picture for testing */
-    background-color: hsl(0,0%,0%,.5);/* remove me */
+    background-color: hsl(0,0%,0%,.2);/* remove me */
     color:  hsl(0,0%,100%,1);
 
     cursor: pointer;
