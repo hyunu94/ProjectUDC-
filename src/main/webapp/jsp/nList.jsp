@@ -1,6 +1,12 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.v_board.model.BoardSelectVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/nList.css">
+<jsp:useBean id="boardService" 
+class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -13,6 +19,9 @@
 </script>
 </head>
 <body>
+<%  
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+%>
 	<div class="contents">
 
 		<div class="grid-container grid03">
@@ -60,14 +69,28 @@
 										<td>99</td>
 									</tr>
 									<!-- 반복구간(시작) -->
+									<%
+									List<BoardSelectVO> list = null;
+
+									try {
+										list = boardService.selectAllBoard();
+										for(int i=0;i<list.size();i++){
+											BoardSelectVO vo = list.get(i);
+										%>
+										
 									<tr>
-										<td>1</td>
-										<td><a href="#" style="text-decoration: none; color:black;">1등</a></td>
-										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
-										<td>2022-10-02</td>
-										<td>10</td>
-										<td>213</td>
+										<td><%=vo.getBoardNo() %></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><%=sdf.format(vo.getRegdate()) %></td>
+										<td><%=vo.getCount() %></td>
+										<td><%=vo.getStar() %></td>
 									</tr>
+										<%}%>
+									<%} catch (SQLException e) {
+										e.printStackTrace();
+									}
+									%>
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
@@ -125,14 +148,25 @@
 										<td>99</td>
 									</tr>
 									<!-- 반복구간(시작) -->
+									<%  try {
+										list = boardService.selectBoardBycate(1);
+										for(int i=0;i<list.size();i++){
+											BoardSelectVO vo = list.get(i);
+										%>
+										
 									<tr>
-										<td>1</td>
-										<td><a href="#" style="text-decoration: none; color:black;">후기게시판</a></td>
-										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
-										<td>2022-10-02</td>
-										<td>10</td>
-										<td>213</td>
+										<td><%=vo.getBoardNo() %></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><%=sdf.format(vo.getRegdate()) %></td>
+										<td><%=vo.getCount() %></td>
+										<td><%=vo.getStar() %></td>
 									</tr>
+										<%}%>
+									<%} catch (SQLException e) {
+										e.printStackTrace();
+									}
+									%> 
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
@@ -190,14 +224,25 @@
 										<td>99</td>
 									</tr>
 									<!-- 반복구간(시작) -->
+									<%  try {
+										list = boardService.selectBoardBycate(4);
+										for(int i=0;i<list.size();i++){
+											BoardSelectVO vo = list.get(i);
+										%>
+										
 									<tr>
-										<td>1</td>
-										<td><a href="#" style="text-decoration: none; color:black;">잡담게시판</a></td>
-										<td><a href="#" style="text-decoration: none; color:black;">홍길동</a></td>
-										<td>2022-10-02</td>
-										<td>10</td>
-										<td>213</td>
+										<td><%=vo.getBoardNo() %></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><%=sdf.format(vo.getRegdate()) %></td>
+										<td><%=vo.getCount() %></td>
+										<td><%=vo.getStar() %></td>
 									</tr>
+										<%}%>
+									<%} catch (SQLException e) {
+										e.printStackTrace();
+									}
+									%> 
 									<!-- 반복구간(끝) -->
 								</tbody>
 							</table>
@@ -236,14 +281,25 @@
 									<col style="width: 9%;" />
 								</colgroup>
 								<thead>
+									<%  try {
+										list = boardService.selectBoardBycate(3);
+										for(int i=0;i<list.size();i++){
+											BoardSelectVO vo = list.get(i);
+										%>
+										
 									<tr>
-										<td scope="col" class="no"><span>번호</span></td>
-										<td scope="col" class="title" style="text-align: center;"><span>제목</span></td>
-										<td scope="col" class="writer"><span>글쓴이</span></td>
-										<td scope="col" class="regdate"><span>등록일</span></td>
-										<td scope="col" class="count"><span>조회</span></td>
-										<td scope="col" class="recommand"><span>추천</span></td>
+										<td><%=vo.getBoardNo() %></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><%=sdf.format(vo.getRegdate()) %></td>
+										<td><%=vo.getCount() %></td>
+										<td><%=vo.getStar() %></td>
 									</tr>
+										<%}%>
+									<%} catch (SQLException e) {
+										e.printStackTrace();
+									}
+									%> 
 								</thead>
 								<tbody>
 									<tr>

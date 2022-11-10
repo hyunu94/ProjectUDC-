@@ -118,14 +118,15 @@ public class BoardDAO {
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				String title = rs.getString(1);
-				Clob content = rs.getClob(2);
+				int boardNo = rs.getInt(1);
+				String title = rs.getString(2);
 				Timestamp regdate = rs.getTimestamp(3);
-				int star = rs.getInt(4);
-				int count = rs.getInt(5);
-				String catename = rs.getString(6);
+				int count = rs.getInt(4);
+				int star = rs.getInt(5);
+				String nick = rs.getString(6);
+				int cateNo = rs.getInt(7);
 				
-				BoardSelectVO vo = new BoardSelectVO(title, content, regdate, star, count, catename);
+				BoardSelectVO vo = new BoardSelectVO(boardNo, title, regdate, count, star, nick, cateNo);
 				list.add(vo);
 			}
 			
@@ -147,22 +148,23 @@ public class BoardDAO {
 		try {
 			con = pool.getConnection();
 			
-			String sql = "select title , content , regdate , star , count , catename from v_board_cate\r\n"
-					+ "where cateNo = ?";
+			String sql = "select * from v_boardall\r\n"
+					+ "where cateno = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, cateNo);
 			
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				String title = rs.getString(1);
-				Clob content = rs.getClob(2);
+				int boardNo = rs.getInt(1);
+				String title = rs.getString(2);
 				Timestamp regdate = rs.getTimestamp(3);
-				int star = rs.getInt(4);
-				int count = rs.getInt(5);
-				String catename = rs.getString(6);
+				int count = rs.getInt(4);
+				int star = rs.getInt(5);
+				String nick = rs.getString(6);
+				int cateNo2 = rs.getInt(7);
 				
-				BoardSelectVO vo = new BoardSelectVO(title, content, regdate, star, count, catename);
+				BoardSelectVO vo = new BoardSelectVO(boardNo, title, regdate, count, star, nick, cateNo2);
 				list.add(vo);
 			}
 			
