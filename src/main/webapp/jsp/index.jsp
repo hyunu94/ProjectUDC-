@@ -41,7 +41,7 @@
 							</div>
 
 							<div class="content">
-								<ul>
+								<ul> 
 									<li class="title">UDC SuperConcert#001 JOHN MAYER!</li>
 									<li>롤링스톤즈 선정 2022년 세계 3대 기타리스트</li>
 									<li>존 메이어, 8년만에 다시 내한!</li>
