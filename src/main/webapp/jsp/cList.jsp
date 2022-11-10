@@ -136,7 +136,7 @@
 							</table>
 							<div class="btn_write" style="display: block;">
 							<%if(cl_login){ 
-								if(memberVo.getKindNo()==2){%>
+								if(memberVo.getKindNo()==1){%>
 								<input type="button" class="sub2" value="글쓰기" onclick="location.href='cWrite.jsp'">
 							<% }%>	
 							<%} %>
