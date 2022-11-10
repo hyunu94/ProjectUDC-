@@ -29,7 +29,7 @@
 		
 		if(cnt>0) {
 			msg = "비밀번호가 변경되었습니다!";
-			url = "../jsp/info.jsp";
+			url="../jsp/close.jsp";
 		} 
 	} catch (SQLException e) {
 		e.printStackTrace();

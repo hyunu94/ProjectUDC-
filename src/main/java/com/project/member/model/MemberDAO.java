@@ -397,7 +397,7 @@ public class MemberDAO {
 		} finally {
 			pool.dbClose(rs, ps, con);
 		}
-		
 	}
+	
 	
 }

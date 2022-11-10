@@ -21,9 +21,7 @@
 	$(function() {
 		$('#currentPwd').focus();
 
-		$('#sub1').click(
-				
-				function() {
+		$('#sub1').click(function() {
 					if ($('#currentPwd').val().length < 1) {
 						alert('현재 비밀번호를 입력하세요');
 						$('#currentPwd').focus();
@@ -41,7 +39,8 @@
 						$('#newPwdConfirm').focus();
 						event.preventDefault();
 					}
-				});
+		});
+	});
 
 </script>
 <div class="body">
