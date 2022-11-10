@@ -56,7 +56,7 @@
     padding: 15% 0 15% 0;
 }
 
-.small_body p {
+.nick_body p {
     margin-top: 15px;
     margin-bottom: 15px;
 }
