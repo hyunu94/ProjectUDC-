@@ -1,9 +1,13 @@
 package com.project.board.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 import com.project.v_board.model.BoardSelectVO;
+import com.project.v_boardNo_search.model.DetailboardViewVO;
 
 public class BoardService {
 	private BoardDAO dao;
@@ -29,5 +33,9 @@ public class BoardService {
 	}
 	public List<BoardSelectVO> selectBoardBycate(int cateNo) throws SQLException { //게시판별로 조회
 		return dao.selectBoardBycate(cateNo);
+	}
+	
+	public DetailboardViewVO selectByboardNO(int boardNo) throws SQLException { //게시판 detail 조회 뷰
+		return dao.selectByboardNO(boardNo);
 	}
 }

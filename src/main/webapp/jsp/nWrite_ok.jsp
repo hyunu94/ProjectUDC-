@@ -1,3 +1,4 @@
+<%@page import="com.project.v_boardNo_search.model.DetailboardViewVO"%>
 <%@page import="com.project.concert.model.ConcertService"%>
 <%@page import="com.project.concert.model.ConcertVO"%>
 <%@page import="java.sql.SQLException"%>
@@ -48,7 +49,7 @@
 	
 	BoardService boardservice = new BoardService();
 	try{
-		int cnt = boardservice.insertBoard(vo);
+		
 	}catch(SQLException e){
 		e.printStackTrace();
 	}

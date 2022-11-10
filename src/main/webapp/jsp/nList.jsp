@@ -88,8 +88,8 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 										
 									<tr>
 										<td><%=vo.getBoardNo() %></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
 										<td><%=sdf.format(vo.getRegdate()) %></td>
 										<td><%=vo.getCount() %></td>
 										<td><%=vo.getStar() %></td>
@@ -164,8 +164,8 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 										
 									<tr>
 										<td><%=vo.getBoardNo() %></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
 										<td><%=sdf.format(vo.getRegdate()) %></td>
 										<td><%=vo.getCount() %></td>
 										<td><%=vo.getStar() %></td>
@@ -240,8 +240,8 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 										
 									<tr>
 										<td><%=vo.getBoardNo() %></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
 										<td><%=sdf.format(vo.getRegdate()) %></td>
 										<td><%=vo.getCount() %></td>
 										<td><%=vo.getStar() %></td>
@@ -297,8 +297,8 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 										
 									<tr>
 										<td><%=vo.getBoardNo() %></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
-										<td><a href="#" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getTitle() %></a></td>
+										<td><a href="nDetail.jsp?boardNo=<%=vo.getBoardNo() %>" style="text-decoration: none; color:black;"><%=vo.getNick() %></a></td>
 										<td><%=sdf.format(vo.getRegdate()) %></td>
 										<td><%=vo.getCount() %></td>
 										<td><%=vo.getStar() %></td>

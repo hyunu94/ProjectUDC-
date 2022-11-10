@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.project.db.ConnectionPoolMgr2;
 import com.project.v_board.model.BoardSelectVO;
+import com.project.v_boardNo_search.model.DetailboardViewVO;
 
 public class BoardDAO {
 	private ConnectionPoolMgr2 pool;
@@ -238,6 +239,39 @@ public class BoardDAO {
 			return result;
 		}finally {
 			pool.dbClose(ps, con);
+		}
+	}
+	
+	public DetailboardViewVO selectByboardNO(int boardNo) throws SQLException { //게시판 detail 조회 뷰
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		DetailboardViewVO vo = null;
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select * from v_boardNo_select\r\n"
+					+ "where boardNo = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, boardNo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int boardNo2 = rs.getInt(1);
+				String title = rs.getString(2);
+				String content = rs.getString(3);
+				int cateNo = rs.getInt(4);
+				String nick = rs.getString(5);
+				String catename = rs.getString(6);
+				
+				vo = new DetailboardViewVO(boardNo2, title, content, catename, nick, catename);
+			}
+			
+			return vo;
+		}finally {
+			pool.dbClose(rs, ps, con);
 		}
 	}
 	

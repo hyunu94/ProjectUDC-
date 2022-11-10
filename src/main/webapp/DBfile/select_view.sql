@@ -1,4 +1,4 @@
- -- ¿¹¸Å Á¶È¸ ºä
+ -- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½
 --create or replace view v_reserve 
 --as
 --select r.reserveNo , r.buy , m.memberNo , m.name, c.artist,c.title,
@@ -10,7 +10,7 @@
 --join location l
 --on c.locationNo = l.locationNo;
 
---ÀüÃ¼°Ô½ÃÆÇ ºä
+--ï¿½ï¿½Ã¼ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½
 --create or replace view v_boardall 
 --as
 --select b.title , b.content , b.regdate , b.star , b.count , c.catename
@@ -20,7 +20,7 @@
 --
 --select * from v_boardall;
 
---°Ô½ÃÆÇº° ºä
+--ï¿½Ô½ï¿½ï¿½Çºï¿½ ï¿½ï¿½
 --create or replace view v_board_cate
 --as
 --select b.title , b.content , b.regdate , b.star , b.count , c.cateno , c.catename
@@ -28,12 +28,12 @@
 --on b.categoryNo = c.cateNo
 --where b.delcheck = 'N';
 
---°ø¿¬Á¤º¸ ¸®½ºÆ® ºä
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
 create or replace view v_list
 as
 select concertNo , artist , title , regdate , (select name from member m where m.memberNo = c.memberNo ) as name from concert c;
 
---°ø¿¬ »ó¼¼Á¤º¸ ºä
+--ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 create or replace view v_cDetailview
 as
 select c.concertNo , c.artist , c.title , c.content , c.startdate , c.time , c.price ,c.thumbimg, l.address , l.locationname, m.mobile
@@ -42,7 +42,7 @@ on c.memberNo = m.memberNo
 join location l
 on m.locationNo = l.locationNo;
 
--- Áöµµ ¸¶Ä¿  ºä
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¿  ï¿½ï¿½
 create or replace view v_maker
 as
 select c.artist , c.startdate , l.locationname , l.axisx , l.axisy , c.thumbimg
@@ -51,7 +51,7 @@ on m.locationNo = l.locationNo
 join concert c
 on c.memberNo = m.memberNo;
 
--- ¸ÞÀÎ ÆäÀÌÁö ÃÖ½Å »çÁø 4°³ ºÒ·¯¿À±â
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 
 create or replace view v_index
 as
@@ -65,4 +65,13 @@ on m.locationNo = l.locationNo
 order by c.regdate desc
 )
 where rownum <5;
+
+-- nDetail search
+create or replace view v_boardNo_select
+as
+select b.boardNo , b.title , b.content , b.cateNo , m.nick , c.catename
+from board b join member m 
+on b.memberNo = m.memberNo
+join category c
+on b.cateNo = c.cateNo;
 
