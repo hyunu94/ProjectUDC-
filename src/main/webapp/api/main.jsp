@@ -89,7 +89,7 @@
 	}
 	.div_map{
 		display: block;
-		width: 330px;
+		width: 335px;
 		height:290px; 
 		border:2px solid #c0c0c0;
 	}
