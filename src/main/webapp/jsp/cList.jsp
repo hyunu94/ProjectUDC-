@@ -64,7 +64,7 @@
 		totalRecord=list.size();				
 	}
 	
-	int pageSize=5;  
+	int pageSize=10;  
 	int totalPage = (int)Math.ceil((float)totalRecord/pageSize); 
 	int blockSize=10; 
 	
