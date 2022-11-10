@@ -127,7 +127,7 @@
 	<div class="div0">
 		<div class="div1">
 			<h3>공연정보를 입력해 주세요</h3>
-		</div>
+		</div> 
 		<form name="frm1" action="cWrite_ok.jsp" enctype="multipart/form-data" method="post" >
 			<div class="div1">
 				<p class="p1">ARTIST</p>

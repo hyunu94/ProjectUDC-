@@ -42,7 +42,7 @@ public class LocationDAO {
 		}finally {
 			
 		}
-	}
+	} 
 	
 	public int insertLocation(LocationVO vo) throws SQLException {
 		Connection con=null;

@@ -11,7 +11,7 @@ public class Utility {
 	   ="C:\\lecture\\workplace_list\\java_ws\\ProjectUDC-\\src\\main\\webapp\\BoardImg_upload";
 	   
 
-	   
+	    
 	   public static String displayRe(int step) { // 댓글은 옆에 이미지 보여주게 하는 메서드
 	      String result="";
 	      if(step>0){

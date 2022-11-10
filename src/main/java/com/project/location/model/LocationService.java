@@ -17,7 +17,7 @@ public class LocationService {
 	public int insertLocation(LocationVO vo) throws SQLException { //주소 등록
 		return dao.insertLocation(vo);
 	}
-	
+	 
 	public int selectByAddress(String zipcode, String address) throws SQLException { //우편번호와 주소로 locationNo 구하기
 		return dao.selectByAddress(zipcode, address);
 	}

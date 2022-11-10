@@ -19,7 +19,7 @@
 		}		
 	});
 </script>
-<% 
+<%  
 	String cl_userid=(String)session.getAttribute("userid");
 	boolean cl_login = false;
 	

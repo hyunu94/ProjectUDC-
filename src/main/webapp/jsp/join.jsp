@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	$(function() {
 		$('#userid').focus();
-
+ 
 		$('#userid').prop('readonly', true);
 		$('#nick').prop('readonly', true);
 		$('#sample6_postcode').prop('readonly', true);

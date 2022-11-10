@@ -15,7 +15,7 @@
 <body>
 <%
 	request.setCharacterEncoding("utf-8");
-
+ 
 	String kind = request.getParameter("kind");
 	String userid = request.getParameter("userid");
 	String pwd = request.getParameter("pwd");

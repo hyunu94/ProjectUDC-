@@ -11,7 +11,7 @@ public class LocationVO{
 	public LocationVO() {
 		super();
 	}
-
+ 
 	public LocationVO(int locationNo, String zipcode, String address, String locationname,
 			double axisx, double axisy) {
 		super();
