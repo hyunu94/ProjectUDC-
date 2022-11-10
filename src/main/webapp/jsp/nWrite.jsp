@@ -31,11 +31,24 @@
 			fCreator : "createSEditor2"
 		});
 		
+		$("#sub1").click(function(){
+	          //id가 smarteditor인 textarea에 에디터에서 대입
+	            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+	          $('#frm1').submit();
+	      })
+		
 	});
 </script>
 </head>
 <body>
 <%
+String cl_userid=(String)session.getAttribute("userid");
+boolean cl_login = false;
+
+if(cl_userid!=null && !cl_userid.isEmpty()){ //세션에 값이 있으면 로그인된 상태
+	cl_login = true;
+}
+
 ConcertService service = new ConcertService();
 List<ConcertVO> list = null;
 

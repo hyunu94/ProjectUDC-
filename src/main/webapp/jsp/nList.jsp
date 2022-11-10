@@ -20,6 +20,14 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 </head>
 <body>
 <%  
+
+	String cl_userid=(String)session.getAttribute("userid");
+	boolean cl_login = false;
+
+	if(cl_userid!=null && !cl_userid.isEmpty()){ //세션에 값이 있으면 로그인된 상태
+		cl_login = true;
+	}
+	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 %>
 	<div class="contents">
@@ -323,10 +331,10 @@ class="com.project.board.model.BoardService" scope="session"></jsp:useBean>
 								</tbody>
 							</table>
 							<div class="btn_write" style="display: block;">
-								<input type="button" class="sub2" value="글쓰기">
+								<input type="submit" class="sub2" value="글쓰기" >
 							</div>
 							<div class="addons" style="display: block;">
-								<form name="frm" action="" method="get">
+								<form name="frm" action="nList.jsp" method="get">
 									<div class="addons2" style="display: block;">
 										<select name="search_target" class="sel1">
 											<option value="title_content">전체</option>
