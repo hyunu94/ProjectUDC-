@@ -52,7 +52,6 @@ if ( nick != null && !nick.isEmpty()) {
 				event.preventDefault();			
 			}
       });
-
    });
 
 	//닉네임 영문, 한글만 가능

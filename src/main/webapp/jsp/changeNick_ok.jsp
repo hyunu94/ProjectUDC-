@@ -30,7 +30,7 @@
 
 		if(cnt>0){
 			msg="닉네임이 변경되었습니다!";
-			url="../jsp/info.jsp";
+			url="../jsp/close.jsp";
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();
