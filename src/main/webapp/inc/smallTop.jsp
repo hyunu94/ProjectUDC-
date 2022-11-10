@@ -21,17 +21,30 @@
 	margin: 0 auto;
 }
 
+.nav_udc {
+	margin: 0 auto;
+}
+
 .nick_bar h2 {
 	padding: 2% 1% 0 2%;
 	margin-bottom: 15px;
 	font-weight: 600;
 }
 
-.nav_udc {
-	margin: 0 auto;
+.mini_body {
+    width: auto;
+    height: 180px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15% 0 15% 0;
 }
 
-.nick_mold {
+.mini_body p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.small_mold {
 	border: 1px solid lightgray;
 	margin-top: 5%;
 }
@@ -56,4 +69,3 @@
 			<a class="navbar-brand" href="#">UDC</a>
 		</div>
 	</nav>
-	<div class="small_body">

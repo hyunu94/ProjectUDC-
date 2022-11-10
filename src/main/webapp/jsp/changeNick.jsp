@@ -66,7 +66,7 @@ if ( nick != null && !nick.isEmpty()) {
 		<div class="nick_bar">
 			<h2>닉네임 변경</h2>
 		</div>
-		<div class="nick_mold">
+		<div class="small_mold">
 			<table class="nick_tb">
 				<form name="frmNick" method="post" action="changeNick_ok.jsp">
 					<colgroup>

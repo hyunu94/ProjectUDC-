@@ -6,6 +6,7 @@
 	class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
 <%@ include file="../inc/smallTop.jsp"%>
 <!-- content -->
+<title>닉네임 중복 확인</title>
 <%
 	request.setCharacterEncoding("utf-8");
 
@@ -48,24 +49,13 @@
 	}
 </script>
 <style type="text/css">
-.nick_body {
-    width: auto;
-    height: 180px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 15% 0 15% 0;
-}
 
-.nick_body p {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
 </style>
-<div class="nick_body">
+<div class="mini_body">
 	<form name="frmNick" method="post" action="checkNick.jsp">
-		<label for="nick">닉네임 : </label> <input type="text" name="nick"
-			id="nick" size="17" value="<%=nick%>"> <input type="submit"
-			value="중복확인" id="nickck">
+		<label for="nick">닉네임 : </label> 
+		<input type="text" name="nick" id="nick" size="17" value="<%=nick%>"> 
+		<input type="submit" value="중복확인" id="nickck">
 
 		<%if(result==MemberService.EXIST_ID){ %>
 		<p>이미 등록된 닉네임입니다. 다른 닉네임을 입력하세요</p>
