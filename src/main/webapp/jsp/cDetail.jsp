@@ -10,7 +10,8 @@
 
 	ConcertService concertservice = new ConcertService();
 	cDetailViewVO vo = concertservice.selectbyNo(Integer.parseInt(concertNo));
-	
+	String content=vo.getContent();
+	String[] contents = content.split("/");
 %>
 <div class="body">
 	<div class="div0">
@@ -45,7 +46,7 @@
 						<span class="question">소개</span>
 					</td>
 					<td style="border-bottom: none;">
-						<span class="answer" id="content1"><%=vo.getContent() %></span>
+						<span class="answer" id="content1"><%=contents[0] %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -53,7 +54,7 @@
 						<span class="question"></span>
 					</td>
 					<td style="border-bottom: none;">
-						<span class="answer" id="content2">You know you'll never love that way again</span>
+						<span class="answer" id="content2"><%=contents[1] %></span>
 					</td>
 				</tr>			
 				<tr>
@@ -61,7 +62,7 @@
 						<span class="question"></span>
 					</td>
 					<td>
-						<span class="answer" id=content3>Didn't we almost have it all</span>
+						<span class="answer" id=content3><%=contents[2] %></span>
 					</td>
 				</tr>			
 				<tr>
