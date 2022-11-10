@@ -51,13 +51,14 @@ public class LocationDAO {
 		try {
 			con=pool.getConnection();
 			
-			String sql="insert into location(locationno, zipcode, address, axisx,axisy)\r\n"
-					+ "values(location_seq.nextval,?,?,?,?)";
+			String sql="insert into location(locationno, zipcode, address, locationname, axisx,axisy)\r\n"
+					+ "values(location_seq.nextval,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, vo.getZipcode());
 			ps.setString(2, vo.getAddress());
-			ps.setDouble(3, vo.getAxisx());
-			ps.setDouble(4, vo.getAxisy());
+			ps.setString(3, vo.getLocationname());
+			ps.setDouble(4, vo.getAxisx());
+			ps.setDouble(5, vo.getAxisy());
 			
 			int cnt = ps.executeUpdate();
 			

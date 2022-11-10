@@ -23,12 +23,13 @@
 	String saveDir = Utility.CONCERT_UPLOAD_DIR;
 	System.out.println("saveDir = " + saveDir);
 	
-	saveDir = Utility.CONCERT_TEST_DIR;
+	saveDir = "C:\\git\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
 	System.out.println("testDir = " + saveDir);
 	
 	int maxSize = 10 * 1024 * 1024 ;
 	String img="";
 	
+	String msg = "공연 등록이 실패하였습니다." , url ="cWrite_ok.jsp";
 	try{
 		DefaultFileRenamePolicy policy=new DefaultFileRenamePolicy();
 		MultipartRequest mr
@@ -47,6 +48,7 @@
 			System.out.println("filename = " + fileName + ",ori = " + originalFName);
 			img = fileName;
 		}	
+	String memberNo = mr.getParameter("memberNo");
 	String artist = mr.getParameter("artist");
 	String title = mr.getParameter("title");
 	String startdate = mr.getParameter("startdate");
@@ -68,25 +70,29 @@
 	vo.setContent(content);
 	vo.setLink(link);
 	vo.setThumbimg(img);
-	vo.setMemberNo(1);
+	vo.setMemberNo(Integer.parseInt(memberNo));
 	
  	ConcertService service = new ConcertService();
 	int cnt = service.insertConcert(vo);
 	
-	String msg = "공연 등록이 실패하였습니다." , url ="cWrite_ok.jsp";
+	
 	if(cnt>0){
 		msg = "공연 등록을 성공하였습니다.";
-		url = "cDetail.jsp?concertNo="+1;
+		url = "cList.jsp";
 	}
 	
-	request.setAttribute("msg", msg);
-	request.setAttribute("url", url);
 	
 	}catch(SQLException e){
 		e.printStackTrace();
 	}catch(IOException e){
 		e.printStackTrace();
 	} 
+	
+	request.setAttribute("msg", msg);
+	request.setAttribute("url", url);
+	
+	
 %>
+<jsp:forward page="../common/message.jsp"></jsp:forward>
 </body>
 </html>

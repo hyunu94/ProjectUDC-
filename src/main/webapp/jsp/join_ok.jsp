@@ -32,7 +32,7 @@
 	/* String locationNo = request.getParameter("locationNo"); */
 	String zipcode = request.getParameter("zipcode");
 	String address = request.getParameter("address");
-	String detailAdd = request.getParameter("detailAdd");
+	String locationName = request.getParameter("locationName");
 	String x = request.getParameter("x");
 	String y = request.getParameter("y");
 	double axisx = Double.parseDouble(x);
@@ -47,7 +47,7 @@
 	//locationVo
 	locationVo.setZipcode(zipcode);
 	locationVo.setAddress(address);
-	locationVo.setAddressdetail(detailAdd);
+	locationVo.setLocationname(locationName);
 
 	locationVo.setAxisx(axisx);
 	locationVo.setAxisy(axisy);

@@ -102,6 +102,10 @@
 						$('#sample6_postcode').focus();
 						alert('우편번호를 입력하세요');
 						event.preventDefault();
+					} else if ($('#sample6_detailAddress').val().length < 1) {
+						$('#sample6_detailAddress').focus();
+						alert('장소이름을 입력하세요');
+						event.preventDefault();
 					} else if ($('#x').val().length < 1
 							|| $('#y').val().length < 1) {
 						alert('주소확인버튼을 클릭해주세요.');
@@ -166,9 +170,9 @@
 				<p class="p1">회원 유형</p>
 			</div>
 			<div class="p1">
-				<span>일반 회원</span><input type="radio" name="kind" value="1">
+				<span>일반 회원</span><input type="radio" name="kind" value="2">
 				<span>&nbsp;|&nbsp;</span> <span>클럽 회원 (공연등록 전용)</span><input
-					type="radio" name="kind" value="2">
+					type="radio" name="kind" value="1">
 			</div>
 			<!-- <div class = "realize">
          </div> 유효성 검사 칸-->
@@ -254,7 +258,7 @@
 				 <input class="btn_add1" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" />
 				  <br>
 				<input class="input5" type="text" id="sample6_address" name="address" placeholder="주소" /> 
-				<input class="input5" type="text" id="sample6_detailAddress" name="detailAdd" placeholder="상세주소" /><br> 
+				<input class="input5" type="text" id="sample6_detailAddress" name="locationName" placeholder="장소이름" /><br> 
 				<input
 					class="btn_add2" type="button" value="주소 확인" id="addChBt" onclick="addressChk()" />
 				<br>

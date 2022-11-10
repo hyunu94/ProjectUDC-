@@ -1,3 +1,6 @@
+<%@page import="com.project.member.model.MemberVO"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.project.member.model.MemberService"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../inc/top.jsp"%>
@@ -93,6 +96,24 @@
 	 }
 	
 </script>
+<%
+	String userid=(String)session.getAttribute("userid");
+	boolean login = false;
+	
+	if(userid!=null && !userid.isEmpty()){ //세션에 값이 있으면 로그인된 상태
+		login = true;
+	}
+	
+	
+	MemberService memberService = new MemberService();
+	MemberVO memberVo = null;
+	try{
+		memberVo=memberService.selectByUserid(userid);
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+	
+%>
 <style type="text/css">
 	.input1{
 		width:600px;
@@ -161,6 +182,7 @@
 			<div class=div3> 
 				<input type="submit" value="작성 완료" id="sub1">
 			</div>
+				<input type="hidden" value="<%=memberVo.getMemberNo() %>" name="memberNo">
 		</form>
 	</div>
 </div>
