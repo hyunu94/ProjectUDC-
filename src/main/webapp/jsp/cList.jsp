@@ -142,30 +142,31 @@
 							<%} %>
 							</div>
 							<div class="divPage">
-					<%	if(firstPage>1){ %>
-					<a href="cList.jsp?currentPage=<%=firstPage-1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
-						<img src="../img/first.JPG">
-					</a>	
-					<%	}	%>
-
-			<%for(int i=firstPage;i<=lastPage;i++){
-					if(i>totalPage) break;
+								<%	if(firstPage>1){ %>
+								<a href="cList.jsp?currentPage=<%=firstPage-1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
+									<img src="../img/first.JPG">
+								</a>	
+								<%	}	%>
 			
-					if(i==currentPage){%>
-				<span style="color:blue;font-weight: bold;font-size: 1em">
-					<%=i %></span>
-					<%}else{ %>
-				<a href ="cList.jsp?currentPage=<%=i%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
-					[<%=i %>]</a>
-			<%} %>
-			<%	}	%>	
-	
-			<%if(lastPage<totalPage){ %>
-			<a href="cList.jsp?currentPage=<%=lastPage+1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>">
-				<img src="../img/last.JPG">
-			</a>
-			<%} %>
-	</div>
+								<%for(int i=firstPage;i<=lastPage;i++){
+								if(i>totalPage) break;
+						
+								if(i==currentPage){%>
+								<span style="font-size: 1em">
+								<%=i %></span>
+								<%}else{ %>
+								<a href ="cList.jsp?currentPage=<%=i%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>" style="text-decoration: none; color:black;">
+								[<%=i %>]</a>
+								<%} %>
+								<%	}	%>	
+						
+								<%if(lastPage<totalPage){ %>
+								<a href="cList.jsp?currentPage=<%=lastPage+1%>&search_Condition=<%=condition%>&search_Keyword=<%=keyword%>" style="text-decoration: none; color:black;">
+									<img src="../img/last.JPG">
+								</a>
+								<%} %>
+							</div>
+							<br>
 							<div class="addons" style="display: block;">
 								<form name="frm" action="cList.jsp" method="post">
 									<div class="addons2" style="display: block;">
