@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.project.db.ConnectionPoolMgr2;
 import com.project.v_cDetail.model.cDetailViewVO;
+import com.project.v_index.model.IndexVO;
 import com.project.v_list.model.ConcertListVO;
 
 public class ConcertDAO {
@@ -282,5 +283,38 @@ public class ConcertDAO {
 			pool.dbClose(rs, ps, con);
 		}
 		
+	}
+	
+	public List<IndexVO> selectImg() throws SQLException{
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<IndexVO> list = new ArrayList<>();
+		
+		try {
+			con = pool.getConnection();
+			
+			String sql = "select * from v_index";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int concertNo = rs.getInt(1);
+				String artist = rs.getString(2);
+				String startdate = rs.getString(3);
+				String content = rs.getString(4);
+				String title = rs.getString(5);
+				String thumbimg = rs.getString(6);
+				String locationname = rs.getString(7);
+				
+				IndexVO vo = new IndexVO(concertNo, artist, startdate, content, title, thumbimg, locationname);
+				list.add(vo);
+			}
+			
+			System.out.println("index에서 보여질 이미지 갯수 : " + list.size());
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
 	}
 }

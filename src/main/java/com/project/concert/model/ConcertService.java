@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.project.v_cDetail.model.cDetailViewVO;
+import com.project.v_index.model.IndexVO;
 import com.project.v_list.model.ConcertListVO;
 
 public class ConcertService {
@@ -47,5 +49,9 @@ public class ConcertService {
 	
 	public cDetailViewVO selectbyNo(int concertNo) throws SQLException { //공연번호로 전체조회
 		return dao.selectbyNo(concertNo);
+	}
+	
+	public List<IndexVO> selectImg() throws SQLException{
+		return dao.selectImg();
 	}
 }
