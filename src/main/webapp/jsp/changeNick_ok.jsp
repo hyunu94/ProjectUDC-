@@ -38,7 +38,7 @@
 	
 	request.setAttribute("msg", msg);
 	request.setAttribute("url", url);
-	
+	//성공하면 창 닫기!!
 %>
 <jsp:forward page="../common/message.jsp"></jsp:forward>
 </body>

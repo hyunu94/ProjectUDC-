@@ -12,7 +12,7 @@
 request.setCharacterEncoding("utf-8");
 
 String userid = (String)session.getAttribute("userid");
-String nick = (String)session.getAttribute("nick");
+String nick = request.getParameter("nick");
 memberVo = memberService.selectByUserid(userid);
 String curNick = memberVo.getNick();
 
@@ -24,32 +24,35 @@ if ( nick != null && !nick.isEmpty()) {
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
+} else {
+	nick = "";
 }
 %>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
    $(function(){
-      $('#nickck').click(function(){
-         if (!validate_nick($('#nick').val())) {
-            alert('닉네임은 영문, 한글만 가능합니다.');
-            $('#nick').focus();
-            event.preventDefault();
-         } 
+	   $('#btnChkNick').click(function(){
+	    	var nick=$('#nick').val();
+	    	open('checkNick.jsp?nick='+nick,'chk',
+	    		'width=500,height=300,left=0,top=0,location=yes,resizable=yes');	
+	    });
+	   
+      $('#nick_submit').click(function(){
+    	  if ($('#nick').val().length < 1) {
+				alert('닉네임 입력하세요.');
+				$('#nick').focus();
+				event.preventDefault();
+			} else if (!validate_nick($('#nick').val())) {
+				alert('닉네임은 영문, 한글만 가능합니다.');
+				$('#nick').focus();
+				event.preventDefault();
+			}else if($('#chNick').val()!='Y'){
+				alert('닉네임 중복확인을 해야 합니다.');
+				$('#btnChkNick').focus();
+				event.preventDefault();			
+			}
       });
-      
-   $('#btUse').click(function(){
-		$('input[name=nick]').find("#nick").val("<%=nick%>");
-			self.close();
-		});
-   <%-- 
-	$('#nickck').submit(function() {//중복확인을 눌렀을 때 값을 input[name=nick]에 입력
-		$('input[name=nick]').val("<%=nick%>");
-	});
-	 --%>
+
    });
 
 	//닉네임 영문, 한글만 가능
@@ -58,47 +61,44 @@ if ( nick != null && !nick.isEmpty()) {
 		return pattern.test(nick);
 	}
 </script>
-</head>
-<body>
 	<div class="body">
 		<div class="nick_bar">
 			<h2>닉네임 변경</h2>
 		</div>
 		<div class="nick_mold">
 			<table class="nick_tb">
-				<form name="frmNick" method="post" action="changeNick.jsp?nick=<%=nick%>">
+				<form name="frmNick" method="post" action="changeNick_ok.jsp">
 					<colgroup>
 						<col style="width: 50%;" />
 						<col style="width: 50%;" />
 					</colgroup>
-					<thead>
-						<tr>
-							<th><label for="nick">현재 사용중인 닉네임</label></th>
-							<th><label for="chgnick">변경할 닉네임 입력</label></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><span><%=curNick %></span></td>
-							<td>
-								<input type="text" name="nick" id="nick" size="15" value="<%=curNick %>">
-								<input type="hidden" value="<%=memberVo.getMemberNo() %>"/>
-								<input type="submit" value="중복확인" id="nickck">
-								<%
-									if (result == MemberService.EXIST_ID) {
-									%>
-								<p>이미 등록된 닉네임</p>
-								<%
-									} else if (result == MemberService.NON_EXIST_ID) {
-									%>
-								<input type="button" value="사용하기" id="btUse" onclick="location.href='changeNick_ok.jsp'">
-								<p>사용가능한 닉네임</p>
-								<%
-								}
-								%>
+				<thead>
+					<tr>
+						<th><label for="nick">현재 사용중인 닉네임</label></th>
+						<th><label for="chgnick">변경할 닉네임 입력</label></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span><%=curNick %></span></td>
+						<td><input type="hidden" value="<%=memberVo.getMemberNo() %>" />
+							<div class="second_regi">
+								<input id="nick" type="text"
+								 name="nick" placeholder="닉네임 중복확인을 누르세요">
+								<input id="btnChkNick" type="button"
+								 onclick="" value="닉네임 중복 확인" />
+							</div>
 							</td>
-						</tr>
-					</tbody>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2">
+							<input type="submit" id="nick_submit" value="변경하기">
+							 <input type ="hidden" name="chNick" id="chNick"> <!-- 닉네임 체크 유무 -->
+						</td>
+					</tr>
+				</tfoot>
 				</form>
 			</table>
 		</div>

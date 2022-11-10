@@ -1,10 +1,11 @@
 <%@page import="com.project.member.model.MemberService"%>
 <%@page import="java.sql.SQLException"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <jsp:useBean id="memberService" class="com.project.member.model.MemberService"
-	scope="session"></jsp:useBean>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<jsp:useBean id="memberService"
+	class="com.project.member.model.MemberService" scope="session"></jsp:useBean>
+<%@ include file="../inc/smallTop.jsp"%>
+<!-- content -->
 <%
 	request.setCharacterEncoding("utf-8");
 
@@ -19,10 +20,6 @@
 		}
 	}
 %>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -50,20 +47,33 @@
 		return pattern.test(nick);
 	}
 </script>
-</head>
-<body>
- <form name="frmNick" method="post" action="checkNick.jsp">
-	<label for="nick">닉네임 : </label>
-	<input type="text" name="nick" id="nick" size="17" 
-		value="<%=nick%>">
-	<input type="submit" value="중복확인" id="nickck"> 
-	
-	 <%if(result==MemberService.EXIST_ID){ %>
+<style type="text/css">
+.nick_body {
+    width: auto;
+    height: 180px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15% 0 15% 0;
+}
+
+.small_body p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+</style>
+<div class="nick_body">
+	<form name="frmNick" method="post" action="checkNick.jsp">
+		<label for="nick">닉네임 : </label> <input type="text" name="nick"
+			id="nick" size="17" value="<%=nick%>"> <input type="submit"
+			value="중복확인" id="nickck">
+
+		<%if(result==MemberService.EXIST_ID){ %>
 		<p>이미 등록된 닉네임입니다. 다른 닉네임을 입력하세요</p>
-	<%}else if(result==MemberService.NON_EXIST_ID){ %>
+		<%}else if(result==MemberService.NON_EXIST_ID){ %>
 		<input type="button" value="사용하기" id="btUse">
 		<p>사용가능한 닉네임입니다. [사용하기]버튼을 클릭하세요</p>
-	<%} %> 
-</form> 
-</body>
-</html>
+		<%} %>
+	</form>
+</div>
+<!-- content -->
+<%@ include file="../inc/smallBottom.jsp"%>
