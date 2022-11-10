@@ -35,8 +35,7 @@ if (userid != null && !userid.isEmpty()) {
 		
 		$('#btUse').click(function(){
 			
-			$(opener.document).find('#userid').val("<%=userid%>
-	");
+			$(opener.document).find('#userid').val("<%=userid%>");
 			$(opener.document).find("#chkId").val("Y");
 
 			self.close();
