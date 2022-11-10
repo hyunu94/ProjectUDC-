@@ -4,11 +4,8 @@
 <%@ include file="../inc/top.jsp"%>
 <link rel="stylesheet" href="../css/card.css">
 <style type="text/css">
-.recent h1, .find h1 {
-	letter-spacing: -2px;
-	margin-top: 20px;
-	font-weight: 800;
-}
+
+
 </style>
 
 <jsp:useBean id="concertService" 
@@ -34,11 +31,11 @@ class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 		<div class="recent">
 			<h1><a href="cList.jsp" style="text-decoration: none; color:black;">RECENT UPDATE</a></h1>
 		</div>
+		<div class="row mb-2">
 							<%for(int i=0;i<inlist.size();i++){
 								IndexVO vo = inlist.get(i);%>
-		<a href="cDetail.jsp?concertNo=<%=vo.getConcertNo()%>">
-		<div class="row mb-2">
 			<div class="col-md-6">
+				<a class="a1" href="cDetail.jsp?concertNo=<%=vo.getConcertNo()%>">
 				<div
 					class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 					<div class="article_card">
@@ -69,9 +66,9 @@ class="com.project.concert.model.ConcertService" scope="session"></jsp:useBean>
 						</div>
 					</div>
 				</div>
+			</a>				
 			</div>
 		</div>	
-			</a>				
 			<% } //for
 		}catch(SQLException e){
 		e.printStackTrace();
