@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+    
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +12,7 @@
     
 </head>
 <body>
-<div id="map" style="width:100%;height:350px;"></div>
+<div id="map" style="width:100%;height:800px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f45b93b9d4d2b1538f1f65bd30241ea9&libraries=services"></script>
 <script>
@@ -34,6 +40,3 @@ marker.setMap(map);
 </script>
 </body>
 </html>
-
-<!-- <br>짱구는 못말려<br>장르 : 락<br>일시 : 2022.11.03 ~ 2022.11.05<br>
-<a href="https://www.naver.com/">상세보기</a> -->

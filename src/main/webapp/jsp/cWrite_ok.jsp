@@ -23,7 +23,7 @@
 	String saveDir = Utility.CONCERT_UPLOAD_DIR;
 	System.out.println("saveDir = " + saveDir);
 	  
-	saveDir = "D:\\lecture\\workspace_list\\jsp_ws\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
+	saveDir = "C:\\git\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
 	System.out.println("testDir = " + saveDir);
 	
 	int maxSize = 10 * 1024 * 1024 ;

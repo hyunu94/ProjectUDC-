@@ -12,6 +12,8 @@
 	cDetailViewVO vo = concertservice.selectbyNo(Integer.parseInt(concertNo));
 	String content=vo.getContent();
 	String[] contents = content.split("/");
+	
+	
 %>
 <div class="body">
 	<div class="div0">
