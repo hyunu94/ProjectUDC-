@@ -23,7 +23,11 @@
 	String saveDir = Utility.CONCERT_UPLOAD_DIR;
 	System.out.println("saveDir = " + saveDir);
 	  
+<<<<<<< HEAD
 	saveDir = "C:\\Users\\EZEN202\\git\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
+=======
+	saveDir = "C:\\git\\ProjectUDC-\\src\\main\\webapp\\ConcertImg_upload";
+>>>>>>> branch 'master' of https://github.com/hyunu94/ProjectUDC-.git
 	System.out.println("testDir = " + saveDir);
 	
 	int maxSize = 10 * 1024 * 1024 ;
